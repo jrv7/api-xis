@@ -14,7 +14,7 @@ class AdminPermissionUserTableSeeder extends Seeder
      */
     public function run()
     {
-        $tableName = 'permission_user';
+        $tableName = 'user_has_permissions';
         
         \DB::table($tableName)->delete();
         

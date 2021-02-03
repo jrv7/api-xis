@@ -14,7 +14,7 @@ class AdminRoleMenuTableSeeder extends Seeder
      */
     public function run()
     {
-        $tableName = 'role_menu';
+        $tableName = 'role_has_menus';
         
         \DB::table($tableName)->delete();
         

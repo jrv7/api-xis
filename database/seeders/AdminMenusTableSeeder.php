@@ -22,7 +22,7 @@ class AdminMenusTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 2,
-                'menu_id' => 1,
+                'father_menu_id' => 1,
                 'menu_title' => 'Home',
                 'route' => 'HOME_URL',
                 'opt_show_menu' => 1,
@@ -39,7 +39,7 @@ class AdminMenusTableSeeder extends Seeder
             1 => 
             array (
                 'id' => 14,
-                'menu_id' => 400,
+                'father_menu_id' => 400,
                 'menu_title' => 'ADICIONAR_PERFIL',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -56,7 +56,7 @@ class AdminMenusTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 15,
-                'menu_id' => 400,
+                'father_menu_id' => 400,
                 'menu_title' => 'LISTAR_PERFIS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -73,7 +73,7 @@ class AdminMenusTableSeeder extends Seeder
             3 => 
             array (
                 'id' => 33,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'LISTAR_TABELAS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -90,7 +90,7 @@ class AdminMenusTableSeeder extends Seeder
             4 => 
             array (
                 'id' => 37,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'LISTAR_CAMPOS_TABELA',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -107,7 +107,7 @@ class AdminMenusTableSeeder extends Seeder
             5 => 
             array (
                 'id' => 100,
-                'menu_id' => NULL,
+                'father_menu_id' => NULL,
                 'menu_title' => 'ADMINISTRACAO',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -124,7 +124,7 @@ class AdminMenusTableSeeder extends Seeder
             6 => 
             array (
                 'id' => 16,
-                'menu_id' => 400,
+                'father_menu_id' => 400,
                 'menu_title' => 'VIEW_ROLE',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -141,7 +141,7 @@ class AdminMenusTableSeeder extends Seeder
             7 => 
             array (
                 'id' => 4,
-                'menu_id' => 100,
+                'father_menu_id' => 100,
                 'menu_title' => 'USUARIOS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -158,7 +158,7 @@ class AdminMenusTableSeeder extends Seeder
             8 => 
             array (
                 'id' => 7,
-                'menu_id' => 4,
+                'father_menu_id' => 4,
                 'menu_title' => 'ADICIONAR_USUARIO',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -175,7 +175,7 @@ class AdminMenusTableSeeder extends Seeder
             9 => 
             array (
                 'id' => 41,
-                'menu_id' => 4,
+                'father_menu_id' => 4,
                 'menu_title' => 'EDITAR_USUARIO',
                 'route' => 'CRUD_VIEW',
                 'opt_show_menu' => NULL,
@@ -192,7 +192,7 @@ class AdminMenusTableSeeder extends Seeder
             10 => 
             array (
                 'id' => 43,
-                'menu_id' => 100,
+                'father_menu_id' => 100,
                 'menu_title' => 'VISUALIZACAO',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -209,7 +209,7 @@ class AdminMenusTableSeeder extends Seeder
             11 => 
             array (
                 'id' => 45,
-                'menu_id' => 44,
+                'father_menu_id' => 44,
                 'menu_title' => 'EDIT_DICTIONARY_WORD',
                 'route' => 'CRUD_VIEW',
                 'opt_show_menu' => NULL,
@@ -226,7 +226,7 @@ class AdminMenusTableSeeder extends Seeder
             12 => 
             array (
                 'id' => 47,
-                'menu_id' => 44,
+                'father_menu_id' => 44,
                 'menu_title' => 'ADD_DICTIONARY_TRANSLATION',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 0,
@@ -243,7 +243,7 @@ class AdminMenusTableSeeder extends Seeder
             13 => 
             array (
                 'id' => 49,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'RELACIONAR_CAMPOS_TABELA',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 0,
@@ -260,7 +260,7 @@ class AdminMenusTableSeeder extends Seeder
             14 => 
             array (
                 'id' => 51,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'LIST_FIELD_JOINTS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -277,7 +277,7 @@ class AdminMenusTableSeeder extends Seeder
             15 => 
             array (
                 'id' => 5,
-                'menu_id' => 100,
+                'father_menu_id' => 100,
                 'menu_title' => 'MENUS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -294,7 +294,7 @@ class AdminMenusTableSeeder extends Seeder
             16 => 
             array (
                 'id' => 200,
-                'menu_id' => NULL,
+                'father_menu_id' => NULL,
                 'menu_title' => 'CONTEUDO',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -311,7 +311,7 @@ class AdminMenusTableSeeder extends Seeder
             17 => 
             array (
                 'id' => 11,
-                'menu_id' => 200,
+                'father_menu_id' => 200,
                 'menu_title' => 'MODELOS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -328,7 +328,7 @@ class AdminMenusTableSeeder extends Seeder
             18 => 
             array (
                 'id' => 10,
-                'menu_id' => 200,
+                'father_menu_id' => 200,
                 'menu_title' => 'PRODUTOS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -345,7 +345,7 @@ class AdminMenusTableSeeder extends Seeder
             19 => 
             array (
                 'id' => 300,
-                'menu_id' => NULL,
+                'father_menu_id' => NULL,
                 'menu_title' => 'MTG',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -362,7 +362,7 @@ class AdminMenusTableSeeder extends Seeder
             20 => 
             array (
                 'id' => 28,
-                'menu_id' => 300,
+                'father_menu_id' => 300,
                 'menu_title' => 'CARTAS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -379,7 +379,7 @@ class AdminMenusTableSeeder extends Seeder
             21 => 
             array (
                 'id' => 32,
-                'menu_id' => 5,
+                'father_menu_id' => 5,
                 'menu_title' => 'ADICIONAR_MENU',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 1,
@@ -396,7 +396,7 @@ class AdminMenusTableSeeder extends Seeder
             22 => 
             array (
                 'id' => 36,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'ADICIONAR_TABELA',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 1,
@@ -413,7 +413,7 @@ class AdminMenusTableSeeder extends Seeder
             23 => 
             array (
                 'id' => 8,
-                'menu_id' => 200,
+                'father_menu_id' => 200,
                 'menu_title' => 'ARTIGOS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -430,7 +430,7 @@ class AdminMenusTableSeeder extends Seeder
             24 => 
             array (
                 'id' => 23,
-                'menu_id' => 100,
+                'father_menu_id' => 100,
                 'menu_title' => 'IMPORTADOR',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -447,7 +447,7 @@ class AdminMenusTableSeeder extends Seeder
             25 => 
             array (
                 'id' => 31,
-                'menu_id' => 100,
+                'father_menu_id' => 100,
                 'menu_title' => 'DATABASE',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -464,7 +464,7 @@ class AdminMenusTableSeeder extends Seeder
             26 => 
             array (
                 'id' => 6,
-                'menu_id' => 4,
+                'father_menu_id' => 4,
                 'menu_title' => 'LISTAR_USUARIOS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -481,7 +481,7 @@ class AdminMenusTableSeeder extends Seeder
             27 => 
             array (
                 'id' => 40,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'EDITAR_TABELA',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 0,
@@ -498,7 +498,7 @@ class AdminMenusTableSeeder extends Seeder
             28 => 
             array (
                 'id' => 44,
-                'menu_id' => 100,
+                'father_menu_id' => 100,
                 'menu_title' => 'DICTIONARY',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -515,7 +515,7 @@ class AdminMenusTableSeeder extends Seeder
             29 => 
             array (
                 'id' => 46,
-                'menu_id' => 44,
+                'father_menu_id' => 44,
                 'menu_title' => 'LIST_DICTIONARY_WORDS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -532,7 +532,7 @@ class AdminMenusTableSeeder extends Seeder
             30 => 
             array (
                 'id' => 50,
-                'menu_id' => 5,
+                'father_menu_id' => 5,
                 'menu_title' => 'EDITAR_MENU',
                 'route' => 'CRUD_VIEW',
                 'opt_show_menu' => NULL,
@@ -549,7 +549,7 @@ class AdminMenusTableSeeder extends Seeder
             31 => 
             array (
                 'id' => 9,
-                'menu_id' => 8,
+                'father_menu_id' => 8,
                 'menu_title' => 'LISTAR_ARTIGOS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -566,7 +566,7 @@ class AdminMenusTableSeeder extends Seeder
             32 => 
             array (
                 'id' => 52,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'EDITAR_CAMPO_EXTRANGEIRO',
                 'route' => 'CRUD_VIEW',
                 'opt_show_menu' => NULL,
@@ -583,7 +583,7 @@ class AdminMenusTableSeeder extends Seeder
             33 => 
             array (
                 'id' => 38,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'ADICIONAR_CAMPOS_TABELA',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 0,
@@ -600,7 +600,7 @@ class AdminMenusTableSeeder extends Seeder
             34 => 
             array (
                 'id' => 48,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'EDITAR_CAMPO_TABELA',
                 'route' => 'CRUD_VIEW',
                 'opt_show_menu' => NULL,
@@ -617,7 +617,7 @@ class AdminMenusTableSeeder extends Seeder
             35 => 
             array (
                 'id' => 1,
-                'menu_id' => NULL,
+                'father_menu_id' => NULL,
                 'menu_title' => 'HOME',
                 'route' => 'HOME_URL',
                 'opt_show_menu' => 1,
@@ -634,7 +634,7 @@ class AdminMenusTableSeeder extends Seeder
             36 => 
             array (
                 'id' => 22,
-                'menu_id' => 8,
+                'father_menu_id' => 8,
                 'menu_title' => 'VIEW_ARTIGO',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -651,7 +651,7 @@ class AdminMenusTableSeeder extends Seeder
             37 => 
             array (
                 'id' => 59,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'LIST_DATABASES',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -668,7 +668,7 @@ class AdminMenusTableSeeder extends Seeder
             38 => 
             array (
                 'id' => 25,
-                'menu_id' => 23,
+                'father_menu_id' => 23,
                 'menu_title' => 'INSERIR_IMPORTADOR',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -685,7 +685,7 @@ class AdminMenusTableSeeder extends Seeder
             39 => 
             array (
                 'id' => 12,
-                'menu_id' => 10,
+                'father_menu_id' => 10,
                 'menu_title' => 'LISTAR_PRODUTOS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -702,7 +702,7 @@ class AdminMenusTableSeeder extends Seeder
             40 => 
             array (
                 'id' => 26,
-                'menu_id' => 5,
+                'father_menu_id' => 5,
                 'menu_title' => 'LISTAR_MENUS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -719,7 +719,7 @@ class AdminMenusTableSeeder extends Seeder
             41 => 
             array (
                 'id' => 53,
-                'menu_id' => 100,
+                'father_menu_id' => 100,
                 'menu_title' => 'TESTES',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -736,7 +736,7 @@ class AdminMenusTableSeeder extends Seeder
             42 => 
             array (
                 'id' => 54,
-                'menu_id' => 53,
+                'father_menu_id' => 53,
                 'menu_title' => 'LISTAR_TESTES',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -753,7 +753,7 @@ class AdminMenusTableSeeder extends Seeder
             43 => 
             array (
                 'id' => 24,
-                'menu_id' => 23,
+                'father_menu_id' => 23,
                 'menu_title' => 'IMPORTADOR',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -770,7 +770,7 @@ class AdminMenusTableSeeder extends Seeder
             44 => 
             array (
                 'id' => 39,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'RELACIONAR_TABELAS',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 1,
@@ -787,7 +787,7 @@ class AdminMenusTableSeeder extends Seeder
             45 => 
             array (
                 'id' => 400,
-                'menu_id' => 100,
+                'father_menu_id' => 100,
                 'menu_title' => 'PERFIS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -804,7 +804,7 @@ class AdminMenusTableSeeder extends Seeder
             46 => 
             array (
                 'id' => 58,
-                'menu_id' => 5,
+                'father_menu_id' => 5,
                 'menu_title' => 'MENU_LIST_ACTIONS_ADD',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 1,
@@ -821,7 +821,7 @@ class AdminMenusTableSeeder extends Seeder
             47 => 
             array (
                 'id' => 61,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'ADMIN_DB_ADD_DATABASE',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 0,
@@ -838,7 +838,7 @@ class AdminMenusTableSeeder extends Seeder
             48 => 
             array (
                 'id' => 13,
-                'menu_id' => 11,
+                'father_menu_id' => 11,
                 'menu_title' => 'LISTAR_MODELOS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -855,7 +855,7 @@ class AdminMenusTableSeeder extends Seeder
             49 => 
             array (
                 'id' => 62,
-                'menu_id' => 5,
+                'father_menu_id' => 5,
                 'menu_title' => 'ADMIN_MENUS_ADD_RELATED_MENU',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 0,
@@ -872,7 +872,7 @@ class AdminMenusTableSeeder extends Seeder
             50 => 
             array (
                 'id' => 30,
-                'menu_id' => 28,
+                'father_menu_id' => 28,
                 'menu_title' => 'HOME_CARTAS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -889,7 +889,7 @@ class AdminMenusTableSeeder extends Seeder
             51 => 
             array (
                 'id' => 3,
-                'menu_id' => 2,
+                'father_menu_id' => 2,
                 'menu_title' => 'homes',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -906,7 +906,7 @@ class AdminMenusTableSeeder extends Seeder
             52 => 
             array (
                 'id' => 63,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'DB_MONTAR_ESTRUTURA',
                 'route' => 'CRUD_VIEW',
                 'opt_show_menu' => 0,
@@ -923,7 +923,7 @@ class AdminMenusTableSeeder extends Seeder
             53 => 
             array (
                 'id' => 29,
-                'menu_id' => 28,
+                'father_menu_id' => 28,
                 'menu_title' => 'LISTAR_CARTAS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -940,7 +940,7 @@ class AdminMenusTableSeeder extends Seeder
             54 => 
             array (
                 'id' => 64,
-                'menu_id' => 5,
+                'father_menu_id' => 5,
                 'menu_title' => 'MENUS_LISTAR_MENU_ACTIONS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -957,7 +957,7 @@ class AdminMenusTableSeeder extends Seeder
             55 => 
             array (
                 'id' => 42,
-                'menu_id' => 5,
+                'father_menu_id' => 5,
                 'menu_title' => 'LISTAR_MENUS_RELACIONADOS',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
@@ -974,7 +974,7 @@ class AdminMenusTableSeeder extends Seeder
             56 => 
             array (
                 'id' => 65,
-                'menu_id' => 5,
+                'father_menu_id' => 5,
                 'menu_title' => 'EDITAR_MENUS_RELACIONADOS',
                 'route' => 'CRUD_VIEW',
                 'opt_show_menu' => NULL,
@@ -991,7 +991,7 @@ class AdminMenusTableSeeder extends Seeder
             57 => 
             array (
                 'id' => 60,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'DB_VIEW_DATABASE',
                 'route' => 'CRUD_VIEW',
                 'opt_show_menu' => 0,
@@ -1008,7 +1008,7 @@ class AdminMenusTableSeeder extends Seeder
             58 => 
             array (
                 'id' => 66,
-                'menu_id' => 31,
+                'father_menu_id' => 31,
                 'menu_title' => 'DB_REFATORAR_TABELA',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 0,
@@ -1025,7 +1025,7 @@ class AdminMenusTableSeeder extends Seeder
             59 => 
             array (
                 'id' => 500,
-                'menu_id' => NULL,
+                'father_menu_id' => NULL,
                 'menu_title' => 'SYSTEM',
                 'route' => NULL,
                 'opt_show_menu' => 1,
@@ -1042,7 +1042,7 @@ class AdminMenusTableSeeder extends Seeder
             60 => 
             array (
                 'id' => 67,
-                'menu_id' => 44,
+                'father_menu_id' => 44,
                 'menu_title' => '_STATIC_LAYOUTS_DICTIONARY_TRANSLATE_',
                 'route' => 'CRUD_INSERT',
                 'opt_show_menu' => 1,

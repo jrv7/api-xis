@@ -18,7 +18,7 @@ class AdminMenus extends Migration
         // Tabela menus
         Schema::create(self::TABLENAME, function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('menu_id')->nullable();
+            $table->bigInteger('father_menu_id')->nullable();
             $table->string('menu_title', 255);
             $table->string('route', 255)->nullable();
             $table->boolean('opt_show_menu')->nullable()->default(true);

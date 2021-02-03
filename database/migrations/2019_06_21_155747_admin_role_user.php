@@ -11,14 +11,14 @@ class AdminRoleUser extends Migration
      *
      * @return void
      */
-    private const TABLENAME = 'role_user';
+    private const TABLENAME = 'user_has_roles';
 
     public function up()
     {
         // Tabela role_user
         Schema::create(self::TABLENAME, function (Blueprint $table) {
-            $table->bigInteger('role_id')->references('id')->on('roles');
             $table->bigInteger('user_id')->references('id')->on('users');
+            $table->bigInteger('role_id')->references('id')->on('roles');
             $table->string('user_type', 255);
             $table->primary(array('role_id', 'user_id'));
         });

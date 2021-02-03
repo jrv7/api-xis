@@ -26,23 +26,23 @@ class AdminViewVwFatherMenus extends Migration
                         n0.menu_title,
                         '0'::text AS nivel
                     FROM admin.menus n0
-                    WHERE n0.menu_id IS NULL
+                    WHERE n0.father_menu_id IS NULL
                     UNION
                     SELECT 
                         n1.id AS id_menu,
                         (n0.menu_title::text || ' > '::text) || n1.menu_title::text AS menu_title,
                         '1'::text AS nivel
                     FROM admin.menus n1
-                    JOIN admin.menus n0 ON n0.id = n1.menu_id
-                    WHERE n0.menu_id IS NULL
+                    JOIN admin.menus n0 ON n0.id = n1.father_menu_id
+                    WHERE n0.father_menu_id IS NULL
                     UNION
                     SELECT 
                         n2.id AS id_menu,
                         (((n0.menu_title::text || ' > '::text) || n1.menu_title::text) || ' > '::text) || n2.menu_title::text AS menu_title,
                         '2'::text AS nivel
                     FROM admin.menus n2
-                    JOIN admin.menus n1 ON n1.id = n2.menu_id
-                    JOIN admin.menus n0 ON n0.id = n1.menu_id
+                    JOIN admin.menus n1 ON n1.id = n2.father_menu_id
+                    JOIN admin.menus n0 ON n0.id = n1.father_menu_id
                 ) menus_pai
                 ORDER BY menus_pai.menu_title;"
         );

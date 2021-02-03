@@ -11,7 +11,7 @@ class AdminRoleMenu extends Migration
      *
      * @return void
      */
-    private const TABLENAME = 'role_menu';
+    private const TABLENAME = 'role_has_menus';
 
     public function up()
     {

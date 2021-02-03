@@ -22,8 +22,8 @@ class CreateViewVwOrganizedMenus extends Migration
             m.id, 
             m.menu_title 
         FROM menus m 
-        LEFT JOIN menus fm ON fm.id = m.menu_id 
-        LEFT JOIN menus gm ON gm.id = fm.menu_id;"
+        LEFT JOIN menus fm ON fm.id = m.father_menu_id 
+        LEFT JOIN menus gm ON gm.id = fm.father_menu_id;"
         );
 
         $id_table = DB::table('db_tables')->insertGetId([

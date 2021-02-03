@@ -14,12 +14,12 @@ class AdminGiveRolePermissionsToMenus extends Seeder
     public function run()
     {
         
-        \DB::statement("INSERT INTO role_menu (role_id, menu_id)
+        \DB::statement("INSERT INTO role_has_menus (role_id, menu_id)
                         SELECT 
                             1 AS role_id,
                             m.id
                         FROM menus m
-                        LEFT JOIN role_menu rm ON rm.menu_id = m.id
+                        LEFT JOIN role_has_menus rm ON rm.menu_id = m.id
                         WHERE rm.menu_id IS NULL ");
     }
 }

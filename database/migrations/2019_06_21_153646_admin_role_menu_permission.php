@@ -11,7 +11,7 @@ class AdminRoleMenuPermission extends Migration
      *
      * @return void
      */
-    private const TABLENAME = 'role_menu_permission';
+    private const TABLENAME = 'role_has_menu_has_permission';
 
     public function up()
     {
@@ -20,7 +20,7 @@ class AdminRoleMenuPermission extends Migration
             $table->bigInteger('role_id')->references('id')->on('roles');
             $table->bigInteger('menu_id')->references('id')->on('menus');
             $table->bigInteger('permission_id')->references('id')->on('permissions');
-            $table->bigInteger('menu_id_target')->nullable()->references('id')->on('menus');
+            $table->bigInteger('target_menu_id')->nullable()->references('id')->on('menus');
             $table->primary(array('role_id', 'menu_id', 'permission_id'));
         });
     }
