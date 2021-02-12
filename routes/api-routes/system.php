@@ -11,5 +11,16 @@ Route::group([
 ], function () {
     Route::group(['prefix'=>'menus'], function () {
         Route::get('root', [App\Http\Controllers\Admin\UserController::class, 'getMainMenus']);
+        Route::get('root/{mainMenuHash}/submenus', [App\Http\Controllers\Admin\UserController::class, 'getSubmenus']);
+    });
+    Route::group(['prefix'=>'blueprints'], function () {
+        Route::get('{menu_has}', [App\Http\Controllers\Admin\SystemController::class, 'fetchBlueprints']);
+    });
+    Route::group(['prefix'=>'db-structure'], function () {
+        Route::get('make-model/{table_id?}', [App\Http\Controllers\Admin\SystemController::class, 'makeModelFile']);
+    });
+
+    Route::group(['prefix'=>'dictionary'], function () {
+        Route::get('', [App\Http\Controllers\Admin\SystemController::class, 'getDictionary']);
     });
 });

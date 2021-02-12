@@ -25,7 +25,7 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_field_id' => 28,
                 'nofield_join_value' => NULL,
                 'remote_visible_field_id' => 29,
-                'model_foreign_function' => '_Database',
+                'model_foreign_function' => '_database',
             ),
             1 => 
             array (
@@ -34,7 +34,7 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_field_id' => 30,
                 'nofield_join_value' => NULL,
                 'remote_visible_field_id' => 31,
-                'model_foreign_function' => '_TableType',
+                'model_foreign_function' => '_table_yype',
             ),
             2 => 
             array (
@@ -43,7 +43,7 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_field_id' => 21,
                 'nofield_join_value' => NULL,
                 'remote_visible_field_id' => 22,
-                'model_foreign_function' => '_FatherMenu',
+                'model_foreign_function' => '_father_menu',
             ),
             3 => 
             array (
@@ -52,7 +52,7 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_field_id' => 23,
                 'nofield_join_value' => NULL,
                 'remote_visible_field_id' => 25,
-                'model_foreign_function' => '_AreaTable',
+                'model_foreign_function' => '_area_table',
             ),
             4 => 
             array (
