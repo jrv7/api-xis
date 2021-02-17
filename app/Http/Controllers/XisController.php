@@ -30,57 +30,46 @@ class XisController extends Controller
             'db' => null
         ];
 
-        $_return['db'] = Table::with([
-            'primaryKeys.type',
-            'listActions',
-            'listActions.menu',
-            'listActions.menu.fatherMenu',
-            'listActions.menu.fatherMenu.fatherMenu',
-            'relatedTables',
-            'relatedTables.rightTable',
-            'relatedTables.jointField',
-            'relatedTables.jointMenu',
-            'relatedTables.jointMenu.fatherMenu',
-            'relatedTables.jointMenu.fatherMenu.fatherMenu',
-            'type', 
-            'database', 
-            'fields',
-            'fields.type',
-            'fields.joins',
-            'fields.joins.rightField',
-            'fields.joins.rightField.table',
-            'fields.joins.visibleField',
-            'fields.joins.visibleField.table',
-        ])
-            ->findOrFail($Menu->db_table_id);
+        $_return['db'] = self::getBlueprint($Menu->db_table_id);
 
         return $_return;
     }
 
     protected static function getBlueprintsFromTable(Table $table)
     {
+        return [
+            'db' => self::getBlueprint($table->id)
+        ];
+    }
+
+    private static function getBlueprint($table_id)
+    {
         return Table::with([
-            'primaryKeys.type',
-            'listActions',
-            'listActions.menu',
-            'listActions.menu.fatherMenu',
-            'listActions.menu.fatherMenu.fatherMenu',
-            'relatedTables',
-            'relatedTables.rightTable',
-            'relatedTables.jointField',
-            'relatedTables.jointMenu',
-            'relatedTables.jointMenu.fatherMenu',
-            'relatedTables.jointMenu.fatherMenu.fatherMenu',
-            'type', 
-            'database', 
-            'fields',
-            'fields.type',
-            'fields.joins',
-            'fields.joins.rightField',
-            'fields.joins.rightField.table',
-            'fields.joins.visibleField',
-            'fields.joins.visibleField.table',
-        ])
-            ->findOrFail($table->id);
+                'primaryKeys.type',
+                'listActions',
+                'listActions.menu',
+                'listActions.menu.fatherMenu',
+                'listActions.menu.fatherMenu.fatherMenu',
+                'manyToManyTables',
+                'manyToManyTables.pivotTable',
+                'manyToManyTables.nTable',
+                'relatedTables',
+                'relatedTables.rightTable',
+                'relatedTables.jointField',
+                'relatedTables.jointMenu',
+                'relatedTables.jointMenu.fatherMenu',
+                'relatedTables.jointMenu.fatherMenu.fatherMenu',
+                'type', 
+                'database', 
+                'fields',
+                'fields.table',
+                'fields.type',
+                'fields.joins',
+                'fields.joins.rightField',
+                'fields.joins.rightField.table',
+                'fields.joins.visibleField',
+                'fields.joins.visibleField.table',
+            ])
+            ->findOrFail($table_id);
     }
 }

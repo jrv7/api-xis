@@ -12,9 +12,14 @@ use App\Models\{
 
 class SystemController extends XisController
 {
-    public function fetchBlueprints(Request $request, $menu_hash)
+    public function fetchBlueprintsByMenu(Request $request, $menu_hash)
     {
         return response()->json($this->getBlueprintsByMenu($request, $menu_hash));
+    }
+
+    public function fetchBlueprintsByTable(Request $request, Table $table)
+    {
+        return response()->json($this->getBlueprintsFromTable($table));
     }
 
     public function getDictionary(Request $request)

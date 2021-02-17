@@ -18,7 +18,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
         \DB::table($tableName)->delete();
         
         \DB::table($tableName)->insert(array (
-            0 => 
             array (
                 'relation_type_id' => 2,
                 'local_field_id' => 24,
@@ -27,7 +26,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 29,
                 'model_foreign_function' => '_database',
             ),
-            1 => 
             array (
                 'relation_type_id' => 2,
                 'local_field_id' => 26,
@@ -36,7 +34,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 31,
                 'model_foreign_function' => '_table_yype',
             ),
-            2 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 14,
@@ -45,7 +42,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 22,
                 'model_foreign_function' => '_father_menu',
             ),
-            3 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 20,
@@ -54,7 +50,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 25,
                 'model_foreign_function' => '_area_table',
             ),
-            4 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 33,
@@ -63,7 +58,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 25,
                 'model_foreign_function' => NULL,
             ),
-            5 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 34,
@@ -72,7 +66,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 37,
                 'model_foreign_function' => NULL,
             ),
-            6 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 64,
@@ -81,7 +74,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 15,
                 'model_foreign_function' => NULL,
             ),
-            7 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 112,
@@ -90,7 +82,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 15,
                 'model_foreign_function' => NULL,
             ),
-            8 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 39,
@@ -99,7 +90,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 48,
                 'model_foreign_function' => NULL,
             ),
-            9 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 108,
@@ -108,7 +98,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 35,
                 'model_foreign_function' => NULL,
             ),
-            10 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 70,
@@ -117,7 +106,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 140,
                 'model_foreign_function' => NULL,
             ),
-            11 => 
             array (
                 'relation_type_id' => 2,
                 'local_field_id' => 97,
@@ -126,7 +114,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 140,
                 'model_foreign_function' => NULL,
             ),
-            12 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 137,
@@ -135,7 +122,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 142,
                 'model_foreign_function' => NULL,
             ),
-            13 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 136,
@@ -144,7 +130,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 135,
                 'model_foreign_function' => NULL,
             ),
-            14 => 
             array (
                 'relation_type_id' => 2,
                 'local_field_id' => 144,
@@ -153,7 +138,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 150,
                 'model_foreign_function' => NULL,
             ),
-            15 => 
             array (
                 'relation_type_id' => 2,
                 'local_field_id' => 145,
@@ -162,7 +146,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 153,
                 'model_foreign_function' => NULL,
             ),
-            16 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 148,
@@ -171,7 +154,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 156,
                 'model_foreign_function' => NULL,
             ),
-            17 => 
             array (
                 'relation_type_id' => 2,
                 'local_field_id' => 157,
@@ -180,7 +162,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 22,
                 'model_foreign_function' => NULL,
             ),
-            18 => 
             array (
                 'relation_type_id' => 2,
                 'local_field_id' => 211,
@@ -189,7 +170,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 146,
                 'model_foreign_function' => NULL,
             ),
-            19 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 225,
@@ -198,7 +178,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 2,
                 'model_foreign_function' => NULL,
             ),
-            20 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 227,
@@ -207,7 +186,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 226,
                 'model_foreign_function' => NULL,
             ),
-            21 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 228,
@@ -216,7 +194,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 35,
                 'model_foreign_function' => NULL,
             ),
-            22 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 230,
@@ -225,7 +202,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 226,
                 'model_foreign_function' => NULL,
             ),
-            23 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 231,
@@ -234,7 +210,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 35,
                 'model_foreign_function' => NULL,
             ),
-            24 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 124,
@@ -243,7 +218,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 15,
                 'model_foreign_function' => NULL,
             ),
-            25 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 123,
@@ -252,7 +226,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 15,
                 'model_foreign_function' => NULL,
             ),
-            26 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 249,
@@ -261,7 +234,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 25,
                 'model_foreign_function' => NULL,
             ),
-            27 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 250,
@@ -270,7 +242,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 247,
                 'model_foreign_function' => NULL,
             ),
-            28 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 253,
@@ -279,7 +250,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 25,
                 'model_foreign_function' => NULL,
             ),
-            29 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 254,
@@ -288,7 +258,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 15,
                 'model_foreign_function' => NULL,
             ),
-            30 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 255,
@@ -297,10 +266,33 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_visible_field_id' => 25,
                 'model_foreign_function' => NULL,
             ),
-            31 => 
             array (
                 'relation_type_id' => 1,
                 'local_field_id' => 256,
+                'remote_field_id' => 23,
+                'nofield_join_value' => NULL,
+                'remote_visible_field_id' => 25,
+                'model_foreign_function' => NULL,
+            ),
+            array (
+                'relation_type_id' => 1,
+                'local_field_id' => 68,
+                'remote_field_id' => 1,
+                'nofield_join_value' => NULL,
+                'remote_visible_field_id' => 2,
+                'model_foreign_function' => 'user',
+            ),
+            array (
+                'relation_type_id' => 1,
+                'local_field_id' => 111,
+                'remote_field_id' => 59,
+                'nofield_join_value' => NULL,
+                'remote_visible_field_id' => 72,
+                'model_foreign_function' => 'role',
+            ),
+            array (
+                'relation_type_id' => 1,
+                'local_field_id' => 269,
                 'remote_field_id' => 23,
                 'nofield_join_value' => NULL,
                 'remote_visible_field_id' => 25,

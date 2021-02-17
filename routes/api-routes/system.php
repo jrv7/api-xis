@@ -14,7 +14,8 @@ Route::group([
         Route::get('root/{mainMenuHash}/submenus', [App\Http\Controllers\Admin\UserController::class, 'getSubmenus']);
     });
     Route::group(['prefix'=>'blueprints'], function () {
-        Route::get('{menu_has}', [App\Http\Controllers\Admin\SystemController::class, 'fetchBlueprints']);
+        Route::get('by-menu/{menu_has}', [App\Http\Controllers\Admin\SystemController::class, 'fetchBlueprintsByMenu']);
+        Route::get('by-table/{table}', [App\Http\Controllers\Admin\SystemController::class, 'fetchBlueprintsByTable']);
     });
     Route::group(['prefix'=>'db-structure'], function () {
         Route::get('make-model/{table_id?}', [App\Http\Controllers\Admin\SystemController::class, 'makeModelFile']);

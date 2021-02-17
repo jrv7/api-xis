@@ -56,6 +56,10 @@ class Table extends Model
         return $this->_OneToManyTables();
     }
 
+    public function manyToManyTables () {
+        return $this->hasMany(VwManyToManyTable::class, 'm_table_id', 'id');
+    }
+
     public function MakeItModel () {
         $counter = 0;
         CHECK_MODEL: {
@@ -143,13 +147,17 @@ class ' . $ModelFile . ' extends XisModel {
     private const TABLE_ID = ' . $Table->id . ';
     protected $connection = \'' . $Database->db_connection . '\';
     public $table = \'' . $Table->name . '\';';
-            if (@count($pkeys) > 1) {
-                $content .= '
+
+            if ($Table->type->id != 4) {
+                if (@count($pkeys) > 1) {
+                    $content .= '
     protected $primaryKey = [\'' . implode("', '", $pkeys) . '\'];';
-            } else if (isset($pkeys[0])) {
-                $content .= '
+                } else if (isset($pkeys[0])) {
+                    $content .= '
     protected $primaryKey = \'' . $pkeys[0] . '\';';
+                }
             }
+
             $content .= '
     public $timestamps = ' . ($Table->has_timestamps ? 'true' : 'false') . ';
 
@@ -210,7 +218,7 @@ class ' . $ModelFile . ' extends XisModel {
      * Right Field: ' . $JoinedTable->right_table_field_name . '
      * Visible Field: ' . $JoinedTable->right_table_visible_field_name . '
      */
-    public function _' . $func_name . '()
+    public function ' . $func_name . '()
     {
         return $this->hasOne(' . $model_name . '::class, \'' . $JoinedTable->right_table_field_name . '\', \'' . $JoinedTable->left_table_field_name . '\');
     }

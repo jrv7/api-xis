@@ -649,6 +649,20 @@ class AdminDbTablesTableSeeder extends Seeder
                 'has_timestamps' => false,
                 'indexable' => true,
             ),
+            45 => 
+            array (
+                'id' => 51,
+                'database_id' => 1,
+                'name' => 'vw_many_to_many_tables',
+                'table_type_id' => 5,
+                'model' => 'App\Models\User\VwManyToManyTable',
+                'default_list_action_field_id' => NULL,
+                'total_rows' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'has_timestamps' => false,
+                'indexable' => false,
+            ),
         ));
         
         echo "Setando o proximo valor para a sequencia incremental como: ";
