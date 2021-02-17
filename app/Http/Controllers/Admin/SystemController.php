@@ -8,6 +8,8 @@ use App\Models\{
     Admin\Menu,
     Admin\Table,
     Admin\Dictionary,
+    Admin\DictionaryTranslation,
+    Admin\Language,
 };
 
 class SystemController extends XisController
@@ -44,6 +46,42 @@ class SystemController extends XisController
         }
 
         return response()->json($Dictionary, 200);
+    }
+
+    public function translateWord(Request $request)
+    {
+        $validData = $request->validate([
+            'language' => ['integer', 'required'],
+            'word' => ['string', 'required'],
+            'translation' => ['string', 'required'],
+        ]);
+
+        $Language = Language::findOrFail($request->get('language'));
+
+        $Word = Dictionary::where('word', $request->get('word'))
+            ->first();
+
+        if (!$Word) {
+            $Word = new Dictionary;
+            $Word->word = trim($request->get('word'));
+            $Word->save();
+        }
+
+        $Translation = DictionaryTranslation::where('dictionary_id', $Word->id)
+            ->where('language_id', $Language->id)
+            ->first();
+
+        if (!$Translation) {
+            $Translation = new DictionaryTranslation;
+            $Translation->dictionary_id = $Word->id;
+            $Translation->language_id = $Language->id;
+            $Translation->translation = trim($request->get('translation'));
+            $Translation->save();
+        }
+
+        sleep(1);
+
+        return response()->json($Translation, 200);
     }
 
     public function makeModelFile(Request $request, $table_id = null)
