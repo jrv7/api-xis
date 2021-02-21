@@ -314,26 +314,45 @@ class DataController extends XisController
         $_start_update_at = time();
 
         $validate_rules = [];
-        $_validate_primary = [];
 
         foreach ($table->fields as $field) {
             if (!$field->primary_key) continue;
 
             $validate_rules[$field->name] = ['required', "exists:{$table->database->name}.{$table->name}"];
-
-            $_validate_primary[] = $field->name;
         }
-
-        $_validate_notnull = [];
 
         foreach ($table->fields as $field) {
             if ($field->primary_key) continue;
-            if (!$field->not_null) continue;
             if (!$field->editable) continue;
 
-            $validate_rules[$field->name] = ['required'];
+            if (!isset($validate_rules[$field->name])) {
+                $validate_rules[$field->name] = [];
+            }
 
-            $_validate_notnull[] = $field->name;
+            if ($field->not_null) {
+
+                if ($field->conditional_field_id) {
+                    $ConditionalField = TableField::find($field->conditional_field_id);
+
+                    if ($ConditionalField) {
+                        if ($request->has($ConditionalField->name)) {
+                            $validate_rules[$field->name][] = 'required';
+                        }
+                    }
+                } else {
+                    $validate_rules[$field->name][] = 'required';
+                }
+            }
+
+            if ($field->email) {
+                $validate_rules[$field->name][] = 'email';
+            }
+
+            if ($field->unique) {
+                if ($request->has('id')) {
+                    $validate_rules[$field->name][] = \Illuminate\Validation\Rule::unique("{$table->database->name}.{$table->name}")->ignore($request->get('id'));
+                }
+            }
         }
 
         $_valid_data = $request->validate($validate_rules);
@@ -423,10 +442,26 @@ class DataController extends XisController
 
         foreach ($table->fields as $field) {
             if ($field->primary_key) continue;
-            if (!$field->not_null) continue;
             if (!$field->editable) continue;
 
-            $validate_rules[$field->name] = ['required'];
+            if (!isset($validate_rules[$field->name])) {
+                $validate_rules[$field->name] = [];
+            }
+
+            if ($field->not_null) {
+
+                if ($field->conditional_field_id) {
+                    $ConditionalField = TableField::find($field->conditional_field_id);
+
+                    if ($ConditionalField) {
+                        if ($request->has($ConditionalField->name)) {
+                            $validate_rules[$field->name][] = 'required';
+                        }
+                    }
+                } else {
+                    $validate_rules[$field->name][] = 'required';
+                }
+            }
 
             if ($field->email) {
                 $validate_rules[$field->name][] = 'email';
