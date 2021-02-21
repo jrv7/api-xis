@@ -35,7 +35,7 @@ class AdminDbTableFields extends Migration
             $table->integer('display_order')->default(0);
             $table->string('crud_edit_validation_type', 255)->nullable();
             $table->text('crud_edit_validation_function')->nullable();
-            $table->string('email', 255)->nullable();
+            $table->boolean('email')->default(false);
             $table->boolean('is_elasticsearchable')->default(true);
         });
     }

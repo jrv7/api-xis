@@ -18,4 +18,19 @@ class Menu extends Model
     {
         return $this->belongsTo(Menu::class, 'father_menu_id', 'id');
     }
+
+    public function children()
+    {
+        return $this->hasMany(Menu::class, 'father_menu_id', 'id');
+    }
+
+    public function actions()
+    {
+        return $this->hasMany(MenuHasActionMenu::class);
+    }
+
+    public function isActionOf()
+    {
+        return $this->belongsToMany(Menu::class, 'menu_has_action_menus', 'target_menu_id', 'menu_id');
+    }
 }

@@ -33,6 +33,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $appends = [
+        'confirm_password'
+    ];
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -45,5 +49,10 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Admin\Role::class, 'user_has_roles');
+    }
+
+    public function getConfirmPasswordAttribute($value)
+    {
+        return null;
     }
 }

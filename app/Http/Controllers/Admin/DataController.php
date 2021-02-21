@@ -257,6 +257,10 @@ class DataController extends XisController
         $Data = (new $Table->model)
             ->where(function ($q) use ($IDs, $Table) {
                 foreach ($IDs as $ID) {
+                    if (!$ID['value']) {
+                        $q->whereRaw("1=0");
+                    }
+                    
                     foreach ($Table->fields as $field) {
                         if ($field->id != $ID['field_id']) continue;
 
@@ -264,9 +268,15 @@ class DataController extends XisController
                     }
                 }
             })
-            ->first();
+            ->get();
 
-        return response()->json($Data, 200);
+        if ($Data->isNotEmpty()) {
+            $Data = $Data->first();
+
+            return response()->json($Data, 200);
+        }
+
+        return response()->json(null, 404);
     }
 
     private static function clearIdValues($ids)
@@ -293,5 +303,152 @@ class DataController extends XisController
         }
 
         return $organized;
+    }
+
+    /**
+     * UPDATE
+     */
+    public function updateByTable(Request $request, Table $table)
+    {
+        $_wait = 2;
+        $_start_update_at = time();
+
+        $validate_rules = [];
+        $_validate_primary = [];
+
+        foreach ($table->fields as $field) {
+            if (!$field->primary_key) continue;
+
+            $validate_rules[$field->name] = ['required', "exists:{$table->database->name}.{$table->name}"];
+
+            $_validate_primary[] = $field->name;
+        }
+
+        $_validate_notnull = [];
+
+        foreach ($table->fields as $field) {
+            if ($field->primary_key) continue;
+            if (!$field->not_null) continue;
+            if (!$field->editable) continue;
+
+            $validate_rules[$field->name] = ['required'];
+
+            $_validate_notnull[] = $field->name;
+        }
+
+        $_valid_data = $request->validate($validate_rules);
+
+        $Data = (new $table->model)->where(function ($q) use ($table, $request) {
+            foreach ($table->fields as $field) {
+                if (!$field->primary_key) continue;
+
+                $q->where($field->name, $request->get($field->name));
+            }
+        })
+            ->get();
+
+        if ($Data->isNotEmpty()) {
+            if ($Data->count() == 1) {
+                $Data = $Data->first();
+
+                $_updates = [];
+
+                foreach ($table->fields as $field) {
+                    if ($field->primary_key) continue;
+                    if (!$field->editable) continue;
+    
+                    if ($request->has($field->name)) {
+                        switch (true) {
+                            case ($field->type->is_password): {
+                                $_new_value = trim($request->get($field->name));
+
+                                /**
+                                 * Criar mais regras de validacao de senha aqui
+                                 */
+                                if (strlen($_new_value)) {
+                                    $_updates[$field->name] = $_new_value;
+                                }
+                            } break;
+
+                            case ($field->type->is_boolean): {
+                                $_new_value = $request->get($field->name);
+
+                                if (is_bool($_new_value)) {
+                                    $_updates[$field->name] = $_new_value;
+                                } else if (is_numeric($_new_value)) {
+                                    $_updates[$field->name] = (!!$_new_value);
+                                } else if (is_string($_new_value)) {
+                                    if (mb_strtolower($_new_value) == 'true') {
+                                        $_updates[$field->name] = true;
+                                    } else if (mb_strtolower($_new_value) == 'false') {
+                                        $_updates[$field->name] = false;
+                                    }
+                                }
+                            } break;
+
+                            default: {
+                                $_new_value = $request->get($field->name);
+                                $_updates[$field->name] = $_new_value;
+                            } break;
+                        }
+                    }
+                }
+
+                if ((time() - $_start_update_at) < $_wait) {
+                    sleep($_wait);
+                }
+
+                if (count($_updates)) {
+                    if ($Data->update($_updates)) {
+                        return response()->json($Data, 200);
+                    }
+                }
+
+                return response()->json(null, 401);
+            }
+
+            return response()->json(['error' => "Counld not find single key for table {$table->name}"], 404);
+        }
+
+        return response()->json(null, 404);
+    }
+
+    public function insertByTable(Request $request, Table $table)
+    {
+
+        $_wait = 2;
+        $_start_update_at = time();
+
+        $validate_rules = [];
+
+        foreach ($table->fields as $field) {
+            if ($field->primary_key) continue;
+            if (!$field->not_null) continue;
+            if (!$field->editable) continue;
+
+            $validate_rules[$field->name] = ['required'];
+
+            if ($field->email) {
+                $validate_rules[$field->name][] = 'email';
+            }
+
+            if ($field->unique) {
+                $validate_rules[$field->name][] = "unique:{$table->database->name}.{$table->name}";
+            }
+        }
+
+        $_valid_data = $request->validate($validate_rules);
+
+        $newData = (new $table->model);
+
+        foreach ($_valid_data as $_field => $_value) {
+            $newData->{$_field} = $_value;
+        }
+
+        if ($newData->save()) {
+            return response()->json($newData, 200);
+        } else {
+            dd(null, 401);
+        }
     }
 }

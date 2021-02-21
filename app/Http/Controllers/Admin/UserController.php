@@ -17,6 +17,13 @@ class UserController extends Controller
         if (count($Roles)) {
             foreach ($Roles as $role) {
                 $RoleMenus = $role->menus()
+                    ->with(
+                        [
+                            'actions.targetMenu',
+                            'children.actions.targetMenu',
+                            'children.children.actions.targetMenu',
+                        ]
+                    )
                     ->where('system_id', 1)
                     ->whereNull('father_menu_id')
                     ->get();

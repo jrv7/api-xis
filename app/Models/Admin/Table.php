@@ -92,6 +92,8 @@ class Table extends Model
             $pkeys = [];
             $simpleFields = [];
             $hiddenFields = [];
+            $appendableFields = [];
+            $encryptedFields = [];
             $urlFields = [];
             foreach ($Table->fields()->where('is_appendable', false)->get() as $field) {
                 if ($field->primary_key) {
@@ -106,6 +108,14 @@ class Table extends Model
                 if ($field->type->is_image) {
                     $urlFields[] = $field->name;
                 }
+
+                if ($field->type->is_password) {
+                    $appendableFields[] = $field->name;
+                    $encryptedFields[] = $field->name;
+                }
+            }
+            foreach ($Table->fields()->where('is_appendable', true)->get() as $field) {
+                $appendableFields[] = $field->name;
             }
 
             $ModelFile = 'TABLE_' . mb_strtoupper($Table->database->name) . '_' . mb_strtoupper($Table->name) . '_' . md5($Table->id);
@@ -180,6 +190,14 @@ class ' . $ModelFile . ' extends XisModel {
                     // Each append is an Instance of Table->_ReferencedTable
                     $appendedFields[] = "total_{$append->_LeftTable->name}";
                 }
+
+
+
+                $appendablesContent = '
+    protected $appends = [
+        \'' . implode("', '", $appendableFields) . '\',
+    ];';
+                $content .= $appendablesContent;
 
                 $appendsContent = '
     protected $appendables = [
@@ -260,12 +278,38 @@ class ' . $ModelFile . ' extends XisModel {
 
                     $appendGetters = '
 
-    public function getTotal' . str_replace(' ', '', ucwords(str_replace('_', ' ', $append->_LeftTable->name))) . 'Attribute()
+    public function getTotal' . str_replace(' ', '', ucwords(str_replace('_', ' ', $append->_LeftTable->name))) . 'Attribute($value)
     {
         return $this->' . str_replace(' ', '', ucwords(str_replace('_', ' ', $append->_LeftTable->name))) . '->count();
     }
 ';
                     $content .= $appendGetters;
+                }
+            }
+
+            if (count($appendableFields)) {
+                foreach ($appendableFields as $appendableField) {
+                    $appendableFieldGetters = '
+
+    public function get' . str_replace(' ', '', ucwords(str_replace('_', ' ', $appendableField))) . 'Attribute($value)
+    {
+        return null;
+    }
+';
+                    $content .= $appendableFieldGetters;
+                }
+            }
+
+            if (count($encryptedFields)) {
+                foreach ($encryptedFields as $encryptedField) {
+                    $encryptedFieldSetters = '
+
+    public function set' . str_replace(' ', '', ucwords(str_replace('_', ' ', $encryptedField))) . 'Attribute($value)
+    {
+        $this->attributes[\'' . $encryptedField . '\'] = \\Hash::make($value);
+    }
+';
+                    $content .= $encryptedFieldSetters;
                 }
             }
 

@@ -23,5 +23,6 @@ Route::group([
 
     Route::group(['prefix'=>'dictionary'], function () {
         Route::get('', [App\Http\Controllers\Admin\SystemController::class, 'getDictionary']);
+        Route::post('translate', [App\Http\Controllers\Admin\SystemController::class, 'translateWord']);
     });
 });

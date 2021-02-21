@@ -38,7 +38,7 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'display_order' => 0,
                 'crud_edit_validation_type' => NULL,
                 'crud_edit_validation_function' => NULL,
-                'email' => NULL,
+                'email' => false,
                 'is_elasticsearchable' => true,
             ),
             array (
@@ -60,7 +60,7 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'display_order' => 0,
                 'crud_edit_validation_type' => NULL,
                 'crud_edit_validation_function' => NULL,
-                'email' => NULL,
+                'email' => false,
                 'is_elasticsearchable' => true,
             ),
             array (
@@ -82,7 +82,7 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'display_order' => 0,
                 'crud_edit_validation_type' => NULL,
                 'crud_edit_validation_function' => NULL,
-                'email' => NULL,
+                'email' => false,
                 'is_elasticsearchable' => true,
             ),
             array (
@@ -104,7 +104,7 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'display_order' => 0,
                 'crud_edit_validation_type' => NULL,
                 'crud_edit_validation_function' => NULL,
-                'email' => NULL,
+                'email' => false,
                 'is_elasticsearchable' => true,
             ),
             array (
@@ -126,7 +126,7 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'display_order' => 0,
                 'crud_edit_validation_type' => NULL,
                 'crud_edit_validation_function' => NULL,
-                'email' => NULL,
+                'email' => false,
                 'is_elasticsearchable' => true,
             ),
             array (
@@ -142,14 +142,14 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'default_value' => NULL,
                 'min_length' => 0,
                 'max_length' => 0,
-                'fillable' => true,
-                'editable' => true,
-                'display_in_lists' => true,
+                'fillable' => false,
+                'editable' => false,
+                'display_in_lists' => false,
                 'display_order' => 0,
                 'crud_edit_validation_type' => NULL,
                 'crud_edit_validation_function' => NULL,
-                'email' => NULL,
-                'is_elasticsearchable' => true,
+                'email' => false,
+                'is_elasticsearchable' => false,
             ),
             array (
                 'id' => 22,
@@ -170,7 +170,7 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'display_order' => 0,
                 'crud_edit_validation_type' => NULL,
                 'crud_edit_validation_function' => NULL,
-                'email' => NULL,
+                'email' => false,
                 'is_elasticsearchable' => true,
             ),
             array (
@@ -192,7 +192,7 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'display_order' => 0,
                 'crud_edit_validation_type' => NULL,
                 'crud_edit_validation_function' => NULL,
-                'email' => NULL,
+                'email' => false,
                 'is_elasticsearchable' => true,
             ),
             array (
@@ -236,7 +236,7 @@ $(_elem).attr(\'checked\', false);
 });
 console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from the default [Consult and admin for doubts]\');
 }',
-            'email' => NULL,
+            'email' => false,
             'is_elasticsearchable' => true,
         ),
         array (
@@ -280,7 +280,7 @@ $(_elem).attr(\'checked\', false);
 });
 console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from the default [Consult and admin for doubts]\');
 }',
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -302,7 +302,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -324,7 +324,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -346,7 +346,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -368,7 +368,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -390,7 +390,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -412,7 +412,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -434,7 +434,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -456,7 +456,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -478,7 +478,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -500,7 +500,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -522,7 +522,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -544,7 +544,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -566,7 +566,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -588,7 +588,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -610,7 +610,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -632,7 +632,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -654,7 +654,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -676,7 +676,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -698,7 +698,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -720,7 +720,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -742,7 +742,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -764,7 +764,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => true,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -775,7 +775,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'placeholder' => '',
                 'help_text' => '',
                 'primary_key' => false,
-        'not_null' => true,
+        'not_null' => false,
         'unique' => false,
         'default_value' => NULL,
         'min_length' => 0,
@@ -786,7 +786,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -808,7 +808,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -830,7 +830,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -852,7 +852,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -874,7 +874,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -896,7 +896,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -918,7 +918,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 98,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -940,7 +940,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -962,7 +962,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -984,7 +984,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1006,7 +1006,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1028,7 +1028,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1050,7 +1050,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1072,7 +1072,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1094,7 +1094,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1116,7 +1116,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1138,7 +1138,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1160,7 +1160,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1182,7 +1182,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1204,7 +1204,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1226,7 +1226,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1248,7 +1248,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1270,7 +1270,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => true,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1292,7 +1292,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1314,7 +1314,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1336,7 +1336,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1358,7 +1358,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1380,7 +1380,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1402,7 +1402,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1424,7 +1424,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 290,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1446,7 +1446,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 280,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1468,7 +1468,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1490,7 +1490,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1512,7 +1512,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 1000,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1534,7 +1534,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1556,7 +1556,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 1000,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1578,7 +1578,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1600,7 +1600,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1622,7 +1622,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1644,7 +1644,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1666,7 +1666,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1688,7 +1688,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1710,7 +1710,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1732,7 +1732,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1754,7 +1754,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1776,7 +1776,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1798,7 +1798,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1820,7 +1820,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1842,7 +1842,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1864,7 +1864,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1886,7 +1886,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1908,7 +1908,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1930,7 +1930,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1952,7 +1952,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1974,7 +1974,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -1996,7 +1996,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2018,7 +2018,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2040,7 +2040,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2062,7 +2062,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2084,7 +2084,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2106,7 +2106,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2128,7 +2128,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2150,7 +2150,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2172,7 +2172,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2194,7 +2194,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2216,7 +2216,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2238,7 +2238,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2260,7 +2260,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2282,7 +2282,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2304,7 +2304,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2326,7 +2326,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2348,7 +2348,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2370,7 +2370,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2392,7 +2392,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2414,7 +2414,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2436,7 +2436,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2458,7 +2458,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2480,7 +2480,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2502,7 +2502,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 94,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2524,7 +2524,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2546,7 +2546,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 96,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2568,7 +2568,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2590,7 +2590,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 300,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2612,7 +2612,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2634,7 +2634,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2656,7 +2656,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2678,7 +2678,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2700,7 +2700,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2722,7 +2722,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2744,7 +2744,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2766,7 +2766,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2788,7 +2788,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2810,7 +2810,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2832,7 +2832,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2854,7 +2854,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2876,7 +2876,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2898,7 +2898,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2920,7 +2920,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2942,7 +2942,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2964,7 +2964,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -2986,7 +2986,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3008,7 +3008,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3030,7 +3030,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3052,7 +3052,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3074,7 +3074,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3096,7 +3096,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3118,7 +3118,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3140,7 +3140,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3162,7 +3162,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3184,7 +3184,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3206,7 +3206,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3228,7 +3228,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3250,7 +3250,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3272,7 +3272,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3294,7 +3294,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3316,7 +3316,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3338,7 +3338,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3360,7 +3360,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3382,7 +3382,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3404,7 +3404,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3426,7 +3426,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3448,7 +3448,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3470,7 +3470,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3492,7 +3492,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3514,7 +3514,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3536,7 +3536,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3558,7 +3558,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3580,7 +3580,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3602,7 +3602,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3624,7 +3624,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3646,7 +3646,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3668,7 +3668,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3690,7 +3690,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3712,7 +3712,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3734,7 +3734,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3756,7 +3756,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3778,7 +3778,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3800,7 +3800,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3822,7 +3822,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3844,7 +3844,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3866,7 +3866,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3888,7 +3888,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3910,7 +3910,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -3932,7 +3932,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -3954,7 +3954,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -3976,7 +3976,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 1000,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -3998,7 +3998,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4020,7 +4020,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -4042,7 +4042,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 300,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -4064,7 +4064,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 300,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -4086,7 +4086,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 300,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -4108,7 +4108,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -4130,7 +4130,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4152,7 +4152,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4174,7 +4174,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4196,7 +4196,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4218,7 +4218,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4240,7 +4240,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => true,
     ),
     array (
@@ -4262,7 +4262,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4284,7 +4284,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4306,7 +4306,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4328,7 +4328,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4350,7 +4350,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4372,7 +4372,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4394,7 +4394,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4416,7 +4416,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4438,7 +4438,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4460,7 +4460,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4482,7 +4482,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4504,7 +4504,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4526,7 +4526,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4548,7 +4548,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4570,7 +4570,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4592,7 +4592,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4614,7 +4614,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4636,7 +4636,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
     array (
@@ -4658,7 +4658,29 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'display_order' => 100,
         'crud_edit_validation_type' => NULL,
         'crud_edit_validation_function' => NULL,
-        'email' => NULL,
+        'email' => false,
+        'is_elasticsearchable' => false,
+    ),
+    array (
+        'id' => 270,
+        'table_id' => 2,
+        'type_id' => 22,
+        'name' => 'confirm_password',
+        'placeholder' => '',
+        'help_text' => '',
+        'primary_key' => false,
+        'not_null' => false,
+        'unique' => false,
+        'default_value' => NULL,
+        'min_length' => 0,
+        'max_length' => 0,
+        'fillable' => false,
+        'editable' => false,
+        'display_in_lists' => false,
+        'display_order' => 0,
+        'crud_edit_validation_type' => NULL,
+        'crud_edit_validation_function' => NULL,
+        'email' => false,
         'is_elasticsearchable' => false,
     ),
 ));

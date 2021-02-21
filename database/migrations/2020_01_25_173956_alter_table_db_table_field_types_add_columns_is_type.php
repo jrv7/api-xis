@@ -19,6 +19,7 @@ class AlterTableDbTableFieldTypesAddColumnsIsType extends Migration
             $table->boolean('is_string')->default(false)->description('Marks if the field is string.');
             $table->boolean('is_boolean')->default(false)->description('Marks if the field is boolean.');
             $table->boolean('is_datetime')->default(false)->description('Marks if the field is date or datetime.');
+            $table->boolean('is_password')->default(false)->description('Marks if the field is password.');
         });
 
         DB::table(self::TABLENAME)->whereIn('name', [
@@ -59,6 +60,12 @@ class AlterTableDbTableFieldTypesAddColumnsIsType extends Migration
         ])->update([
             'is_datetime' => true
         ]);
+
+        DB::table(self::TABLENAME)->whereIn('name', [
+            'password'
+        ])->update([
+            'is_password' => true
+        ]);
     }
 
     /**
@@ -73,6 +80,7 @@ class AlterTableDbTableFieldTypesAddColumnsIsType extends Migration
             $table->dropColumn('is_string');
             $table->dropColumn('is_boolean');
             $table->dropColumn('is_datetime');
+            $table->dropColumn('is_password');
         });
     }
 }
