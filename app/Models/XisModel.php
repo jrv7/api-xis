@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Admin\{UpdateHistory, Indexer, Table, TableFieldType};
 use DB;
+use Auth;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,17 +23,21 @@ class XisModel extends Indexer {
             $Model->updateStructure();
         });
 
-        self::updating(function($Model){
+        self::updating(function($Model)
+        {
             // ... code here
-            if (!!! isset($Model->User)) {
+            if (!!! Auth::check()) {
                 return true;
             }
+
+            $_User = Auth::user();
+            
             $History = new UpdateHistory;
-            $History->user_id = $Model->User->id;
-            $History->table_id = $Model->Table->id;
+            $History->user_id = $_User->id;
+            $History->table_id = $Model->getModelTable()->id;
 
             $History->save();
-            $History->InsertHistoryData($Model);
+            $History->InsertHistoryData($Model, $Model->getModelTable());
 
             // dd('DD after updating', $History);
             // dd("Atualizando a data de modificacao da tabela {$Model->Table->name}");

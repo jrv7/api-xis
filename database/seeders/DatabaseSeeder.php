@@ -54,6 +54,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(AdminOauthRefreshTokens::class);
         $this->call(AdminGiveRolePermissionsToMenus::class);
         $this->call(AdminMenuListActions::class);
-        
+        $this->call(AdminDbTableFieldJoinsTableSeeder::class);
+        $this->call(AdminMenuHasActionMenusTableSeeder::class);
     }
 }

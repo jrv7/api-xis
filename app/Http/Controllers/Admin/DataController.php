@@ -38,11 +38,30 @@ class DataController extends XisController
                 if (method_exists((new $Blueprints->model), $_join->model_foreign_function)) {
                     $_model_withs[] = mb_strtolower($_join->model_foreign_function);
                 } else {
-                    // $_class_name = get_class($_join);
-                    // return response()->json([
-                    //     'error' => "No Method defined: '{$_join->model_foreign_function}' on object {$_class_name}",
-                    //     'object' => $_join
-                    // ], 401);
+                    if ($_join->leftField) {
+                        $_func_name = str_replace('_id', '', $_join->leftField->name);
+
+                        if (method_exists((new $Blueprints->model), $_func_name)) {
+                            $_model_withs[] = mb_strtolower($_func_name);
+
+                            \DB::table('db_table_field_joins')
+                                ->where('relation_type_id', $_join->relation_type_id)
+                                ->where('local_field_id', $_join->local_field_id)
+                                ->where('remote_field_id', $_join->remote_field_id)
+                                ->where('remote_field_id', $_join->remote_field_id)
+                                ->update(
+                                    [
+                                        'model_foreign_function' => $_func_name
+                                    ]
+                                );
+                            $_join->model_foreign_function = $_func_name;
+                        } else {
+                            // dd($_join->leftField);
+                        }
+                    } else {
+                        // dd($_join->leftField);
+                    }
+                    // dd($_join->leftField);
                 }
             }
         }
@@ -80,7 +99,6 @@ class DataController extends XisController
                             // Percorre todos os campos vendo se o ID do campo bate com o do limitador
                             foreach ($Blueprints->fields as $field) {
                                 if (($field->id != $_limiter_field_id) && $field->type->id != 10) continue;
-
                                 if ($field->joins) {
                                     foreach ($field->joins as $_join) {
                                         if ($_join->remote_field_id == $_limiter_field_id) {
@@ -224,7 +242,20 @@ class DataController extends XisController
         }
 
         if ($visibleField) {
-            $selectFields[] = \DB::raw("{$visibleField->name} AS value");
+            if ($visibleField->table->id == $table->id) {
+                $selectFields[] = \DB::raw("{$visibleField->name} AS value");
+            } else {
+                $_first_text_field = null;
+                foreach ($Blueprints->fields as $field) {
+                    if (!in_array($field->type_id, [2, 3])) continue;
+                    if ($_first_text_field) continue;
+                    $_first_text_field = $field;
+                }
+
+                if ($_first_text_field) {
+                    $selectFields[] = \DB::raw("{$_first_text_field->name} AS value");
+                }
+            }
         } else {
             $_first_text_field = null;
             foreach ($Blueprints->fields as $field) {
@@ -232,11 +263,59 @@ class DataController extends XisController
                 if ($_first_text_field) continue;
                 $_first_text_field = $field;
             }
-            $selectFields[] = \DB::raw("{$_first_text_field} AS value");
+
+            if ($_first_text_field) {
+                $selectFields[] = \DB::raw("{$_first_text_field->name} AS value");
+            }
         }
 
         $Data = (new $table->model)
             ->select($selectFields)
+            ->where(function ($q) use ($request, $Blueprints) {
+                if ($request->has('limiters')) {
+                    $_limiters = $request->get('limiters');
+        
+                    if (substr_count($_limiters, '-')) {
+                        if (substr($_limiters, 0, 1) == '-') {
+                            $_limiters = substr($_limiters, 1);
+                        }
+        
+                        if (substr($_limiters, -1) == '-') {
+                            $_limiters = substr($_limiters, 0, -1);
+                        }
+                        
+                        $_limiters = explode('-', $_limiters);
+        
+                        if (count($_limiters)) {
+                            foreach ($_limiters as $_limiter) {
+                                $_limiter_params = explode(':', $_limiter);
+
+                                if (isset($_limiter_params[0]) && isset($_limiter_params[1])) {
+                                    $_limiter_field_id = $_limiter_params[0];
+                                    $_limiter_field_value = $_limiter_params[1];
+        
+                                    // Percorre todos os campos vendo se o ID do campo bate com o do limitador
+                                    foreach ($Blueprints->fields as $field) {
+                                        if (($field->id != $_limiter_field_id) && $field->type->id != 10) continue;
+
+                                        $q->where($field->name, $_limiter_field_value);
+
+                                        if ($field->joins) {
+                                            foreach ($field->joins as $_join) {
+                                                if ($_join->remote_field_id == $_limiter_field_id) {
+                                                    $Data->whereHas("{$_join->model_foreign_function}", function ($q) use ($_join, $_limiter_field_value) {
+                                                        $q->where($_join->rightField->name, $_limiter_field_value);
+                                                    });
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            })
             ->get();
 
         return response()->json($Data, 200);
@@ -318,7 +397,11 @@ class DataController extends XisController
         foreach ($table->fields as $field) {
             if (!$field->primary_key) continue;
 
-            $validate_rules[$field->name] = ['required', "exists:{$table->database->name}.{$table->name}"];
+            $validate_rules[$field->name] = ['required'];
+
+            if ($field->type->name == 'bigint') {
+                $validate_rules[$field->name][] = "exists:{$table->database->name}.{$table->name}";
+            }
         }
 
         foreach ($table->fields as $field) {
@@ -414,7 +497,7 @@ class DataController extends XisController
                 }
 
                 if ((time() - $_start_update_at) < $_wait) {
-                    sleep($_wait);
+                    // sleep($_wait);
                 }
 
                 if (count($_updates)) {
@@ -423,13 +506,19 @@ class DataController extends XisController
                     }
                 }
 
-                return response()->json(null, 401);
+                return response()->json($_valid_data, 200);
             }
 
             return response()->json(['error' => "Counld not find single key for table {$table->name}"], 404);
+        } else if ($table->type->name == 'join_n_m') {
+            /**
+             * Inserindo registro em uma tabela de ligacao
+             */
+            return $this->insertByTable($request, $table);
+        } else {
+            return response()->json(["error" => "Nothing to update"], 403);
         }
 
-        return response()->json(null, 404);
     }
 
     public function insertByTable(Request $request, Table $table)
@@ -441,8 +530,7 @@ class DataController extends XisController
         $validate_rules = [];
 
         foreach ($table->fields as $field) {
-            if ($field->primary_key) continue;
-            if (!$field->editable) continue;
+            if ($field->primary_key && !$field->editable) continue;
 
             if (!isset($validate_rules[$field->name])) {
                 $validate_rules[$field->name] = [];
@@ -474,16 +562,10 @@ class DataController extends XisController
 
         $_valid_data = $request->validate($validate_rules);
 
-        $newData = (new $table->model);
-
-        foreach ($_valid_data as $_field => $_value) {
-            $newData->{$_field} = $_value;
-        }
-
-        if ($newData->save()) {
-            return response()->json($newData, 200);
+        if ((new $table->model)->insert($_valid_data)) {
+            return response()->json($_valid_data, 200);
         } else {
-            dd(null, 401);
+            return response()->json($_valid_data, 403);
         }
     }
 }

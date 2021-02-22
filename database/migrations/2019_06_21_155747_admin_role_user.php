@@ -19,7 +19,6 @@ class AdminRoleUser extends Migration
         Schema::create(self::TABLENAME, function (Blueprint $table) {
             $table->bigInteger('user_id')->references('id')->on('users');
             $table->bigInteger('role_id')->references('id')->on('roles');
-            $table->string('user_type', 255);
             $table->primary(array('role_id', 'user_id'));
         });
     }

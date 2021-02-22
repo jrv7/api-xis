@@ -20,6 +20,7 @@ class AdminDbTables extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('database_id')->references('id')->on('databases');
             $table->string('name', 255);
+            $table->unique(['database_id', 'name']);
             $table->bigInteger('table_type_id')->references('id')->on('db_table_types');
             $table->string('model', 255)->nullable();
             $table->bigInteger('default_list_action_field_id')->nullable();

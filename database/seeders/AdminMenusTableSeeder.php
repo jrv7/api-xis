@@ -164,7 +164,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'c038d4c071567f8673f2e51a4069f25c',
-                'db_table_id' => NULL,
+                'db_table_id' => 2,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,

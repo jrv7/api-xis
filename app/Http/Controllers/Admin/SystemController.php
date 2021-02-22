@@ -103,7 +103,13 @@ class SystemController extends XisController
                 return response()->json(['message' => 'Cound not find requested table.'], 501);
             }
         } else {
-            $Tables = Table::whereNull('model')->get();
+            $Tables = Table::where(function ($q) {
+                    $q->orWhereNull('model');
+                    $q->orWhereRaw("model LIKE 'NOTHING%'");
+                })
+                // ->inRandomOrder()
+                ->orderBy('id', 'desc')
+                ->get();
 
             if ($Tables->isNotEmpty()) {
                 foreach ($Tables as $Table) {

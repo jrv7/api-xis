@@ -26,3 +26,15 @@ Route::group([
         Route::post('translate', [App\Http\Controllers\Admin\SystemController::class, 'translateWord']);
     });
 });
+
+
+Route::group([
+    'prefix'=>'boot', 
+    'middleware' => [
+        'xis-cors'
+    ]
+], function () {
+    Route::group(['prefix'=>'db-structure'], function () {
+        Route::get('make-model/{table_id?}', [App\Http\Controllers\Admin\SystemController::class, 'makeModelFile']);
+    });
+});

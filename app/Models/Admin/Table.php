@@ -29,6 +29,7 @@ class Table extends Model
     public function fields()
     {
         return $this->hasMany(TableField::class, 'table_id')
+            ->orderBy('display_order', 'desc')
             ->orderBy('id', 'asc');
     }
 
@@ -87,6 +88,7 @@ class Table extends Model
         if (!!! @class_exists($Table->model)) {
             // echo "Classe nao existe";
             $Database = $Table->database;
+            $has_empty_models = false;
             // Primary Keys
             $foreignFields = $Table->fields;
             $pkeys = [];
@@ -183,6 +185,12 @@ class ' . $ModelFile . ' extends XisModel {
     {
         return new self;
     }
+
+    public function getModelTable()
+    {
+        return \\DB::table(\'db_tables\')->find(self::TABLE_ID);
+    }
+    
 ';
             if (count($appends)) {
                 $appendedFields = [];
@@ -224,6 +232,7 @@ class ' . $ModelFile . ' extends XisModel {
                     }
                     if (!$model_name) {
                         $model_name = 'Nothing';
+                        $has_empty_models = true;
                     }
                     $content .= '
     /**
@@ -259,6 +268,7 @@ class ' . $ModelFile . ' extends XisModel {
 
                     if (!$oneToManyModel) {
                         $oneToManyModel = 'Nothing';
+                        $has_empty_models = true;
                     }
 
                     $appendGetters = '
@@ -333,7 +343,14 @@ class ' . $ModelFile . ' extends XisModel {
                 dd("Imposivel salvar arquivo de Model temporario {$ModelFile}");
             }
 
-            $Table->model = "App\\Models\\Temp\\{$ModelFile}";
+            $__model_path = "App\\Models\\Temp\\{$ModelFile}";
+
+            if ($has_empty_models) {
+                $Table->model = null;
+                $__model_path = "NOTHING-{$__model_path}";
+            }
+
+            $Table->model = $__model_path;
             if (@isset($Table->Fields)) unset($Table->Fields);
             if (@isset($Table->ForeignFields)) unset($Table->ForeignFields);
             if (@isset($Table->ListFields)) unset($Table->ListFields);
@@ -341,7 +358,7 @@ class ' . $ModelFile . ' extends XisModel {
             if (@isset($Table->DefaultActionField)) unset($Table->DefaultActionField);
             $Table->save();
 
-            return $Table->model;
+            return "App\\Models\\Temp\\{$ModelFile}";
             // dd("Making temp Model file {$Table->name} IV", $Table);
 
         } else return $Table->model;//return true;

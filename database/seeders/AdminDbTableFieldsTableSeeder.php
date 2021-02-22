@@ -20,10 +20,9 @@ class AdminDbTableFieldsTableSeeder extends Seeder
 
         \DB::table($tableName)->insert(array (
             array (
-                'id' => 14,
                 'table_id' => 3,
                 'type_id' => 10,
-                'name' => 'menu_id',
+                'name' => 'father_menu_id',
                 'placeholder' => '',
                 'help_text' => '',
                 'primary_key' => false,
@@ -42,7 +41,6 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'is_elasticsearchable' => true,
             ),
             array (
-                'id' => 18,
                 'table_id' => 3,
                 'type_id' => 15,
                 'name' => 'class_fa_icon',
@@ -64,7 +62,6 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'is_elasticsearchable' => true,
             ),
             array (
-                'id' => 21,
                 'table_id' => 5,
                 'type_id' => 1,
                 'name' => 'id_father_menu',
@@ -86,7 +83,6 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'is_elasticsearchable' => true,
             ),
             array (
-                'id' => 24,
                 'table_id' => 6,
                 'type_id' => 10,
                 'name' => 'database_id',
@@ -108,7 +104,6 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'is_elasticsearchable' => true,
             ),
             array (
-                'id' => 26,
                 'table_id' => 6,
                 'type_id' => 10,
                 'name' => 'table_type_id',
@@ -130,7 +125,6 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'is_elasticsearchable' => true,
             ),
             array (
-                'id' => 27,
                 'table_id' => 6,
                 'type_id' => 2,
                 'name' => 'model',
@@ -152,7 +146,6 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'is_elasticsearchable' => false,
             ),
             array (
-                'id' => 22,
                 'table_id' => 5,
                 'type_id' => 2,
                 'name' => 'father_menu',
@@ -174,7 +167,6 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'is_elasticsearchable' => true,
             ),
             array (
-                'id' => 19,
                 'table_id' => 3,
                 'type_id' => 16,
                 'name' => 'menu_url_hash',
@@ -196,7 +188,6 @@ class AdminDbTableFieldsTableSeeder extends Seeder
                 'is_elasticsearchable' => true,
             ),
             array (
-                'id' => 16,
                 'table_id' => 3,
                 'type_id' => 18,
                 'name' => 'route',
@@ -240,7 +231,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
             'is_elasticsearchable' => true,
         ),
         array (
-            'id' => 17,
             'table_id' => 3,
             'type_id' => 8,
             'name' => 'opt_show_menu',
@@ -284,7 +274,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 30,
         'table_id' => 10,
         'type_id' => 1,
         'name' => 'id',
@@ -306,7 +295,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 31,
         'table_id' => 10,
         'type_id' => 2,
         'name' => 'name',
@@ -328,7 +316,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 46,
         'table_id' => 11,
         'type_id' => 8,
         'name' => 'editable',
@@ -350,7 +337,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 36,
         'table_id' => 12,
         'type_id' => 1,
         'name' => 'id',
@@ -372,7 +358,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 37,
         'table_id' => 12,
         'type_id' => 2,
         'name' => 'name',
@@ -394,7 +379,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 48,
         'table_id' => 14,
         'type_id' => 2,
         'name' => 'name',
@@ -416,7 +400,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 49,
         'table_id' => 15,
         'type_id' => 2,
         'name' => 'csv_column_divider',
@@ -438,7 +421,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 8,
         'table_id' => 2,
         'type_id' => 13,
         'name' => 'created_at',
@@ -450,8 +432,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'default_value' => NULL,
         'min_length' => 0,
         'max_length' => 0,
-        'fillable' => true,
-        'editable' => true,
+        'fillable' => false,
+        'editable' => false,
         'display_in_lists' => false,
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
@@ -460,7 +442,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 50,
         'table_id' => 14,
         'type_id' => 1,
         'name' => 'id',
@@ -482,7 +463,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 51,
         'table_id' => 15,
         'type_id' => 1,
         'name' => 'id_importer',
@@ -504,7 +484,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 52,
         'table_id' => 17,
         'type_id' => 1,
         'name' => 'id',
@@ -526,7 +505,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 40,
         'table_id' => 11,
         'type_id' => 8,
         'name' => 'primary_key',
@@ -548,7 +526,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 41,
         'table_id' => 11,
         'type_id' => 8,
         'name' => 'not_null',
@@ -570,7 +547,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 42,
         'table_id' => 11,
         'type_id' => 8,
         'name' => 'unique',
@@ -592,7 +568,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 43,
         'table_id' => 11,
         'type_id' => 1,
         'name' => 'min_length',
@@ -614,7 +589,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 44,
         'table_id' => 11,
         'type_id' => 1,
         'name' => 'max_length',
@@ -636,7 +610,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 45,
         'table_id' => 11,
         'type_id' => 8,
         'name' => 'fillable',
@@ -658,7 +631,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 47,
         'table_id' => 11,
         'type_id' => 8,
         'name' => 'display_in_lists',
@@ -680,7 +652,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 29,
         'table_id' => 9,
         'type_id' => 2,
         'name' => 'name',
@@ -702,7 +673,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 2,
         'table_id' => 2,
         'type_id' => 2,
         'name' => 'name',
@@ -724,7 +694,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 10,
         'table_id' => 2,
         'type_id' => 8,
         'name' => 'superuser',
@@ -746,7 +715,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 5,
         'table_id' => 2,
         'type_id' => 2,
         'name' => 'email',
@@ -768,7 +736,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 6,
         'table_id' => 2,
         'type_id' => 14,
         'name' => 'password',
@@ -790,7 +757,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 233,
         'table_id' => 6,
         'type_id' => 1,
         'name' => 'total_rows',
@@ -812,7 +778,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 1,
         'table_id' => 2,
         'type_id' => 1,
         'name' => 'id',
@@ -834,7 +799,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 9,
         'table_id' => 2,
         'type_id' => 13,
         'name' => 'updated_at',
@@ -846,8 +810,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'default_value' => NULL,
         'min_length' => 0,
         'max_length' => 0,
-        'fillable' => true,
-        'editable' => true,
+        'fillable' => false,
+        'editable' => false,
         'display_in_lists' => false,
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
@@ -856,7 +820,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 23,
         'table_id' => 6,
         'type_id' => 1,
         'name' => 'id',
@@ -878,7 +841,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 32,
         'table_id' => 11,
         'type_id' => 1,
         'name' => 'id',
@@ -900,7 +862,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 39,
         'table_id' => 13,
         'type_id' => 10,
         'name' => 'relation_type_id',
@@ -922,7 +883,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 234,
         'table_id' => 6,
         'type_id' => 8,
         'name' => 'indexable',
@@ -944,7 +904,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 62,
         'table_id' => 23,
         'type_id' => 1,
         'name' => 'relation_order',
@@ -966,7 +925,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 63,
         'table_id' => 21,
         'type_id' => 2,
         'name' => 'description',
@@ -988,7 +946,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 65,
         'table_id' => 22,
         'type_id' => 2,
         'name' => 'title',
@@ -1010,7 +967,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 66,
         'table_id' => 18,
         'type_id' => 2,
         'name' => 'description',
@@ -1032,7 +988,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 67,
         'table_id' => 25,
         'type_id' => 3,
         'name' => 'payload',
@@ -1054,9 +1009,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 68,
         'table_id' => 26,
-        'type_id' => 1,
+        'type_id' => 10,
         'name' => 'user_id',
         'placeholder' => '',
                 'help_text' => '',
@@ -1076,7 +1030,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 69,
         'table_id' => 15,
         'type_id' => 1,
         'name' => 'user_id',
@@ -1098,7 +1051,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 71,
         'table_id' => 18,
         'type_id' => 2,
         'name' => 'display_name',
@@ -1120,7 +1072,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 72,
         'table_id' => 21,
         'type_id' => 2,
         'name' => 'display_name',
@@ -1142,7 +1093,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 73,
         'table_id' => 13,
         'type_id' => 2,
         'name' => 'nofield_join_value',
@@ -1164,7 +1114,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 74,
         'table_id' => 15,
         'type_id' => 2,
         'name' => 'file_type',
@@ -1186,7 +1135,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 75,
         'table_id' => 18,
         'type_id' => 2,
         'name' => 'fa_icon_class',
@@ -1208,7 +1156,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 76,
         'table_id' => 13,
         'type_id' => 2,
         'name' => 'model_foreign_function',
@@ -1230,7 +1177,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 77,
         'table_id' => 27,
         'type_id' => 1,
         'name' => 'table_id',
@@ -1252,7 +1198,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 78,
         'table_id' => 28,
         'type_id' => 2,
         'name' => 'email',
@@ -1274,7 +1219,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 79,
         'table_id' => 23,
         'type_id' => 1,
         'name' => 'related_table_id',
@@ -1296,7 +1240,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 80,
         'table_id' => 29,
         'type_id' => 1,
         'name' => 'permission_id',
@@ -1318,7 +1261,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 81,
         'table_id' => 30,
         'type_id' => 1,
         'name' => 'user_id',
@@ -1340,7 +1282,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 82,
         'table_id' => 17,
         'type_id' => 2,
         'name' => 'migration',
@@ -1362,7 +1303,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 83,
         'table_id' => 20,
         'type_id' => 1,
         'name' => 'menu_id_target',
@@ -1384,7 +1324,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 84,
         'table_id' => 25,
         'type_id' => 1,
         'name' => 'user_id',
@@ -1406,7 +1345,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 33,
         'table_id' => 11,
         'type_id' => 10,
         'name' => 'table_id',
@@ -1428,7 +1366,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 34,
         'table_id' => 11,
         'type_id' => 10,
         'name' => 'type_id',
@@ -1450,7 +1387,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 28,
         'table_id' => 9,
         'type_id' => 1,
         'name' => 'id',
@@ -1472,7 +1408,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 20,
         'table_id' => 3,
         'type_id' => 10,
         'name' => 'db_table_id',
@@ -1494,7 +1429,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 15,
         'table_id' => 3,
         'type_id' => 2,
         'name' => 'menu_title',
@@ -1516,7 +1450,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 13,
         'table_id' => 3,
         'type_id' => 1,
         'name' => 'id',
@@ -1538,7 +1471,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 25,
         'table_id' => 6,
         'type_id' => 2,
         'name' => 'name',
@@ -1560,7 +1492,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 85,
         'table_id' => 27,
         'type_id' => 3,
         'name' => 'configurations',
@@ -1582,7 +1513,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 86,
         'table_id' => 21,
         'type_id' => 12,
         'name' => 'updated_at',
@@ -1594,8 +1524,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'default_value' => NULL,
         'min_length' => 0,
         'max_length' => 0,
-        'fillable' => true,
-        'editable' => true,
+        'fillable' => false,
+        'editable' => false,
         'display_in_lists' => true,
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
@@ -1604,7 +1534,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 87,
         'table_id' => 18,
         'type_id' => 12,
         'name' => 'updated_at',
@@ -1616,8 +1545,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'default_value' => NULL,
         'min_length' => 0,
         'max_length' => 0,
-        'fillable' => true,
-        'editable' => true,
+        'fillable' => false,
+        'editable' => false,
         'display_in_lists' => true,
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
@@ -1626,7 +1555,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 88,
         'table_id' => 28,
         'type_id' => 12,
         'name' => 'created_at',
@@ -1638,8 +1566,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'default_value' => NULL,
         'min_length' => 0,
         'max_length' => 0,
-        'fillable' => true,
-        'editable' => true,
+        'fillable' => false,
+        'editable' => false,
         'display_in_lists' => true,
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
@@ -1648,7 +1576,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 90,
         'table_id' => 25,
         'type_id' => 2,
         'name' => 'id',
@@ -1670,7 +1597,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 91,
         'table_id' => 30,
         'type_id' => 1,
         'name' => 'permission_id',
@@ -1692,7 +1618,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 92,
         'table_id' => 29,
         'type_id' => 1,
         'name' => 'role_id',
@@ -1714,7 +1639,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 93,
         'table_id' => 5,
         'type_id' => 3,
         'name' => 'menu_level',
@@ -1736,7 +1660,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 94,
         'table_id' => 21,
         'type_id' => 12,
         'name' => 'created_at',
@@ -1748,8 +1671,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'default_value' => NULL,
         'min_length' => 0,
         'max_length' => 0,
-        'fillable' => true,
-        'editable' => true,
+        'fillable' => false,
+        'editable' => false,
         'display_in_lists' => true,
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
@@ -1758,7 +1681,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 95,
         'table_id' => 25,
         'type_id' => 3,
         'name' => 'user_agent',
@@ -1780,7 +1702,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 96,
         'table_id' => 18,
         'type_id' => 12,
         'name' => 'created_at',
@@ -1792,8 +1713,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'default_value' => NULL,
         'min_length' => 0,
         'max_length' => 0,
-        'fillable' => true,
-        'editable' => true,
+        'fillable' => false,
+        'editable' => false,
         'display_in_lists' => true,
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
@@ -1802,7 +1723,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 98,
         'table_id' => 28,
         'type_id' => 2,
         'name' => 'token',
@@ -1824,7 +1744,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 99,
         'table_id' => 23,
         'type_id' => 1,
         'name' => 'joint_field_id',
@@ -1846,7 +1765,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 100,
         'table_id' => 27,
         'type_id' => 1,
         'name' => 'user_id',
@@ -1868,7 +1786,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 101,
         'table_id' => 25,
         'type_id' => 1,
         'name' => 'last_accessed_menu',
@@ -1890,7 +1807,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 102,
         'table_id' => 23,
         'type_id' => 1,
         'name' => 'table_id',
@@ -1912,7 +1828,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 103,
         'table_id' => 17,
         'type_id' => 1,
         'name' => 'batch',
@@ -1934,7 +1849,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 105,
         'table_id' => 25,
         'type_id' => 2,
         'name' => 'ip_address',
@@ -1956,7 +1870,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 106,
         'table_id' => 30,
         'type_id' => 2,
         'name' => 'user_type',
@@ -1978,7 +1891,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 107,
         'table_id' => 15,
         'type_id' => 2,
         'name' => 'name',
@@ -2000,7 +1912,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 109,
         'table_id' => 26,
         'type_id' => 2,
         'name' => 'user_type',
@@ -2022,9 +1933,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 111,
         'table_id' => 26,
-        'type_id' => 1,
+        'type_id' => 10,
         'name' => 'role_id',
         'placeholder' => '',
                 'help_text' => '',
@@ -2044,7 +1954,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 114,
         'table_id' => 25,
         'type_id' => 1,
         'name' => 'last_activity',
@@ -2066,7 +1975,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 115,
         'table_id' => 21,
         'type_id' => 2,
         'name' => 'name',
@@ -2088,7 +1996,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 117,
         'table_id' => 18,
         'type_id' => 2,
         'name' => 'name',
@@ -2110,7 +2017,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 53,
         'table_id' => 18,
         'type_id' => 1,
         'name' => 'id_permission',
@@ -2132,7 +2038,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 54,
         'table_id' => 19,
         'type_id' => 1,
         'name' => 'role_id',
@@ -2154,7 +2059,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 104,
         'table_id' => 11,
         'type_id' => 3,
         'name' => 'default_value',
@@ -2176,7 +2080,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 56,
         'table_id' => 20,
         'type_id' => 1,
         'name' => 'role_id',
@@ -2198,7 +2101,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 116,
         'table_id' => 11,
         'type_id' => 3,
         'name' => 'crud_edit_validation_function',
@@ -2220,7 +2122,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 55,
         'table_id' => 19,
         'type_id' => 1,
         'name' => 'menu_id',
@@ -2242,7 +2143,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 57,
         'table_id' => 20,
         'type_id' => 1,
         'name' => 'menu_id',
@@ -2264,7 +2164,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 113,
         'table_id' => 6,
         'type_id' => 1,
         'name' => 'default_list_action_field_id',
@@ -2286,7 +2185,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 58,
         'table_id' => 20,
         'type_id' => 1,
         'name' => 'permission_id',
@@ -2308,10 +2206,9 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 59,
         'table_id' => 21,
         'type_id' => 1,
-        'name' => 'id_role',
+        'name' => 'id',
         'placeholder' => '',
                 'help_text' => '',
                 'primary_key' => true,
@@ -2330,7 +2227,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 60,
         'table_id' => 22,
         'type_id' => 1,
         'name' => 'id_status',
@@ -2352,7 +2248,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 61,
         'table_id' => 11,
         'type_id' => 1,
         'name' => 'display_order',
@@ -2374,7 +2269,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 89,
         'table_id' => 11,
         'type_id' => 2,
         'name' => 'crud_edit_validation_type',
@@ -2396,7 +2290,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 118,
         'table_id' => 1,
         'type_id' => 1,
         'name' => 'id',
@@ -2418,7 +2311,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 119,
         'table_id' => 1,
         'type_id' => 2,
         'name' => 'name',
@@ -2440,7 +2332,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 122,
         'table_id' => 9,
         'type_id' => 2,
         'name' => 'db_connection',
@@ -2462,7 +2353,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 110,
         'table_id' => 2,
         'type_id' => 2,
         'name' => 'remember_token',
@@ -2484,7 +2374,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 97,
         'table_id' => 13,
         'type_id' => 10,
         'name' => 'remote_visible_field_id',
@@ -2506,7 +2395,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 108,
         'table_id' => 13,
         'type_id' => 10,
         'name' => 'local_field_id',
@@ -2528,7 +2416,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 70,
         'table_id' => 13,
         'type_id' => 10,
         'name' => 'remote_field_id',
@@ -2550,7 +2437,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 123,
         'table_id' => 31,
         'type_id' => 10,
         'name' => 'menu_id',
@@ -2572,7 +2458,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 35,
         'table_id' => 11,
         'type_id' => 2,
         'name' => 'name',
@@ -2594,7 +2479,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 224,
         'table_id' => 42,
         'type_id' => 1,
         'name' => 'id',
@@ -2616,7 +2500,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 225,
         'table_id' => 42,
         'type_id' => 10,
         'name' => 'user_id',
@@ -2638,7 +2521,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 226,
         'table_id' => 42,
         'type_id' => 19,
         'name' => 'updated_at',
@@ -2650,8 +2532,8 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'default_value' => NULL,
         'min_length' => 0,
         'max_length' => 0,
-        'fillable' => true,
-        'editable' => true,
+        'fillable' => false,
+        'editable' => false,
         'display_in_lists' => true,
         'display_order' => 0,
         'crud_edit_validation_type' => NULL,
@@ -2660,7 +2542,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 227,
         'table_id' => 44,
         'type_id' => 10,
         'name' => 'update_history_id',
@@ -2682,7 +2563,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 228,
         'table_id' => 44,
         'type_id' => 10,
         'name' => 'table_field_id',
@@ -2704,7 +2584,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 229,
         'table_id' => 44,
         'type_id' => 1,
         'name' => 'table_field_value',
@@ -2726,7 +2605,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 230,
         'table_id' => 45,
         'type_id' => 10,
         'name' => 'update_history_id',
@@ -2748,7 +2626,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 231,
         'table_id' => 45,
         'type_id' => 10,
         'name' => 'table_field_id',
@@ -2770,7 +2647,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 232,
         'table_id' => 45,
         'type_id' => 3,
         'name' => 'new_value',
@@ -2792,7 +2668,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 157,
         'table_id' => 3,
         'type_id' => 10,
         'name' => 'return_to_menu_id',
@@ -2814,7 +2689,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 124,
         'table_id' => 31,
         'type_id' => 10,
         'name' => 'target_menu_id',
@@ -2836,7 +2710,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 125,
         'table_id' => 31,
         'type_id' => 15,
         'name' => 'fa_icon',
@@ -2858,7 +2731,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 133,
         'table_id' => 31,
         'type_id' => 2,
         'name' => 'menu_crud_action',
@@ -2880,7 +2752,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 137,
         'table_id' => 33,
         'type_id' => 10,
         'name' => 'language_id',
@@ -2902,7 +2773,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 143,
         'table_id' => 37,
         'type_id' => 1,
         'name' => 'id',
@@ -2924,7 +2794,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 139,
         'table_id' => 34,
         'type_id' => 1,
         'name' => 'joint_remote_field_id',
@@ -2946,7 +2815,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 140,
         'table_id' => 34,
         'type_id' => 2,
         'name' => 'joint_remote_field_name',
@@ -2968,7 +2836,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 142,
         'table_id' => 36,
         'type_id' => 2,
         'name' => 'name',
@@ -2990,7 +2857,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 136,
         'table_id' => 33,
         'type_id' => 10,
         'name' => 'dictionary_id',
@@ -3012,7 +2878,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 144,
         'table_id' => 37,
         'type_id' => 10,
         'name' => 'modelo_id',
@@ -3034,7 +2899,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 145,
         'table_id' => 37,
         'type_id' => 10,
         'name' => 'produto_id',
@@ -3056,7 +2920,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 149,
         'table_id' => 38,
         'type_id' => 1,
         'name' => 'id',
@@ -3078,7 +2941,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 151,
         'table_id' => 38,
         'type_id' => 2,
         'name' => 'nome',
@@ -3100,7 +2962,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 152,
         'table_id' => 39,
         'type_id' => 1,
         'name' => 'id',
@@ -3122,7 +2983,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 153,
         'table_id' => 39,
         'type_id' => 2,
         'name' => 'codigo',
@@ -3144,7 +3004,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 154,
         'table_id' => 39,
         'type_id' => 2,
         'name' => 'name',
@@ -3166,7 +3025,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 150,
         'table_id' => 38,
         'type_id' => 2,
         'name' => 'codigo',
@@ -3188,7 +3046,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 146,
         'table_id' => 37,
         'type_id' => 2,
         'name' => 'codigo',
@@ -3210,7 +3067,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 147,
         'table_id' => 37,
         'type_id' => 2,
         'name' => 'name',
@@ -3232,7 +3088,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 155,
         'table_id' => 40,
         'type_id' => 1,
         'name' => 'id',
@@ -3254,7 +3109,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 156,
         'table_id' => 40,
         'type_id' => 2,
         'name' => 'name',
@@ -3276,7 +3130,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 148,
         'table_id' => 37,
         'type_id' => 10,
         'name' => 'etapa_vida_id',
@@ -3298,7 +3151,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 112,
         'table_id' => 24,
         'type_id' => 10,
         'name' => 'related_menu_id',
@@ -3320,7 +3172,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 135,
         'table_id' => 32,
         'type_id' => 2,
         'name' => 'word',
@@ -3342,7 +3193,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 134,
         'table_id' => 32,
         'type_id' => 1,
         'name' => 'id',
@@ -3364,7 +3214,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 141,
         'table_id' => 36,
         'type_id' => 1,
         'name' => 'id',
@@ -3386,7 +3235,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 198,
         'table_id' => 41,
         'type_id' => 1,
         'name' => 'id',
@@ -3408,7 +3256,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 201,
         'table_id' => 41,
         'type_id' => 6,
         'name' => 'campo_character',
@@ -3430,7 +3277,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 202,
         'table_id' => 41,
         'type_id' => 3,
         'name' => 'campo_texto',
@@ -3452,7 +3298,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 203,
         'table_id' => 41,
         'type_id' => 14,
         'name' => 'campo_senha',
@@ -3474,7 +3319,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 204,
         'table_id' => 41,
         'type_id' => 15,
         'name' => 'campo_fa_icon',
@@ -3496,7 +3340,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 205,
         'table_id' => 41,
         'type_id' => 16,
         'name' => 'campo_md5',
@@ -3518,7 +3361,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 206,
         'table_id' => 41,
         'type_id' => 12,
         'name' => 'campo_data',
@@ -3540,7 +3382,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 207,
         'table_id' => 41,
         'type_id' => 19,
         'name' => 'campo_datetime',
@@ -3562,7 +3403,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 208,
         'table_id' => 41,
         'type_id' => 21,
         'name' => 'campo_time',
@@ -3584,7 +3424,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 209,
         'table_id' => 41,
         'type_id' => 13,
         'name' => 'campo_timestamp',
@@ -3606,7 +3445,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 210,
         'table_id' => 41,
         'type_id' => 11,
         'name' => 'campo_function',
@@ -3628,10 +3466,9 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 211,
         'table_id' => 41,
         'type_id' => 10,
-        'name' => 'Campo_extrangeiro',
+        'name' => 'campo_extrangeiro',
         'placeholder' => '',
                 'help_text' => '',
                 'primary_key' => false,
@@ -3650,7 +3487,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 212,
         'table_id' => 41,
         'type_id' => 18,
         'name' => 'Campos_lista',
@@ -3672,7 +3508,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 213,
         'table_id' => 41,
         'type_id' => 9,
         'name' => 'Campo_lista_preset',
@@ -3694,7 +3529,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 214,
         'table_id' => 41,
         'type_id' => 2,
         'name' => 'campo_string',
@@ -3716,7 +3550,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 215,
         'table_id' => 41,
         'type_id' => 4,
         'name' => 'campo_float',
@@ -3738,7 +3571,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 218,
         'table_id' => 41,
         'type_id' => 5,
         'name' => 'campo_currency',
@@ -3760,7 +3592,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 132,
         'table_id' => 31,
         'type_id' => 1,
         'name' => 'action_order',
@@ -3782,7 +3613,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 219,
         'table_id' => 41,
         'type_id' => 7,
         'name' => 'campo_porcentagem',
@@ -3804,7 +3634,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 199,
         'table_id' => 41,
         'type_id' => 20,
         'name' => 'campo_int',
@@ -3826,7 +3655,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 235,
         'table_id' => 11,
         'type_id' => 8,
         'name' => 'is_elasticsearchable',
@@ -3848,7 +3676,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 236,
         'table_id' => 3,
         'type_id' => 2,
         'name' => 'custom_crud_view',
@@ -3870,7 +3697,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 64,
         'table_id' => 24,
         'type_id' => 10,
         'name' => 'menu_id',
@@ -3892,7 +3718,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 237,
         'table_id' => 3,
         'type_id' => 2,
         'name' => 'custom_controller',
@@ -3914,7 +3739,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 239,
         'table_id' => 46,
         'type_id' => 20,
         'name' => 'power',
@@ -3936,7 +3760,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 238,
         'table_id' => 46,
         'type_id' => 1,
         'name' => 'id',
@@ -3958,7 +3781,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 240,
         'table_id' => 46,
         'type_id' => 2,
         'name' => 'card_name',
@@ -3980,7 +3802,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 241,
         'table_id' => 46,
         'type_id' => 20,
         'name' => 'card_mana_cost',
@@ -4002,7 +3823,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 138,
         'table_id' => 33,
         'type_id' => 2,
         'name' => 'translation',
@@ -4024,7 +3844,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 242,
         'table_id' => 3,
         'type_id' => 2,
         'name' => 'custom_first_method_get',
@@ -4046,7 +3865,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 243,
         'table_id' => 11,
         'type_id' => 2,
         'name' => 'placeholder',
@@ -4068,7 +3886,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 244,
         'table_id' => 11,
         'type_id' => 2,
         'name' => 'help_text',
@@ -4090,7 +3907,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 245,
         'table_id' => 13,
         'type_id' => 10,
         'name' => 'table_type_id',
@@ -4112,7 +3928,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 246,
         'table_id' => 47,
         'type_id' => 1,
         'name' => 'id',
@@ -4134,7 +3949,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 247,
         'table_id' => 47,
         'type_id' => 2,
         'name' => 'name',
@@ -4156,7 +3970,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 248,
         'table_id' => 48,
         'type_id' => 1,
         'name' => 'id',
@@ -4178,7 +3991,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 249,
         'table_id' => 48,
         'type_id' => 10,
         'name' => 'table_id',
@@ -4200,7 +4012,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 250,
         'table_id' => 48,
         'type_id' => 10,
         'name' => 'table_trigger_type_id',
@@ -4222,7 +4033,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 251,
         'table_id' => 48,
         'type_id' => 2,
         'name' => 'description',
@@ -4244,7 +4054,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => true,
     ),
     array (
-        'id' => 252,
         'table_id' => 49,
         'type_id' => 1,
         'name' => 'id',
@@ -4266,7 +4075,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 253,
         'table_id' => 49,
         'type_id' => 10,
         'name' => 'table_id',
@@ -4288,7 +4096,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 254,
         'table_id' => 49,
         'type_id' => 10,
         'name' => 'target_menu_id',
@@ -4310,7 +4117,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 255,
         'table_id' => 50,
         'type_id' => 10,
         'name' => 'table_id',
@@ -4332,7 +4138,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 256,
         'table_id' => 50,
         'type_id' => 10,
         'name' => 'right_table_id',
@@ -4354,7 +4159,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 257,
         'table_id' => 51,
         'type_id' => 10,
         'name' => 'm_field_id',
@@ -4376,7 +4180,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 258,
         'table_id' => 51,
         'type_id' => 2,
         'name' => 'm_field_name',
@@ -4398,7 +4201,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 259,
         'table_id' => 51,
         'type_id' => 10,
         'name' => 'm_visible_field_id',
@@ -4420,7 +4222,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 260,
         'table_id' => 51,
         'type_id' => 2,
         'name' => 'm_visible_field_name',
@@ -4442,7 +4243,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 261,
         'table_id' => 51,
         'type_id' => 10,
         'name' => 'm_table_id',
@@ -4464,7 +4264,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 262,
         'table_id' => 51,
         'type_id' => 2,
         'name' => 'm_table_name',
@@ -4486,7 +4285,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 263,
         'table_id' => 51,
         'type_id' => 2,
         'name' => 'pivot_table_name',
@@ -4508,7 +4306,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 264,
         'table_id' => 51,
         'type_id' => 2,
         'name' => 'n_table_name',
@@ -4530,7 +4327,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 265,
         'table_id' => 51,
         'type_id' => 10,
         'name' => 'n_table_id',
@@ -4552,7 +4348,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 266,
         'table_id' => 51,
         'type_id' => 2,
         'name' => 'n_field_name',
@@ -4574,7 +4369,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 267,
         'table_id' => 51,
         'type_id' => 10,
         'name' => 'n_field_id',
@@ -4596,7 +4390,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 268,
         'table_id' => 51,
         'type_id' => 10,
         'name' => 'n_visible_field_id',
@@ -4618,7 +4411,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 268,
         'table_id' => 51,
         'type_id' => 2,
         'name' => 'n_visible_field_name',
@@ -4640,7 +4432,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 269,
         'table_id' => 51,
         'type_id' => 10,
         'name' => 'pivot_table_id',
@@ -4662,7 +4453,6 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'is_elasticsearchable' => false,
     ),
     array (
-        'id' => 270,
         'table_id' => 2,
         'type_id' => 22,
         'name' => 'confirm_password',
