@@ -13,6 +13,6 @@ class UpdateHistory extends Model
     public function InsertHistoryData($Model, Table $Table)
     {
         $original_data = $Model->getOriginal();
-        dd($original_data);
+        dd($original_data, $Model->toArray());
     }
 }

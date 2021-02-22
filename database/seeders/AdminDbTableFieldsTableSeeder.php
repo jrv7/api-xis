@@ -427,7 +427,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'placeholder' => '',
                 'help_text' => '',
                 'primary_key' => false,
-        'not_null' => true,
+        'not_null' => fase,
         'unique' => false,
         'default_value' => NULL,
         'min_length' => 0,
@@ -4451,28 +4451,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
         'crud_edit_validation_function' => NULL,
         'email' => false,
         'is_elasticsearchable' => false,
-    ),
-    array (
-        'table_id' => 2,
-        'type_id' => 22,
-        'name' => 'confirm_password',
-        'placeholder' => '',
-        'help_text' => '',
-        'primary_key' => false,
-        'not_null' => false,
-        'unique' => false,
-        'default_value' => NULL,
-        'min_length' => 0,
-        'max_length' => 0,
-        'fillable' => false,
-        'editable' => false,
-        'display_in_lists' => false,
-        'display_order' => 0,
-        'crud_edit_validation_type' => NULL,
-        'crud_edit_validation_function' => NULL,
-        'email' => false,
-        'is_elasticsearchable' => false,
-    ),
+    )
 ));
 
         echo "Setando o proximo valor para a sequencia incremental como: ";

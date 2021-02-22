@@ -142,7 +142,7 @@ class Table extends Model
 namespace App\Models\Temp;
 use Illuminate\Database\Eloquent\Model;
 //use App\Models\Admin\Indexer;
-use App\Models\XisModel;
+use App\Models\{XisModel, Admin\Table};
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Config;
 use Auth;
@@ -188,7 +188,7 @@ class ' . $ModelFile . ' extends XisModel {
 
     public function getModelTable()
     {
-        return \\DB::table(\'db_tables\')->find(self::TABLE_ID);
+        return Table::find(self::TABLE_ID);
     }
     
 ';

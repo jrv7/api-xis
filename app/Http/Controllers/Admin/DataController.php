@@ -296,16 +296,16 @@ class DataController extends XisController
         
                                     // Percorre todos os campos vendo se o ID do campo bate com o do limitador
                                     foreach ($Blueprints->fields as $field) {
-                                        if (($field->id != $_limiter_field_id) && $field->type->id != 10) continue;
-
-                                        $q->where($field->name, $_limiter_field_value);
-
-                                        if ($field->joins) {
-                                            foreach ($field->joins as $_join) {
-                                                if ($_join->remote_field_id == $_limiter_field_id) {
-                                                    $Data->whereHas("{$_join->model_foreign_function}", function ($q) use ($_join, $_limiter_field_value) {
-                                                        $q->where($_join->rightField->name, $_limiter_field_value);
-                                                    });
+                                        if ($field->id == $_limiter_field_id) {
+                                            $q->where($field->name, $_limiter_field_value);
+                                        } else if ($field->type->id == 10) {
+                                            if ($field->joins) {
+                                                foreach ($field->joins as $_join) {
+                                                    if ($_join->remote_field_id == $_limiter_field_id) {
+                                                        $Data->whereHas("{$_join->model_foreign_function}", function ($q) use ($_join, $_limiter_field_value) {
+                                                            $q->where($_join->rightField->name, $_limiter_field_value);
+                                                        });
+                                                    }
                                                 }
                                             }
                                         }
