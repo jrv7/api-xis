@@ -64,7 +64,7 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('menus', 'db_table_id'), // 20,
+                'local_field_id' => self::getFieldId('menus', 'table_id'), // 20,
                 'remote_field_id' => self::getFieldId('db_tables', 'id'), // 23,
                 'nofield_join_value' => NULL,
                 'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,

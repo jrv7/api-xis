@@ -46,6 +46,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function defaultMenu()
+    {
+        return $this->belongsTo(Admin\Menu::class, 'default_menu_id');
+    }
+
     public function roles()
     {
         return $this->belongsToMany(Admin\Role::class, 'user_has_roles');

@@ -30,7 +30,7 @@ class XisController extends Controller
             'db' => null
         ];
 
-        $_return['db'] = self::getBlueprint($Menu->db_table_id);
+        $_return['db'] = self::getBlueprint($Menu->table_id);
 
         return $_return;
     }
@@ -54,8 +54,12 @@ class XisController extends Controller
                 'manyToManyTables.pivotTable',
                 'manyToManyTables.nTable',
                 'relatedTables',
+                'relatedTables.leftTable',
                 'relatedTables.rightTable',
+                'relatedTables.rightTable.fields',
                 'relatedTables.jointField',
+                'relatedTables.jointField.leftField',
+                'relatedTables.jointField.rightField',
                 'relatedTables.jointMenu',
                 'relatedTables.jointMenu.fatherMenu',
                 'relatedTables.jointMenu.fatherMenu.fatherMenu',

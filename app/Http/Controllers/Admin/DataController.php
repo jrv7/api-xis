@@ -4,22 +4,33 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\XisController;
+use Auth;
 use App\Models\{
     Admin\Menu,
     Admin\Table,
     Admin\TableField,
 };
+use App\Exports\{
+    TableExportArray,
+    TableExportCollection,
+};
+use Maatwebsite\Excel\Facades\Excel;
 
 class DataController extends XisController
 {
+    protected $_DEFAULT_STORAGE_DISK = 'local';
     protected $per_page = 50;
+    private const RETURN_LIST = null;
+    private const RETURN_RESULT = 1;
+    private const RETURN_QUERY = 2;
+    private const RETURN_ARRAY = 3;
 
     public function __construct(Request $request)
     {
         $this->per_page = $request->has('per-page') ? $request->get('per-page') : $this->per_page;
     }
 
-    public function getList(Request $request, Table $table)
+    public function getList(Request $request, Table $table, $getRaw = null)
     {
         $Blueprints = self::getBlueprintsFromTable($table)['db'];
         $_model_withs = [];
@@ -226,9 +237,313 @@ class DataController extends XisController
                 $Data = $Data->orderBy($primaryKey->name, 'desc');
             }
         }
-        $Data = $Data->paginate($this->per_page);
 
-        return response()->json($Data, 200);
+        if ($getRaw) {
+            switch ($getRaw) {
+                case 1: {
+                    return $Data->get();
+                } break;
+                case 2: {
+                    return $Data;
+                } break;
+                case 3: {
+                    return $Data->get()->toArray();
+                } break;
+            }
+        } else {
+            $Data = $Data->paginate($this->per_page);
+    
+            return response()->json($Data, 200);
+        }
+    }
+
+    public function getData(Request $request, Table $table)
+    {
+        $Blueprints = self::getBlueprintsFromTable($table)['db'];
+        $_model_withs = [];
+        $_filters = [];
+        if ($request->has('filters')) {
+            $_filters = json_decode($request->get('filters'), true);
+        }
+
+        foreach ($Blueprints->fields as $field) {
+            if ($field->type->id != 10) continue;
+
+            foreach ($field->joins as $_join) {
+                if (!$_join->rightField) continue;
+                if (!$_join->rightField->table) continue;
+
+                if (method_exists((new $Blueprints->model), $_join->model_foreign_function)) {
+                    $_model_withs[] = mb_strtolower($_join->model_foreign_function);
+                } else {
+                    if ($_join->leftField) {
+                        $_func_name = str_replace('_id', '', $_join->leftField->name);
+
+                        if (method_exists((new $Blueprints->model), $_func_name)) {
+                            $_model_withs[] = mb_strtolower($_func_name);
+
+                            \DB::table('db_table_field_joins')
+                                ->where('relation_type_id', $_join->relation_type_id)
+                                ->where('local_field_id', $_join->local_field_id)
+                                ->where('remote_field_id', $_join->remote_field_id)
+                                ->where('remote_field_id', $_join->remote_field_id)
+                                ->update(
+                                    [
+                                        'model_foreign_function' => $_func_name
+                                    ]
+                                );
+                            $_join->model_foreign_function = $_func_name;
+                        } else {
+                            // dd($_join->leftField);
+                        }
+                    } else {
+                        // dd($_join->leftField);
+                    }
+                    // dd($_join->leftField);
+                }
+            }
+        }
+
+        $Data = (new $Blueprints->model);
+        
+        $_SELECT_FIELDS = [];
+        $_ORDER_FIELDS = [];
+
+        foreach ($Blueprints->fields as $_field) {
+            if (!$_field->primary_key) continue;
+
+            $_SELECT_FIELDS[] = \DB::raw("{$Blueprints->name}.{$_field->name}");
+        }
+
+        foreach ($Blueprints->fields as $_field) {
+            if ($_field->primary_key) continue;
+            if (!$_field->not_null) continue;
+
+            $_SELECT_FIELDS[] = \DB::raw("{$Blueprints->name}.{$_field->name}");
+            $_ORDER_FIELDS[] = "{$Blueprints->name}.{$_field->name}";
+        }
+
+        foreach ($Blueprints->fields as $_field) {
+            if ($_field->primary_key) continue;
+            if ($_field->not_null) continue;
+            if (!$_field->editable) continue;
+
+            $_SELECT_FIELDS[] = \DB::raw("{$Blueprints->name}.{$_field->name}");
+        }
+
+        if (count($_model_withs)) {
+            $Data = $Data->with($_model_withs);
+        }
+
+        if ($Blueprints->relatedTables->count()) {
+            foreach ($Blueprints->relatedTables as $relatedTable) {
+                $Data = $Data->leftJoin(
+                    $relatedTable->rightTable->name, 
+                    "{$relatedTable->rightTable->name}.{$relatedTable->jointField->leftField->name}",
+                    '=',
+                    "{$relatedTable->leftTable->name}.{$relatedTable->jointField->rightField->name}",
+                );
+
+                foreach ($relatedTable->rightTable->fields as $_r_field) {
+                    if ( (!$_r_field->primary_key) && (!$_r_field->not_null) && (!$_r_field->editable)) continue;
+
+                    $_SELECT_FIELDS[] = \DB::raw("{$relatedTable->rightTable->name}.{$_r_field->name} AS {$relatedTable->rightTable->name}_{$_r_field->name}");
+
+                    if ((!$_r_field->primary_key) && ($_r_field->not_null)) {
+                        $_ORDER_FIELDS[] = "{$relatedTable->rightTable->name}.{$_r_field->name}";
+                    }
+                }
+                // dd($relatedTable);
+            }
+        }
+
+        $Data = $Data->select($_SELECT_FIELDS);
+
+        if ($request->has('limiters')) {
+            $_limiters = $request->get('limiters');
+
+            if (substr_count($_limiters, '-')) {
+                if (substr($_limiters, 0, 1) == '-') {
+                    $_limiters = substr($_limiters, 1);
+                }
+
+                if (substr($_limiters, -1) == '-') {
+                    $_limiters = substr($_limiters, 0, -1);
+                }
+                
+                $_limiters = explode('-', $_limiters);
+
+                if (count($_limiters)) {
+                    foreach ($_limiters as $_limiter) {
+                        $_limiter_params = explode(':', $_limiter);
+                        
+                        if (isset($_limiter_params[0]) && isset($_limiter_params[1])) {
+                            $_limiter_field_id = $_limiter_params[0];
+                            $_limiter_field_value = $_limiter_params[1];
+
+                            // Percorre todos os campos vendo se o ID do campo bate com o do limitador
+                            foreach ($Blueprints->fields as $field) {
+                                if (($field->id != $_limiter_field_id) && $field->type->id != 10) continue;
+                                if ($field->joins) {
+                                    foreach ($field->joins as $_join) {
+                                        if ($_join->remote_field_id == $_limiter_field_id) {
+                                            $Data->whereHas("{$_join->model_foreign_function}", function ($q) use ($_join, $_limiter_field_value) {
+                                                $q->where($_join->rightField->name, $_limiter_field_value);
+                                            });
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        if (isset($_filters['simpleSearch'])) {
+            $Data = $Data->where(function ($q) use ($Blueprints, $_filters) {
+                foreach ($Blueprints->fields as $field) {
+                    if (!in_array($field->type->id, [2, 3, 6, 15, 16])) continue;
+    
+                    $_simple_search = mb_strtolower(trim($_filters['simpleSearch']));
+    
+                    if (mb_strlen($_simple_search)) {
+                        $q->orWhereRaw("LOWER({$field->name}) LIKE '%$_simple_search%'");
+                    }
+                }
+            });
+        }
+
+        if (isset($_filters['fieldSearches'])) {
+            $Data = $Data->where(function ($q) use ($Blueprints, $_filters) {
+                $_organized_f_search = [];
+                foreach ($_filters['fieldSearches'] as $_f_search) {
+                    if (is_null($_f_search)) continue;
+                    $_organized_f_search[$_f_search['id']][] = $_f_search['value'];
+                }
+
+                if (count($_organized_f_search)) {
+                    foreach ($_organized_f_search as $_f_field_id => $_searched_values) {
+                        foreach ($Blueprints->fields as $field) {
+                            if ($field->id != $_f_field_id) continue;
+    
+                            $q->where(function ($q) use ($field, $_searched_values) {
+                                switch (true) {
+                                    case ($field->type->is_numeric): {
+                                        $q->whereIn($field->name, $_searched_values);
+                                    } break;
+                                    default: {
+                                        foreach ($_searched_values as $_searched_value) {
+                                            if (mb_strlen($_searched_value)) {
+                                                $q->orWhereRaw("{$field->name} LIKE '%{$_searched_value}%'");
+                                            }
+                                        }
+                                    } break;
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        }
+
+        if (isset($_filters['booleanFilters'])) {
+            $Data = $Data->where(function ($q) use ($Blueprints, $_filters) {
+                foreach ($_filters['booleanFilters'] as $_b_search) {
+                    foreach ($Blueprints->fields as $field) {
+                        if ($field->id != $_b_search['id']) continue;
+
+                        if (!is_null($_b_search['value'])) {
+                            $q->where($field->name, (!!$_b_search['value']));
+                        }
+                    }
+                }
+            });
+        }
+
+        if (isset($_filters['fkFieldSearches'])) {
+            $Data = $Data->where(function ($q) use ($Blueprints, $_filters, $_model_withs) {
+                foreach ($_filters['fkFieldSearches'] as $_fk_search) {
+                    if (!is_array($_fk_search['value'])) continue;
+                    if (!count($_fk_search['value'])) continue;
+
+                    foreach ($Blueprints->fields as $field) {
+                        if ($field->id != $_fk_search['id']) continue;
+
+                        if ($field->joins) {
+                            foreach ($field->joins as $_join) {
+                                if ($_join->local_field_id != $field->id) continue;
+
+                                $q->whereHas($_join->model_foreign_function, function ($q) use ($Blueprints, $_filters, $_join, $_fk_search) {
+                                    $q->whereIn($_join->rightField->name, $_fk_search['value']);
+                                });
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        if ($request->has('order-by')) {
+            $_orderBy = json_decode($request->get('order-by'), true);
+
+            if (is_array($_orderBy)) {
+                foreach ($_orderBy as $_order) {
+                    if (!$_order['order']) continue;
+
+                    foreach ($Blueprints->fields as $field) {
+                        if ($field->id != $_order['fieldId']) continue;
+    
+                        $_ORDER = (($_order['order'] == 1) ? 'ASC' : 'DESC');
+                        
+                        // dd($field->name, $_ORDER);
+    
+                        $Data = $Data->orderBy($field->name, $_ORDER);
+                    }
+    
+                }
+            }
+        } else {
+            if (count($_ORDER_FIELDS)) {
+                foreach ($_ORDER_FIELDS as $_ordered_field) {
+                    $Data = $Data->orderBy($_ordered_field, 'ASC');
+                }
+            }
+        }
+
+        if ($Blueprints->primaryKeys) {
+            foreach ($Blueprints->primaryKeys as $primaryKey) {
+                $Data = $Data->orderBy($primaryKey->name, 'desc');
+            }
+        }
+
+        return $Data->get();
+    }
+
+    public function downloadList(Request $request, Table $table)
+    {
+        $User = Auth::user();
+        $path = "public/exports/{$User->id}/$table->id/excel";
+        $_time = time();
+        $filename = "Export_{$table->name}_{$_time}.xlsx";
+        $Data = $this->getData($request, $table);
+
+        $export = new TableExportCollection($table, $Data);
+
+        Excel::store($export,  "{$path}/{$filename}", $this->_DEFAULT_STORAGE_DISK, null, [
+            'visibility' => 'public',
+        ]);
+
+        if (\Storage::disk($this->_DEFAULT_STORAGE_DISK)->exists("{$path}/{$filename}")) {
+            return response()->json([
+                'status' => 1,
+                'filename' => $filename,
+                'download' => \Config::get('app.url') . \Storage::disk($this->_DEFAULT_STORAGE_DISK)->url("{$path}/{$filename}")
+            ]);
+        }
+
+        return response()->json(null, 403);
     }
 
     public function getListOfOptionsByTable(Request $request, Table $table, TableField $visibleField = null)
@@ -333,6 +648,8 @@ class DataController extends XisController
 
         $IDs = self::clearIdValues($ids);
 
+        if (!$Table) return response()->json(['error' => "Invalid Model for Menu", 'model' => $Table, 'menu' => $Menu], 403);
+
         $Data = (new $Table->model)
             ->where(function ($q) use ($IDs, $Table) {
                 foreach ($IDs as $ID) {
@@ -389,7 +706,7 @@ class DataController extends XisController
      */
     public function updateByTable(Request $request, Table $table)
     {
-        $_wait = 2;
+        $_wait = 1;
         $_start_update_at = time();
 
         $validate_rules = [];
@@ -497,7 +814,7 @@ class DataController extends XisController
                 }
 
                 if ((time() - $_start_update_at) < $_wait) {
-                    // sleep($_wait);
+                    sleep($_wait);
                 }
 
                 if (count($_updates)) {
@@ -523,9 +840,8 @@ class DataController extends XisController
 
     public function insertByTable(Request $request, Table $table)
     {
-
-        $_wait = 2;
-        $_start_update_at = time();
+        $_wait = 1;
+        $_start_insert_at = time();
 
         $validate_rules = [];
 
@@ -563,6 +879,10 @@ class DataController extends XisController
         $_valid_data = $request->validate($validate_rules);
 
         if ((new $table->model)->insert($_valid_data)) {
+            if ((time() - $_start_insert_at) < $_wait) {
+                sleep($_wait - ( (INT) date('s', (time() - $_start_insert_at)) ));
+            }
+
             return response()->json($_valid_data, 200);
         } else {
             return response()->json($_valid_data, 403);

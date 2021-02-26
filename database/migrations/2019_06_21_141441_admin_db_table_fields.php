@@ -27,11 +27,12 @@ class AdminDbTableFields extends Migration
             $table->boolean('not_null')->default(false);
             $table->boolean('unique')->default(false);
             $table->text('default_value')->nullable();
-            $table->integer('min_length')->default(0);
-            $table->integer('max_length')->default(0);
+            $table->integer('min_length')->nullable();
+            $table->integer('max_length')->nullable();
             $table->boolean('fillable')->default(true);
             $table->boolean('editable')->default(true);
             $table->boolean('display_in_lists')->default(true);
+            $table->boolean('translate_in_lists')->default(false);
             $table->integer('display_order')->default(0)->nullable();
             $table->string('crud_edit_validation_type', 255)->nullable();
             $table->text('crud_edit_validation_function')->nullable();

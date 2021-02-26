@@ -9,6 +9,8 @@ Route::group([
         'auth:api'
     ]
 ], function () {
+    Route::get('user', [App\Http\Controllers\Admin\UserController::class, 'getSession']);
+
     Route::group(['prefix'=>'menus'], function () {
         Route::get('root', [App\Http\Controllers\Admin\UserController::class, 'getMainMenus']);
         Route::get('root/{mainMenuHash}/submenus', [App\Http\Controllers\Admin\UserController::class, 'getSubmenus']);
@@ -24,6 +26,7 @@ Route::group([
     Route::group(['prefix'=>'dictionary'], function () {
         Route::get('', [App\Http\Controllers\Admin\SystemController::class, 'getDictionary']);
         Route::post('translate', [App\Http\Controllers\Admin\SystemController::class, 'translateWord']);
+        Route::post('bulk-translate', [App\Http\Controllers\Admin\SystemController::class, 'translateManyWords']);
     });
 });
 

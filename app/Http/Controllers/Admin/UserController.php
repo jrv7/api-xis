@@ -5,9 +5,18 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\{Admin\Menu};
+use Auth;
 
 class UserController extends Controller
 {
+    public function getSession(Request $request)
+    {
+        if (Auth::check()) {
+            return response()->json($request->user()->load('defaultMenu'), 200);
+        } else {
+            return response()->json(null, 401);
+        }
+    }
     public function getMainMenus(Request $request)
     {
         $Roles = $request->user()->roles;

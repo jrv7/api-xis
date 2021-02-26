@@ -21,7 +21,7 @@ class RelatedTable extends Model
 
     public function jointField()
     {
-        return $this->belongsTo(TableField::class, 'joint_field_id');
+        return $this->belongsTo(TableFieldJoin::class, 'joint_field_id', 'remote_field_id');
     }
 
     public function jointMenu()

@@ -28,19 +28,21 @@ class SystemController extends XisController
     {
         $Dictionary = [];
 
+        $_laguage = $request->has('language') ? $request->get('language') : 1;
+
         $Words = Dictionary::with('translations')
-            ->whereHas('translations', function ($q) {
-                $q->where('language_id', 1);
+            ->whereHas('translations', function ($q) use ($_laguage) {
+                $q->where('language_id', $_laguage);
             })
             ->get();
         
         if ($Words->isNotEmpty()) {
             foreach ($Words as $word) {
-                $word = $word->toArray();
+                $_translations = $word->translations->toArray();
 
                 $Dictionary[] = [
-                    'word' => $word['word'],
-                    'translation' => (isset($word['translations'][0]) ? $word['translations'][0]['translation'] : "_{$word['word']}_")
+                    'word' => $word->word,
+                    'translation' => (isset($_translations[$_laguage - 1]) ? ($_translations[$_laguage - 1]['translation']) : "_{$word->word}_")
                 ];
             }
         }
@@ -82,6 +84,46 @@ class SystemController extends XisController
         sleep(1);
 
         return response()->json($Translation, 200);
+    }
+
+    public function translateManyWords(Request $request)
+    {
+        $Language = Language::findOrFail($request->get('language'));
+
+        $translated = [];
+
+        foreach ($request->get('words') as $_word) {
+            $Word = Dictionary::where('word', trim($_word['word']))
+                ->get();
+
+            if ($Word->isNotEmpty()) {
+                $Word = $Word->first();
+            } else {
+                $Word = new Dictionary;
+                $Word->word = trim($_word['word']);
+
+                $Word->save();
+            }
+
+            $Translation = DictionaryTranslation::with(['word'])
+                ->where('language_id', $request->get('language'))
+                ->where('dictionary_id', $Word->id)
+                ->get();
+
+            if ($Translation->isNotEmpty()) {
+                $Translation = $Translation->first();
+            } else {
+                $Translation = new DictionaryTranslation;
+                $Translation->language_id = $request->get('language');
+                $Translation->dictionary_id = $Word->id;
+                $Translation->translation = $_word['translation'];
+                $Translation->save();
+            }
+
+            $translated[] = $Translation->load('word');;
+        }
+
+        return response()->json($translated, 200);
     }
 
     public function makeModelFile(Request $request, $table_id = null)

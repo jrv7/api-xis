@@ -41,20 +41,19 @@ class XisModel extends Indexer {
 
             // dd('DD after updating', $History);
             // dd("Atualizando a data de modificacao da tabela {$Model->Table->name}");
-            $updated_at = \App\Models\Admin\Table::where('id', $Model->Table->id)
-                ->get();
+            if ($Model->Table) {
+                $updated_at = \App\Models\Admin\Table::where('id', $Model->Table->id)
+                    ->get();
 
-            if ($updated_at->isNotEmpty()) {
-                $updated_at = $updated_at->first();
-                $datahora = explode(' ', microtime());
-                $datahora = date("Y-m-d H:i:s.", $datahora[1]) . ($datahora[0] * 1000000);
-                $updated_at->updated_at = $datahora;
-                // $updated_at->updated_at = time();
-                $updated_at->save();
+                if ($updated_at->isNotEmpty()) {
+                    $updated_at = $updated_at->first();
+                    $datahora = explode(' ', microtime());
+                    $datahora = date("Y-m-d H:i:s.", $datahora[1]) . ($datahora[0] * 1000000);
+                    $updated_at->updated_at = $datahora;
+                    // $updated_at->updated_at = time();
+                    $updated_at->save();
+                }
             }
-
-            unset($Model->Table);
-            unset($Model->User);
         });
 
         self::updated(function($Model){

@@ -11,7 +11,7 @@ class Menu extends Model
 
     public function table()
     {
-        return $this->belongsTo(Table::class, 'db_table_id');
+        return $this->belongsTo(Table::class, 'table_id');
     }
 
     public function fatherMenu()

@@ -1410,7 +1410,7 @@ console.log(\'DB-Function: Disable "opt_show_menu" on "route" differente from th
     array (
         'table_id' => 3,
         'type_id' => 10,
-        'name' => 'db_table_id',
+        'name' => 'table_id',
         'placeholder' => '',
                 'help_text' => '',
                 'primary_key' => false,

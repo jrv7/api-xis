@@ -10,7 +10,8 @@ Route::group([
     ]
 ], function () {
     Route::group(['prefix'=>'list'], function () {
-        Route::get('{table}', [App\Http\Controllers\Admin\DataController::class, 'getList']);
+        Route::get('{table}', [App\Http\Controllers\Admin\DataController::class, 'getList'])->where('table', '[0-9]+');
+        Route::get('{table}/download', [App\Http\Controllers\Admin\DataController::class, 'downloadList'])->where('table', '[0-9]+');
     });
     Route::group(['prefix'=>'view'], function () {
         Route::get('by-menu/{menu_hash}/{ids}', [App\Http\Controllers\Admin\DataController::class, 'getDataByMenu']);
