@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Auth;
 use App\Models\{
     Admin\Menu,
     Admin\Table,
@@ -32,19 +33,30 @@ class XisController extends Controller
 
         $_return['db'] = self::getBlueprint($Menu->table_id);
 
+        if (!$_return['db']) {
+            return response()->json(['error' => "Could not access table {$Menu->table_id}. Permission not granted"], 401);
+        }
+
         return $_return;
     }
 
     protected static function getBlueprintsFromTable(Table $table)
     {
-        return [
+        $_return = [
             'db' => self::getBlueprint($table->id)
         ];
+
+        if (!$_return['db']) {
+            return response()->json(['error' => "Could not access table {$table->id}. Permission not granted"], 401);
+        }
+
+        return $_return;
     }
 
     private static function getBlueprint($table_id)
     {
-        return Table::with([
+        $User = Auth::user();
+        $return = Table::with([
                 'primaryKeys.type',
                 'listActions',
                 'listActions.menu',
@@ -74,6 +86,25 @@ class XisController extends Controller
                 'fields.joins.visibleField',
                 'fields.joins.visibleField.table',
             ])
-            ->findOrFail($table_id);
+            ->select('db_tables.*')
+            ->join('role_has_permissions_in_tables AS rpt', 'rpt.table_id', '=', 'db_tables.id')
+            ->join('permissions', 'permissions.id', '=', 'rpt.permission_id')
+            ->join('roles', 'roles.id', '=', 'rpt.role_id')
+            ->join('user_has_roles AS ur', 'ur.role_id', '=', 'roles.id')
+            ->join('users', function ($q) use ($User) {
+                $q->on('users.id', '=', 'ur.user_id');
+                $q->where('users.id', $User->id);
+            })
+            ->whereIn('permissions.name', [
+                'read'
+            ])
+            ->groupBy('db_tables.id')
+            ->find($table_id);
+
+        if ($return) {
+            return $return;
+        } else {
+            return null;
+        }
     }
 }

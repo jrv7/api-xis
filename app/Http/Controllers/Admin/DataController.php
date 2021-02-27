@@ -638,6 +638,7 @@ class DataController extends XisController
 
     public function getDataByMenu(Request $request, $menu_hash, $ids)
     {
+        $_model_withs = [];
         $Menu = Menu::with(['table'])
             ->where('menu_url_hash', $menu_hash)
             ->first();
@@ -649,6 +650,44 @@ class DataController extends XisController
         $IDs = self::clearIdValues($ids);
 
         if (!$Table) return response()->json(['error' => "Invalid Model for Menu", 'model' => $Table, 'menu' => $Menu], 403);
+
+        foreach ($Table->fields as $field) {
+            if ($field->type->id != 10) continue;
+
+            foreach ($field->joins as $_join) {
+                if (!$_join->rightField) continue;
+                if (!$_join->rightField->table) continue;
+
+                if (method_exists((new $Table->model), $_join->model_foreign_function)) {
+                    $_model_withs[] = mb_strtolower($_join->model_foreign_function);
+                } else {
+                    if ($_join->leftField) {
+                        $_func_name = str_replace('_id', '', $_join->leftField->name);
+
+                        if (method_exists((new $Table->model), $_func_name)) {
+                            $_model_withs[] = mb_strtolower($_func_name);
+
+                            \DB::table('db_table_field_joins')
+                                ->where('relation_type_id', $_join->relation_type_id)
+                                ->where('local_field_id', $_join->local_field_id)
+                                ->where('remote_field_id', $_join->remote_field_id)
+                                ->where('remote_field_id', $_join->remote_field_id)
+                                ->update(
+                                    [
+                                        'model_foreign_function' => $_func_name
+                                    ]
+                                );
+                            $_join->model_foreign_function = $_func_name;
+                        } else {
+                            // dd($_join->leftField);
+                        }
+                    } else {
+                        // dd($_join->leftField);
+                    }
+                    // dd($_join->leftField);
+                }
+            }
+        }
 
         $Data = (new $Table->model)
             ->where(function ($q) use ($IDs, $Table) {
@@ -663,7 +702,13 @@ class DataController extends XisController
                         $q->where($field->name, $ID['value']);
                     }
                 }
-            })
+            });
+
+        if (count($_model_withs)) {
+            $Data = $Data->with($_model_withs);
+        }
+
+        $Data = $Data
             ->get();
 
         if ($Data->isNotEmpty()) {

@@ -10,6 +10,8 @@ class AdminMenusTableSeeder extends Seeder
     /**
      * Auto generated seed file
      *
+     * self::getTableId('SEARCH_TABLE_NAME', 1), // 
+     * 
      * @return void
      */
     public function run()
@@ -19,7 +21,6 @@ class AdminMenusTableSeeder extends Seeder
         \DB::table($tableName)->delete();
         
         \DB::table($tableName)->insert(array (
-            0 => 
             array (
                 'id' => 2,
                 'father_menu_id' => 1,
@@ -28,7 +29,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '8084d2014eff3a7b21d7d031f36279eb',
-                'table_id' => 1,
+                'table_id' => self::getTableId('home', 1), // 1,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -36,16 +37,15 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            1 => 
             array (
                 'id' => 14,
                 'father_menu_id' => 400,
-                'menu_title' => 'ADICIONAR_PERFIL',
+                'menu_title' => 'EDITAR_PERFIL',
                 'route' => 'DEFAULT_URL',
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'dc211d992b7e397b158d3103f2b9cf5a',
-                'table_id' => NULL,
+                'table_id' => self::getTableId('roles', 1), // 21,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -53,7 +53,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            2 => 
             array (
                 'id' => 15,
                 'father_menu_id' => 400,
@@ -62,7 +61,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'de2e2b248a0ba65ed3f11c2bdf6c9a53',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -70,7 +69,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            3 => 
             array (
                 'id' => 33,
                 'father_menu_id' => 31,
@@ -79,7 +77,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'table',
                 'menu_url_hash' => '71deca3bdc0f642e4ce1fa892929da7a',
-                'table_id' => 6,
+                'table_id' => self::getTableId('db_tables', 1), // 6,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -87,7 +85,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            4 => 
             array (
                 'id' => 37,
                 'father_menu_id' => 31,
@@ -96,7 +93,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'b832bac46147eab1b8dde6852058f864',
-                'table_id' => 11,
+                'table_id' => self::getTableId('db_table_fields', 1), // 11,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -104,7 +101,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            5 => 
             array (
                 'id' => 100,
                 'father_menu_id' => NULL,
@@ -113,7 +109,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'cogs',
                 'menu_url_hash' => '9212b503339c08ed8a0360f0dd4912cd',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -121,7 +117,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            6 => 
             array (
                 'id' => 16,
                 'father_menu_id' => 400,
@@ -130,7 +125,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '972dc026d07b74a3918783b74a929cd6',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -138,7 +133,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            7 => 
             array (
                 'id' => 4,
                 'father_menu_id' => 100,
@@ -147,7 +141,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'users',
                 'menu_url_hash' => '987f94b6b2866343e9c54edd250fc259',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -155,7 +149,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            8 => 
             array (
                 'id' => 7,
                 'father_menu_id' => 4,
@@ -164,7 +157,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'c038d4c071567f8673f2e51a4069f25c',
-                'table_id' => 2,
+                'table_id' => self::getTableId('users', 1), // 2,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -172,7 +165,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            9 => 
             array (
                 'id' => 41,
                 'father_menu_id' => 4,
@@ -181,7 +173,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => NULL,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '7475ae2fd02e1086cea4973630445a45',
-                'table_id' => 2,
+                'table_id' => self::getTableId('users', 1), // 2,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -189,7 +181,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            10 => 
             array (
                 'id' => 43,
                 'father_menu_id' => 100,
@@ -198,7 +189,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'screwdriver',
                 'menu_url_hash' => 'd01fef50b51726275f3feca3c70e4dea',
-                'table_id' => 3,
+                'table_id' => self::getTableId('menus', 1), // 3,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -206,7 +197,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            11 => 
             array (
                 'id' => 45,
                 'father_menu_id' => 44,
@@ -215,7 +205,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => NULL,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'ea134e4b4256fc2f0f88109021c9b07f',
-                'table_id' => 32,
+                'table_id' => self::getTableId('dictionary', 1), // 32,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -223,7 +213,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            12 => 
             array (
                 'id' => 47,
                 'father_menu_id' => 44,
@@ -232,7 +221,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '9ae9cb587594021cd28e7cce953d97f6',
-                'table_id' => 33,
+                'table_id' => self::getTableId('dictionary_translations', 1), // 33,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -240,7 +229,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            13 => 
             array (
                 'id' => 49,
                 'father_menu_id' => 31,
@@ -249,7 +237,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '79784338ee2e9c6c1185a24465f743db',
-                'table_id' => 13,
+                'table_id' => self::getTableId('db_table_field_joins', 1), // 13,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -257,7 +245,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            14 => 
             array (
                 'id' => 51,
                 'father_menu_id' => 31,
@@ -266,7 +253,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '072d411b7681fc2091418482db2735ad',
-                'table_id' => 13,
+                'table_id' => self::getTableId('db_table_field_joins', 1), // 13,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -274,7 +261,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            15 => 
             array (
                 'id' => 5,
                 'father_menu_id' => 100,
@@ -283,7 +269,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'bars',
                 'menu_url_hash' => '9f6e4f167614a21b8de52e38531a1662',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -291,7 +277,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            16 => 
             array (
                 'id' => 200,
                 'father_menu_id' => NULL,
@@ -300,7 +285,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'icon-prd',
                 'menu_url_hash' => '8f11553e223f69cd6938f0e0a5ca3106',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -308,7 +293,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            17 => 
             array (
                 'id' => 11,
                 'father_menu_id' => 200,
@@ -317,7 +301,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '079d8e7f8990b3a5d281798269d0b79d',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -325,7 +309,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            18 => 
             array (
                 'id' => 10,
                 'father_menu_id' => 200,
@@ -334,7 +317,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'icon-prd',
                 'menu_url_hash' => '90b370c685f47bc1f300559a24d4b03c',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -342,7 +325,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            19 => 
             array (
                 'id' => 300,
                 'father_menu_id' => NULL,
@@ -351,7 +333,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => 'icon-mtg',
                 'menu_url_hash' => 'a79441ea707855e0896395fd9baaf0db',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -359,7 +341,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            20 => 
             array (
                 'id' => 28,
                 'father_menu_id' => 300,
@@ -368,7 +349,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '4c1ce9bd11d5e36158c4d8fa3dc8e9f1',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -376,7 +357,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            21 => 
             array (
                 'id' => 32,
                 'father_menu_id' => 5,
@@ -385,7 +365,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'f7297421861662291eddeb6179378a0d',
-                'table_id' => 3,
+                'table_id' => self::getTableId('menus', 1), // 3,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -393,7 +373,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            22 => 
             array (
                 'id' => 36,
                 'father_menu_id' => 31,
@@ -402,7 +381,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'table',
                 'menu_url_hash' => '51d1147595b4dc439c0cb4683ccd7322',
-                'table_id' => 6,
+                'table_id' => self::getTableId('db_tables', 1), // 6,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -410,7 +389,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            23 => 
             array (
                 'id' => 8,
                 'father_menu_id' => 200,
@@ -419,7 +397,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '784949445fe212956e95a460fb824d7c',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -427,7 +405,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            24 => 
             array (
                 'id' => 23,
                 'father_menu_id' => 100,
@@ -436,7 +413,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'arrow-down',
                 'menu_url_hash' => '3625f554c8528bf453c5a695d6942f84',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -444,7 +421,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            25 => 
             array (
                 'id' => 31,
                 'father_menu_id' => 100,
@@ -453,7 +429,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'database',
                 'menu_url_hash' => '965ac7557dc20d67047043ecbed46ae4',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -461,7 +437,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            26 => 
             array (
                 'id' => 6,
                 'father_menu_id' => 4,
@@ -470,7 +445,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'bf4fc0f7f9966228b29a2b6e1813f0b7',
-                'table_id' => 2,
+                'table_id' => self::getTableId('users', 1), // 2,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -478,7 +453,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            27 => 
             array (
                 'id' => 40,
                 'father_menu_id' => 31,
@@ -487,7 +461,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '997423f712aa8fd8e10f38a9afbb3c48',
-                'table_id' => 6,
+                'table_id' => self::getTableId('db_tables', 1), // 6,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -495,7 +469,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            28 => 
             array (
                 'id' => 44,
                 'father_menu_id' => 100,
@@ -504,7 +477,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'book',
                 'menu_url_hash' => 'dca0aae7fb14c689e8757742c76045a6',
-                'table_id' => 2,
+                'table_id' => self::getTableId('users', 1), // 2,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -512,7 +485,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            29 => 
             array (
                 'id' => 46,
                 'father_menu_id' => 44,
@@ -521,7 +493,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '08bc460efd6d7b6b5501bf115c8c7ebe',
-                'table_id' => 32,
+                'table_id' => self::getTableId('dictionary', 1), // 32,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -529,7 +501,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            30 => 
             array (
                 'id' => 50,
                 'father_menu_id' => 5,
@@ -538,7 +509,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => NULL,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'c6177de3c5d54b9edc1e2e04fcfe43d5',
-                'table_id' => 3,
+                'table_id' => self::getTableId('menus', 1), // 3,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -546,7 +517,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            31 => 
             array (
                 'id' => 9,
                 'father_menu_id' => 8,
@@ -555,7 +525,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'icon-prd',
                 'menu_url_hash' => '1cf31abde0e4254b12fc09c499933f64',
-                'table_id' => 37,
+                'table_id' => self::getTableId('articles', 2), // 37,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -563,7 +533,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            32 => 
             array (
                 'id' => 52,
                 'father_menu_id' => 31,
@@ -572,7 +541,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => NULL,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '8f05329a3c2a90e9f2b6fa3f5e822273',
-                'table_id' => 13,
+                'table_id' => self::getTableId('db_table_field_joins', 1), // 13,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -580,7 +549,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            33 => 
             array (
                 'id' => 38,
                 'father_menu_id' => 31,
@@ -589,7 +557,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '48d507a1af1f3f26b0d96ab176107a96',
-                'table_id' => 11,
+                'table_id' => self::getTableId('db_table_fields', 1), // 11,
                 'return_to_menu_id' => 37,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -597,7 +565,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            34 => 
             array (
                 'id' => 48,
                 'father_menu_id' => 31,
@@ -606,7 +573,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => NULL,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '0d305d3368202beb084b757d11394e31',
-                'table_id' => 11,
+                'table_id' => self::getTableId('db_table_fields', 1), // 11,
                 'return_to_menu_id' => 37,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -614,7 +581,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            35 => 
             array (
                 'id' => 1,
                 'father_menu_id' => NULL,
@@ -623,7 +589,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'icon-home',
                 'menu_url_hash' => 'ebc11b9610e2dbc927c230572624a014',
-                'table_id' => 1,
+                'table_id' => self::getTableId('home', 1), // 1,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -631,7 +597,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            36 => 
             array (
                 'id' => 22,
                 'father_menu_id' => 8,
@@ -640,7 +605,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'cf4f1627d6deceec9e44960a34e8c3a1',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => 22,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -648,7 +613,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            37 => 
             array (
                 'id' => 59,
                 'father_menu_id' => 31,
@@ -657,7 +621,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'database',
                 'menu_url_hash' => '2fdce19f21d3424597bbfc92a269bce3',
-                'table_id' => 9,
+                'table_id' => self::getTableId('databases', 1), // 9,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -665,7 +629,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            38 => 
             array (
                 'id' => 25,
                 'father_menu_id' => 23,
@@ -674,7 +637,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'd168545cfcb74d58de1b443e604f6954',
-                'table_id' => 15,
+                'table_id' => self::getTableId('importers', 1), // 15,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -682,7 +645,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            39 => 
             array (
                 'id' => 12,
                 'father_menu_id' => 10,
@@ -691,7 +653,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '087191174a91f7d5a73acb8a1d760a34',
-                'table_id' => 39,
+                'table_id' => self::getTableId('produtos', 2), // 39,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -699,7 +661,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            40 => 
             array (
                 'id' => 26,
                 'father_menu_id' => 5,
@@ -708,7 +669,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '24c007b328f19943bc53bf4715f9fe6b',
-                'table_id' => 3,
+                'table_id' => self::getTableId('menus', 1), // 3,
                 'return_to_menu_id' => 48,
                 'custom_crud_view' => NULL,
                 'custom_controller' => 'Menus',
@@ -716,41 +677,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            41 => 
-            array (
-                'id' => 53,
-                'father_menu_id' => 100,
-                'menu_title' => 'TESTES',
-                'route' => 'DEFAULT_URL',
-                'opt_show_menu' => 1,
-                'class_fa_icon' => NULL,
-                'menu_url_hash' => 'ac458410f4ada3be8f576477eef41ce3',
-                'table_id' => 41,
-                'return_to_menu_id' => 100,
-                'custom_crud_view' => NULL,
-                'custom_controller' => NULL,
-                'custom_first_method_get' => NULL,
-                'system_id' => 1,
-                'custom_first_method_post' => NULL,
-            ),
-            42 => 
-            array (
-                'id' => 54,
-                'father_menu_id' => 53,
-                'menu_title' => 'LISTAR_TESTES',
-                'route' => 'DEFAULT_URL',
-                'opt_show_menu' => 1,
-                'class_fa_icon' => NULL,
-                'menu_url_hash' => '2c7ac929a02f2857b8d15bef01193dd0',
-                'table_id' => 41,
-                'return_to_menu_id' => 53,
-                'custom_crud_view' => NULL,
-                'custom_controller' => NULL,
-                'custom_first_method_get' => NULL,
-                'system_id' => 1,
-                'custom_first_method_post' => NULL,
-            ),
-            43 => 
             array (
                 'id' => 24,
                 'father_menu_id' => 23,
@@ -759,7 +685,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'cee5d729e0f43173fc56d65ec4afb222',
-                'table_id' => 15,
+                'table_id' => self::getTableId('importers', 1), // 15,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -767,7 +693,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            44 => 
             array (
                 'id' => 39,
                 'father_menu_id' => 31,
@@ -776,7 +701,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'database',
                 'menu_url_hash' => '5d6be589684984505435e6b53a6874f7',
-                'table_id' => 23,
+                'table_id' => self::getTableId('db_related_tables', 1), // 23,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -784,7 +709,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            45 => 
             array (
                 'id' => 400,
                 'father_menu_id' => 100,
@@ -793,7 +717,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'address-card',
                 'menu_url_hash' => 'fdbcc17be502e5192b8dfe1edfdfba38',
-                'table_id' => 2,
+                'table_id' => self::getTableId('users', 1), // 2,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -801,7 +725,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            46 => 
             array (
                 'id' => 58,
                 'father_menu_id' => 5,
@@ -810,7 +733,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '673acf5da3f4a2a96293ff0fb3781eea',
-                'table_id' => 31,
+                'table_id' => self::getTableId('menu_list_actions', 1), // 31,
                 'return_to_menu_id' => 26,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -818,7 +741,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            47 => 
             array (
                 'id' => 61,
                 'father_menu_id' => 31,
@@ -827,7 +749,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '99e8f8df060c56aec39585267bd99f5e',
-                'table_id' => 9,
+                'table_id' => self::getTableId('databases', 1), // 9,
                 'return_to_menu_id' => 59,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -835,7 +757,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            48 => 
             array (
                 'id' => 13,
                 'father_menu_id' => 11,
@@ -844,7 +765,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '41fa02c4e9a3ecbcde545b8bd7e3c9ec',
-                'table_id' => 38,
+                'table_id' => self::getTableId('modelos', 2), // 38,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -852,7 +773,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            49 => 
             array (
                 'id' => 62,
                 'father_menu_id' => 5,
@@ -861,7 +781,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '132878f048adc0cb452f43bca3abcd60',
-                'table_id' => 24,
+                'table_id' => self::getTableId('menus_related', 1), // 24,
                 'return_to_menu_id' => 26,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -869,7 +789,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            50 => 
             array (
                 'id' => 30,
                 'father_menu_id' => 28,
@@ -878,7 +797,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '510554cf118fc95de2b9d4f3c50d141c',
-                'table_id' => 37,
+                'table_id' => self::getTableId('articles', 2), // 37,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -886,7 +805,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            51 => 
             array (
                 'id' => 3,
                 'father_menu_id' => 2,
@@ -895,7 +813,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'fdc8e290421fe8e99a4833ca6851148e',
-                'table_id' => 1,
+                'table_id' => self::getTableId('home', 1), // 1,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -903,7 +821,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            52 => 
             array (
                 'id' => 63,
                 'father_menu_id' => 31,
@@ -912,7 +829,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '350c4983a110fb4ca8b22485ada8c51b',
-                'table_id' => 9,
+                'table_id' => self::getTableId('databases', 1), // 9,
                 'return_to_menu_id' => 60,
                 'custom_crud_view' => 'Admin.Menus.view',
                 'custom_controller' => NULL,
@@ -920,7 +837,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            53 => 
             array (
                 'id' => 29,
                 'father_menu_id' => 28,
@@ -929,7 +845,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '6d44910fe843bb9b9b3ce4b54f27da74',
-                'table_id' => 46,
+                'table_id' => self::getTableId('cards', 3), // 46,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -937,7 +853,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            54 => 
             array (
                 'id' => 64,
                 'father_menu_id' => 5,
@@ -946,7 +861,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'f95c7754b516afc736b77d639647fdf3',
-                'table_id' => 24,
+                'table_id' => self::getTableId('menus_related', 1), // 24,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -954,7 +869,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            55 => 
             array (
                 'id' => 42,
                 'father_menu_id' => 5,
@@ -963,7 +877,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '72225452abd48f8a7326234a890269f3',
-                'table_id' => 24,
+                'table_id' => self::getTableId('menus_related', 1), // 24,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -971,7 +885,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            56 => 
             array (
                 'id' => 65,
                 'father_menu_id' => 5,
@@ -980,7 +893,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => NULL,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '74a3c738207d3e025d296250ca5722e9',
-                'table_id' => 24,
+                'table_id' => self::getTableId('menus_related', 1), // 24,
                 'return_to_menu_id' => 42,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -988,7 +901,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            57 => 
             array (
                 'id' => 60,
                 'father_menu_id' => 31,
@@ -997,7 +909,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => 'e3d32941c8f66324f6f067f3718cfda8',
-                'table_id' => 9,
+                'table_id' => self::getTableId('databases', 1), // 9,
                 'return_to_menu_id' => 31,
                 'custom_crud_view' => 'Admin.Menus.view',
                 'custom_controller' => NULL,
@@ -1005,7 +917,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            58 => 
             array (
                 'id' => 66,
                 'father_menu_id' => 31,
@@ -1014,7 +925,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 0,
                 'class_fa_icon' => 'wrench',
                 'menu_url_hash' => '3a5f8adc972ff33ba6acc4ad925f2ebf',
-                'table_id' => 6,
+                'table_id' => self::getTableId('db_tables', 1), // 6,
                 'return_to_menu_id' => 33,
                 'custom_crud_view' => NULL,
                 'custom_controller' => 'Tables',
@@ -1022,7 +933,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            59 => 
             array (
                 'id' => 500,
                 'father_menu_id' => NULL,
@@ -1031,7 +941,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => 'icon-adm',
                 'menu_url_hash' => 'bee68edb0831803be707445c59933d6d',
-                'table_id' => NULL,
+                'table_id' =>NULL,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -1039,7 +949,6 @@ class AdminMenusTableSeeder extends Seeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ),
-            60 => 
             array (
                 'id' => 67,
                 'father_menu_id' => 44,
@@ -1048,7 +957,7 @@ class AdminMenusTableSeeder extends Seeder
                 'opt_show_menu' => 1,
                 'class_fa_icon' => NULL,
                 'menu_url_hash' => '826aa10c3f33723a395741a784a526c0',
-                'table_id' => 33,
+                'table_id' => self::getTableId('dictionary_translations', 1), // 33,
                 'return_to_menu_id' => NULL,
                 'custom_crud_view' => NULL,
                 'custom_controller' => NULL,
@@ -1077,5 +986,19 @@ class AdminMenusTableSeeder extends Seeder
         \DB::statement("alter sequence admin.menus_id_seq restart with {$total_tabela}");
 
         echo PHP_EOL . PHP_EOL;
+    }
+
+    private static function getTableId($table_name, $database_id = 1)
+    {
+        $_table = \DB::table('db_tables')
+            ->where('database_id', $database_id)
+            ->where('name', $table_name)
+            ->get();
+
+        if ($_table->isNotEmpty()) {
+            return $_table->first()->id;
+        } else {
+            return null;
+        }
     }
 }

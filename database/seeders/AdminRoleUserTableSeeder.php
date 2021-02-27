@@ -22,8 +22,7 @@ class AdminRoleUserTableSeeder extends Seeder
             0 => 
             array (
                 'role_id' => 1,
-                'user_id' => 1,
-                'user_type' => 'Admin',
+                'user_id' => 1
             ),
         ));
         

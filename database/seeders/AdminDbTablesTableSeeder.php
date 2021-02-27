@@ -20,7 +20,7 @@ class AdminDbTablesTableSeeder extends Seeder
         
         \DB::table($tableName)->insert(array (
             array (
-                'id' => 10,
+                // 'id' => 10,
                 'database_id' => 1,
                 'name' => 'db_table_types',
                 'table_type_id' => 1,
@@ -33,7 +33,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 33,
+                // 'id' => 33,
                 'database_id' => 1,
                 'name' => 'dictionary_translations',
                 'table_type_id' => 1,
@@ -46,7 +46,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 14,
+                // 'id' => 14,
                 'database_id' => 1,
                 'name' => 'db_table_relation_types',
                 'table_type_id' => 1,
@@ -59,7 +59,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 36,
+                // 'id' => 36,
                 'database_id' => 1,
                 'name' => 'languages',
                 'table_type_id' => 1,
@@ -72,7 +72,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 38,
+                // 'id' => 38,
                 'database_id' => 2,
                 'name' => 'modelos',
                 'table_type_id' => 1,
@@ -85,7 +85,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 39,
+                // 'id' => 39,
                 'database_id' => 2,
                 'name' => 'produtos',
                 'table_type_id' => 1,
@@ -98,7 +98,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 40,
+                // 'id' => 40,
                 'database_id' => 2,
                 'name' => 'etapas_vida',
                 'table_type_id' => 1,
@@ -111,7 +111,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 22,
+                // 'id' => 22,
                 'database_id' => 1,
                 'name' => 'status',
                 'table_type_id' => 1,
@@ -124,7 +124,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 23,
+                // 'id' => 23,
                 'database_id' => 1,
                 'name' => 'db_related_tables',
                 'table_type_id' => 1,
@@ -137,7 +137,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 15,
+                // 'id' => 15,
                 'database_id' => 1,
                 'name' => 'importers',
                 'table_type_id' => 1,
@@ -150,7 +150,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 44,
+                // 'id' => 44,
                 'database_id' => 1,
                 'name' => 'db_update_history_ids',
                 'table_type_id' => 1,
@@ -163,7 +163,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 17,
+                // 'id' => 17,
                 'database_id' => 1,
                 'name' => 'migrations',
                 'table_type_id' => 1,
@@ -176,7 +176,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 45,
+                // 'id' => 45,
                 'database_id' => 1,
                 'name' => 'db_update_history_changes',
                 'table_type_id' => 1,
@@ -189,7 +189,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 18,
+                // 'id' => 18,
                 'database_id' => 1,
                 'name' => 'permissions',
                 'table_type_id' => 1,
@@ -202,7 +202,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 32,
+                // 'id' => 32,
                 'database_id' => 1,
                 'name' => 'dictionary',
                 'table_type_id' => 1,
@@ -215,7 +215,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 9,
+                // 'id' => 9,
                 'database_id' => 1,
                 'name' => 'databases',
                 'table_type_id' => 1,
@@ -228,7 +228,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 12,
+                // 'id' => 12,
                 'database_id' => 1,
                 'name' => 'db_table_field_types',
                 'table_type_id' => 1,
@@ -241,7 +241,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 24,
+                // 'id' => 24,
                 'database_id' => 1,
                 'name' => 'menus_related',
                 'table_type_id' => 1,
@@ -254,7 +254,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 2,
+                // 'id' => 2,
                 'database_id' => 1,
                 'name' => 'users',
                 'table_type_id' => 1,
@@ -267,7 +267,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 31,
+                // 'id' => 31,
                 'database_id' => 1,
                 'name' => 'menu_list_actions',
                 'table_type_id' => 1,
@@ -280,7 +280,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 13,
+                // 'id' => 13,
                 'database_id' => 1,
                 'name' => 'db_table_field_joins',
                 'table_type_id' => 1,
@@ -293,7 +293,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 26,
+                // 'id' => 26,
                 'database_id' => 1,
                 'name' => 'user_has_roles',
                 'table_type_id' => 1,
@@ -306,7 +306,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 27,
+                // 'id' => 27,
                 'database_id' => 1,
                 'name' => 'db_table_user_configurations',
                 'table_type_id' => 1,
@@ -319,7 +319,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 19,
+                // 'id' => 19,
                 'database_id' => 1,
                 'name' => 'role_menu',
                 'table_type_id' => 1,
@@ -332,7 +332,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 5,
+                // 'id' => 5,
                 'database_id' => 1,
                 'name' => 'vw_father_menus',
                 'table_type_id' => 5,
@@ -345,7 +345,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 20,
+                // 'id' => 20,
                 'database_id' => 1,
                 'name' => 'role_menu_permission',
                 'table_type_id' => 1,
@@ -358,7 +358,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 28,
+                // 'id' => 28,
                 'database_id' => 1,
                 'name' => 'password_resets',
                 'table_type_id' => 1,
@@ -371,7 +371,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 21,
+                // 'id' => 21,
                 'database_id' => 1,
                 'name' => 'roles',
                 'table_type_id' => 1,
@@ -384,7 +384,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 29,
+                // 'id' => 29,
                 'database_id' => 1,
                 'name' => 'permission_role',
                 'table_type_id' => 1,
@@ -397,7 +397,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 30,
+                // 'id' => 30,
                 'database_id' => 1,
                 'name' => 'permission_user',
                 'table_type_id' => 1,
@@ -410,20 +410,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 41,
-                'database_id' => 1,
-                'name' => 'testes',
-                'table_type_id' => 1,
-                'model' => null,
-                'default_list_action_field_id' => NULL,
-                'total_rows' => 3,
-                'created_at' => NULL,
-                'updated_at' => '2018-08-26 04:48:35',
-                'has_timestamps' => false,
-                'indexable' => true,
-            ),
-            array (
-                'id' => 42,
+                // 'id' => 42,
                 'database_id' => 1,
                 'name' => 'db_update_history',
                 'table_type_id' => 1,
@@ -436,7 +423,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 1,
+                // 'id' => 1,
                 'database_id' => 1,
                 'name' => 'home',
                 'table_type_id' => 1,
@@ -449,7 +436,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => false,
             ),
             array (
-                'id' => 37,
+                // 'id' => 37,
                 'database_id' => 2,
                 'name' => 'artigos',
                 'table_type_id' => 1,
@@ -462,7 +449,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 34,
+                // 'id' => 34,
                 'database_id' => 1,
                 'name' => 'vw_remote_table_fields',
                 'table_type_id' => 5,
@@ -475,7 +462,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 6,
+                // 'id' => 6,
                 'database_id' => 1,
                 'name' => 'db_tables',
                 'table_type_id' => 1,
@@ -488,7 +475,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 25,
+                // 'id' => 25,
                 'database_id' => 1,
                 'name' => 'sessions',
                 'table_type_id' => 1,
@@ -501,7 +488,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 46,
+                // 'id' => 46,
                 'database_id' => 3,
                 'name' => 'cards',
                 'table_type_id' => 1,
@@ -514,7 +501,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 11,
+                // 'id' => 11,
                 'database_id' => 1,
                 'name' => 'db_table_fields',
                 'table_type_id' => 1,
@@ -527,7 +514,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 3,
+                // 'id' => 3,
                 'database_id' => 1,
                 'name' => 'menus',
                 'table_type_id' => 1,
@@ -540,7 +527,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 47,
+                // 'id' => 47,
                 'database_id' => 1,
                 'name' => 'db_table_trigger_types',
                 'table_type_id' => 1,
@@ -553,7 +540,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => false,
             ),
             array (
-                'id' => 48,
+                // 'id' => 48,
                 'database_id' => 1,
                 'name' => 'db_table_triggers',
                 'table_type_id' => 1,
@@ -566,7 +553,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => false,
             ),
             array (
-                'id' => 49,
+                // 'id' => 49,
                 'database_id' => 1,
                 'name' => 'db_table_list_actions',
                 'table_type_id' => 1,
@@ -579,7 +566,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 50,
+                // 'id' => 50,
                 'database_id' => 1,
                 'name' => 'db_table_view_right_block',
                 'table_type_id' => 1,
@@ -592,7 +579,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 'indexable' => true,
             ),
             array (
-                'id' => 51,
+                // 'id' => 51,
                 'database_id' => 1,
                 'name' => 'vw_many_to_many_tables',
                 'table_type_id' => 5,

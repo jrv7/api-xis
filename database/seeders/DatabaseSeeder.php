@@ -43,11 +43,11 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminStatusTypesTableSeeder::class);
         $this->call(AdminStatusHasTypesTableSeeder::class);
         $this->call(AdminDbTableTriggerTypesTableSeeder::class);
-        $this->call(AdminDbTableTriggersTableSeeder::class);
+        // $this->call(AdminDbTableTriggersTableSeeder::class);
         $this->call(AdminRoleUserTableSeeder::class);
         $this->call(AdminLayouts::class);
         $this->call(AdminDbTableListActions::class);
-        $this->call(AdminDbTableViewRightBlock::class);
+        // $this->call(AdminDbTableViewRightBlock::class);
         // $this->call(AdminOauthClientsSeeder::class);
         // $this->call(AdminOauthAccessTokens::class);
         // $this->call(AdminOauthPersonalAccessTokens::class);
@@ -56,5 +56,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminMenuListActions::class);
         $this->call(AdminDbTableFieldJoinsTableSeeder::class);
         $this->call(AdminMenuHasActionMenusTableSeeder::class);
+        $this->call(AdminRolesHasPermissionsInTablesSeeder::class);
     }
 }

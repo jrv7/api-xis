@@ -220,7 +220,7 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'remote_field_id' => self::getFieldId('db_tables', 'id'), // 23,
                 'nofield_join_value' => NULL,
                 'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,
-                'model_foreign_function' => table,
+                'model_foreign_function' => 'table',
             ),
             array (
                 'relation_type_id' => 1,
