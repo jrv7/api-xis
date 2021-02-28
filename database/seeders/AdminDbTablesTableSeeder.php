@@ -296,7 +296,7 @@ class AdminDbTablesTableSeeder extends Seeder
                 // 'id' => 26,
                 'database_id' => 1,
                 'name' => 'user_has_roles',
-                'table_type_id' => 1,
+                'table_type_id' => 4,
                 'model' => null,
                 'default_list_action_field_id' => NULL,
                 'total_rows' => 1,
@@ -591,6 +591,19 @@ class AdminDbTablesTableSeeder extends Seeder
                 'has_timestamps' => false,
                 'indexable' => false,
             ),
+            array (
+                // 'id' => 51,
+                'database_id' => 1,
+                'name' => 'role_has_permissions_in_tables',
+                'table_type_id' => self::getTableTypeId('join_n_m_map'), // 5,
+                'model' => null,
+                'default_list_action_field_id' => NULL,
+                'total_rows' => 0,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'has_timestamps' => false,
+                'indexable' => false,
+            ),
         ));
         
         echo "Setando o proximo valor para a sequencia incremental como: ";
@@ -612,5 +625,18 @@ class AdminDbTablesTableSeeder extends Seeder
         \DB::statement("alter sequence admin.db_tables_id_seq restart with {$total_tabela}");
 
         echo PHP_EOL . PHP_EOL;
+    }
+
+    public static function getTableTypeId($type_name)
+    {
+        $_table_type = \DB::table('db_table_types')
+            ->where('name', $type_name)
+            ->get();
+
+        if ($_table_type->isNotEmpty()) {
+            return $_table_type->first()->id;
+        } else {
+            return null;
+        }
     }
 }

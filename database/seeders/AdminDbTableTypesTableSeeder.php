@@ -19,35 +19,33 @@ class AdminDbTableTypesTableSeeder extends Seeder
         \DB::table($tableName)->delete();
         
         \DB::table($tableName)->insert(array (
-            0 => 
             array (
                 'id' => 1,
                 'name' => 'normal',
             ),
-            1 => 
             array (
                 'id' => 2,
                 'name' => 'join_1_1',
             ),
-            2 => 
             array (
                 'id' => 3,
                 'name' => 'join_1_n',
             ),
-            3 => 
             array (
                 'id' => 4,
                 'name' => 'join_n_m',
             ),
-            4 => 
             array (
                 'id' => 5,
                 'name' => 'table_view',
             ),
-            5 => 
             array (
                 'id' => 6,
                 'name' => 'temporary',
+            ),
+            array (
+                'id' => 7,
+                'name' => 'join_n_m_map',
             ),
         ));
         

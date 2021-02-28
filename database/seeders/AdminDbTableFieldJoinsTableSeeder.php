@@ -27,7 +27,7 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
             return $field->id;
         }
 
-        dd($table_name, $field_name);
+        dd('AdminDbTableFieldJoinsTableSeeder', 'Field NOT found', $table_name, $field_name);
 
         return null;
     }
@@ -253,6 +253,30 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
                 'nofield_join_value' => NULL,
                 'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,
                 'model_foreign_function' => NULL,
+            ),
+            array (
+                'relation_type_id' => 1,
+                'local_field_id' => self::getFieldId('role_has_permissions_in_tables', 'role_id'),
+                'remote_field_id' => self::getFieldId('roles', 'id'),
+                'nofield_join_value' => NULL,
+                'remote_visible_field_id' => self::getFieldId('roles', 'display_name'),
+                'model_foreign_function' => 'role',
+            ),
+            array (
+                'relation_type_id' => 1,
+                'local_field_id' => self::getFieldId('role_has_permissions_in_tables', 'permission_id'),
+                'remote_field_id' => self::getFieldId('permissions', 'id'),
+                'nofield_join_value' => NULL,
+                'remote_visible_field_id' => self::getFieldId('permissions', 'display_name'),
+                'model_foreign_function' => 'permission',
+            ),
+            array (
+                'relation_type_id' => 1,
+                'local_field_id' => self::getFieldId('role_has_permissions_in_tables', 'table_id'),
+                'remote_field_id' => self::getFieldId('db_tables', 'id'),
+                'nofield_join_value' => NULL,
+                'remote_visible_field_id' => self::getFieldId('db_tables', 'name'),
+                'model_foreign_function' => 'table',
             ),
             
         ));
