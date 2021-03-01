@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminPermissionRoleTableSeeder extends Seeder
+class AdminPermissionRoleTableSeeder extends XisSeeder
 {
 
     /**
@@ -19,25 +19,21 @@ class AdminPermissionRoleTableSeeder extends Seeder
         \DB::table($tableName)->delete();
         
         \DB::table($tableName)->insert(array (
-            0 => 
             array (
-                'permission_id' => 2,
-                'role_id' => 1,
+                'permission_id' => self::getPermissionId('view'), // 3,
+                'role_id' => self::getRoleId('admin'), // 1,
             ),
-            1 => 
             array (
-                'permission_id' => 3,
-                'role_id' => 1,
+                'permission_id' => self::getPermissionId('create'), // 1,
+                'role_id' => self::getRoleId('admin'), // 1,
             ),
-            2 => 
             array (
-                'permission_id' => 4,
-                'role_id' => 1,
+                'permission_id' => self::getPermissionId('update'), // 2,
+                'role_id' => self::getRoleId('admin'), // 1,
             ),
-            3 => 
             array (
-                'permission_id' => 1,
-                'role_id' => 1,
+                'permission_id' => self::getPermissionId('delete'), // 4,
+                'role_id' => self::getRoleId('admin'), // 1,
             ),
         ));
         

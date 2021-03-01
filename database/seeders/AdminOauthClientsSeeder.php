@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminOauthClientsSeeder extends Seeder
+class AdminOauthClientsSeeder extends XisSeeder
 {
     /**
      * Auto generated seed file

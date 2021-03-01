@@ -86,42 +86,63 @@ class DataController extends XisController
         // dd($Blueprints->model, $_model_withs);
 
         if ($request->has('limiters')) {
-            $_limiters = $request->get('limiters');
+            $_limiters = self::clearIdValues($request->get('limiters'));
 
-            if (substr_count($_limiters, '-')) {
-                if (substr($_limiters, 0, 1) == '-') {
-                    $_limiters = substr($_limiters, 1);
-                }
-
-                if (substr($_limiters, -1) == '-') {
-                    $_limiters = substr($_limiters, 0, -1);
-                }
+            if (count($_limiters)) {
+                foreach ($_limiters as $_limiter) {
                 
-                $_limiters = explode('-', $_limiters);
+                    $_limiter_field_id = $_limiter['field_id'];
+                    $FilterField = TableField::find($_limiter_field_id);
+                    $_limiter_field_value = $_limiter['value'];
 
-                if (count($_limiters)) {
-                    foreach ($_limiters as $_limiter) {
-                        $_limiter_params = explode(':', $_limiter);
-                        
-                        if (isset($_limiter_params[0]) && isset($_limiter_params[1])) {
-                            $_limiter_field_id = $_limiter_params[0];
-                            $_limiter_field_value = $_limiter_params[1];
+                    if ($FilterField) {
+                        // Percorre todos os campos vendo se o ID do campo bate com o do limitador
+                        foreach ($Blueprints->fields as $field) {
+                            if (($field->id != $FilterField->id) && (!$field->primary_key) && $field->type->id != 10) continue;
 
-                            // Percorre todos os campos vendo se o ID do campo bate com o do limitador
-                            foreach ($Blueprints->fields as $field) {
-                                if (($field->id != $_limiter_field_id) && $field->type->id != 10) continue;
-                                if ($field->joins) {
-                                    foreach ($field->joins as $_join) {
-                                        if ($_join->remote_field_id == $_limiter_field_id) {
-                                            $Data->whereHas("{$_join->model_foreign_function}", function ($q) use ($_join, $_limiter_field_value) {
-                                                $q->where($_join->rightField->name, $_limiter_field_value);
-                                            });
-                                        }
+                            if ($field->id == $FilterField->id) {
+                                $Data = $Data->where("{$field->table->name}.{$field->name}", $_limiter_field_value);
+                            }
+
+                            if ($field->joins) {
+                                foreach ($field->joins as $_join) {
+                                    if ($_join->remote_field_id == $FilterField->id) {
+                                        $Data->whereHas("{$_join->model_foreign_function}", function ($q) use ($_join, $_limiter_field_value) {
+                                            $q->where($_join->rightField->name, $_limiter_field_value);
+                                        });
                                     }
                                 }
                             }
                         }
 
+                        foreach ($Blueprints->joinedTables as $joinedTable) {
+                            if ($joinedTable->rightTable) {
+                                if ($joinedTable->rightTable->manyToManyTables) {
+                                    foreach ($joinedTable->rightTable->manyToManyTables as $manyToManyTable) {
+                                        if ($manyToManyTable->pivotTable) {
+                                            foreach ($manyToManyTable->pivotTable->fields as $pivot_t_field) {
+                                                if ($pivot_t_field->id == $FilterField->id) {
+                                                    // Vincular todas as tabelas relacionadas ate aqui
+                                                    $Data->whereHas("{$joinedTable->right_table_object}", function ($q) use ($manyToManyTable, $FilterField, $_limiter_field_value) {
+                                                        $withMethod = str_replace(' ', '', ucwords(str_replace('_', ' ', $manyToManyTable->pivot_table_name)));
+
+                                                        if (method_exists( (new $manyToManyTable->mTable->model), $withMethod )) {
+                                                            $q->whereHas($withMethod, function ($q) use ($manyToManyTable, $FilterField, $_limiter_field_value) {
+                                                                foreach ($manyToManyTable->pivotTable->fields as $fields) {
+                                                                    if ($fields->id == $FilterField->id) {
+                                                                        $q->where($fields->name, $_limiter_field_value);
+                                                                    }
+                                                                }
+                                                            });
+                                                        }
+                                                    });
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -251,8 +272,11 @@ class DataController extends XisController
                 } break;
             }
         } else {
-            $Data = $Data->paginate($this->per_page);
-    
+            if ($this->per_page) {
+                $Data = $Data->paginate($this->per_page);
+            } else {
+                $Data = $Data->get();
+            }
             return response()->json($Data, 200);
         }
     }
@@ -708,6 +732,36 @@ class DataController extends XisController
             $Data = $Data->with($_model_withs);
         }
 
+        $ids = self::clearIdValues($ids);
+
+        if (count($ids)) {
+            foreach ($ids as $_filter_id) {
+                $FilterField = TableField::find($_filter_id['field_id']);
+                $FilterValue = $_filter_id['value'];
+
+                if ($FilterField) {
+                    foreach ($Table->fields as $field) {
+                        if (!$field->primary_key) continue;
+
+                        if ($field->id == $FilterField->id) {
+                            $Data = $Data->where("{$field->table->name}.{$field->name}", $FilterValue);
+                        } else {
+                            if ($FilterField->joins->count()) {
+                                foreach ($FilterField->joins as $_f_joined_field) {
+                                    if (in_array($field->id, [
+                                        $_f_joined_field->leftField->id,
+                                        $_f_joined_field->rightField->id
+                                    ])) {
+                                        $Data = $Data->where("{$field->table->name}.{$field->name}", $FilterValue);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         $Data = $Data
             ->get();
 
@@ -737,10 +791,12 @@ class DataController extends XisController
         foreach ($ids as $id) {
             $_values = explode(':', $id);
 
-            $organized[] = [
-                'field_id' => $_values[0],
-                'value' => $_values[1]
-            ];
+            if (isset($_values[0]) && isset($_values[1])) {
+                $organized[] = [
+                    'field_id' => $_values[0],
+                    'value' => $_values[1]
+                ];
+            }
         }
 
         return $organized;
@@ -888,49 +944,176 @@ class DataController extends XisController
         $_wait = 1;
         $_start_insert_at = time();
 
-        $validate_rules = [];
+        // Inderts diferentes para cada tipo de tabela
+        switch ($table->type->name) {
+            case 'join_n_m_map': {
+                $_inserts = [];
 
-        foreach ($table->fields as $field) {
-            if ($field->primary_key && !$field->editable) continue;
+                foreach ($table->joinedTables as $joinedTable) {
+                    if ($request->has($joinedTable->right_table_object)) {
+                        $right_data = $request->get($joinedTable->right_table_object);
+                        if (isset($right_data[$joinedTable->right_table_field_name])) {
+                            $_inserts[$joinedTable->left_table_field_name] = $right_data[$joinedTable->right_table_field_name];
+                        }
+                    }
+                }
 
-            if (!isset($validate_rules[$field->name])) {
-                $validate_rules[$field->name] = [];
-            }
+                if ((new $table->model)->insert($_inserts)) {
+                    return response()->json($_inserts, 200);
+                } else {
+                    return response()->json(['error' => 'Could not insert data'], 403);
+                }
+            } break;
 
-            if ($field->not_null) {
+            default: {
+                $validate_rules = [];
 
-                if ($field->conditional_field_id) {
-                    $ConditionalField = TableField::find($field->conditional_field_id);
-
-                    if ($ConditionalField) {
-                        if ($request->has($ConditionalField->name)) {
+                foreach ($table->fields as $field) {
+                    if ($field->primary_key && !$field->editable) continue;
+        
+                    if (!isset($validate_rules[$field->name])) {
+                        $validate_rules[$field->name] = [];
+                    }
+        
+                    if ($field->not_null) {
+                        if (($field->type->name == 'md5') && (!$field->fillable) && (!$field->editable)) continue;
+        
+                        if ($field->conditional_field_id) {
+                            $ConditionalField = TableField::find($field->conditional_field_id);
+        
+                            if ($ConditionalField) {
+                                if ($request->has($ConditionalField->name)) {
+                                    $validate_rules[$field->name][] = 'required';
+                                }
+                            }
+                        } else {
                             $validate_rules[$field->name][] = 'required';
                         }
                     }
+        
+                    if ($field->email) {
+                        $validate_rules[$field->name][] = 'email';
+                    }
+        
+                    if ($field->unique) {
+                        $validate_rules[$field->name][] = "unique:{$table->database->name}.{$table->name}";
+                    }
+                }
+        
+                $_valid_data = $request->validate($validate_rules);
+        
+                foreach ($table->fields as $field) {
+                    if ($field->not_null && ($field->type->name == 'md5') && (!$field->fillable) && (!$field->editable)) {
+                        $prefix = explode('_', $field->table->name);
+                        $prefix = $prefix[count($prefix) - 1];
+                        $prefix = mb_strtoupper(substr($prefix, 0, 1));
+        
+                        $_valid_data[$field->name] = self::generateUnicDbHash($field->table->name, $field->name, $prefix, $field->max_length);
+                    }
+                }
+        
+                if ((new $table->model)->insert($_valid_data)) {
+                    if ((time() - $_start_insert_at) < $_wait) {
+                        sleep($_wait - ( (INT) date('s', (time() - $_start_insert_at)) ));
+                    }
+        
+                    return response()->json($_valid_data, 200);
                 } else {
-                    $validate_rules[$field->name][] = 'required';
+                    return response()->json($_valid_data, 403);
                 }
             }
-
-            if ($field->email) {
-                $validate_rules[$field->name][] = 'email';
-            }
-
-            if ($field->unique) {
-                $validate_rules[$field->name][] = "unique:{$table->database->name}.{$table->name}";
-            }
         }
+    }
 
-        $_valid_data = $request->validate($validate_rules);
+    public function deleteByTable(Request $request, Table $table)
+    {
+        $_start_delete_at = time();
+        $_wait = 1;
+        // Cada tipo de tabela vai ter um delete diferente
+        switch ($table->type->name) {
+            case 'join_n_m_map': {
+                // monta os withs da tabela
+                $_model_withs = [];
+                foreach ($table->fields as $field) {
+                    if ($field->type->id != 10) continue;
+        
+                    foreach ($field->joins as $_join) {
+                        if (!$_join->rightField) continue;
+                        if (!$_join->rightField->table) continue;
+        
+                        if (method_exists((new $table->model), $_join->model_foreign_function)) {
+                            $_model_withs[] = mb_strtolower($_join->model_foreign_function);
+                        } else {
+                            if ($_join->leftField) {
+                                $_func_name = str_replace('_id', '', $_join->leftField->name);
+        
+                                if (method_exists((new $table->model), $_func_name)) {
+                                    $_model_withs[] = mb_strtolower($_func_name);
+        
+                                    \DB::table('db_table_field_joins')
+                                        ->where('relation_type_id', $_join->relation_type_id)
+                                        ->where('local_field_id', $_join->local_field_id)
+                                        ->where('remote_field_id', $_join->remote_field_id)
+                                        ->where('remote_field_id', $_join->remote_field_id)
+                                        ->update(
+                                            [
+                                                'model_foreign_function' => $_func_name
+                                            ]
+                                        );
+                                    $_join->model_foreign_function = $_func_name;
+                                } else {
+                                    // dd($_join->leftField);
+                                }
+                            } else {
+                                // dd($_join->leftField);
+                            }
+                            // dd($_join->leftField);
+                        }
+                    }
+                }
 
-        if ((new $table->model)->insert($_valid_data)) {
-            if ((time() - $_start_insert_at) < $_wait) {
-                sleep($_wait - ( (INT) date('s', (time() - $_start_insert_at)) ));
-            }
+                if (!count($_model_withs)) return response()->json(['error' => 'Could not identify key fields'], 403);
 
-            return response()->json($_valid_data, 200);
-        } else {
-            return response()->json($_valid_data, 403);
+                $where_data = $request->get('data');
+
+                $DataQ = (new $table->model)
+                    ->where(function ($q) use ($_model_withs, $where_data) {
+                        foreach ($_model_withs as $_model_with) {
+                            $q->whereHas($_model_with, function ($q) use ($_model_with, $where_data) {
+                                if (isset($where_data[$_model_with])) {
+                                    foreach ($where_data[$_model_with] as $_field => $_value) {
+                                        $q->where($_field, $_value);
+                                    }
+                                }
+                            });
+                        }
+                    });
+
+                $Data = $DataQ
+                    ->get();
+
+                if ($Data->count() === 1) {
+                    $Data = $Data->first();
+
+                    if ($DataQ->delete()) {
+                        if ((time() - $_start_delete_at) < $_wait) {
+                            sleep($_wait);
+                        }
+                        return response()->json($Data, 200);
+                    } else {
+                        if ((time() - $_start_delete_at) < $_wait) {
+                            sleep($_wait);
+                        }
+                        return response()->json(['error' => 'Could not delete data'], 403);
+                    }
+                } else {
+                    return response()->json(['error' => 'Could not identify unique data to delete'], 403);
+                }
+            } break;
+
+            default: {
+                return response()->json(['message' => 'Nothing done'], 200);
+            } break;
         }
     }
 }

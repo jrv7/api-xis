@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminDictionaryTableSeeder extends Seeder
+class AdminDictionaryTableSeeder extends XisSeeder
 {
 
     /**

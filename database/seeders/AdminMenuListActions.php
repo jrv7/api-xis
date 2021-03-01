@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminMenuListActions extends Seeder
+class AdminMenuListActions extends XisSeeder
 {
     /**
      * Run the database seeds.
@@ -18,60 +18,11 @@ class AdminMenuListActions extends Seeder
         \DB::table($tableName)->delete();
         
         \DB::table($tableName)->insert(array (
-            0 => array (
-                'menu_id'           => 6,
-                'target_menu_id'    => 41,
-                'fa_icon'           => 'pencil-alt',
+            array (
+                'menu_id'           => self::getMenuId('bf4fc0f7f9966228b29a2b6e1813f0b7'), // 6,
+                'target_menu_id'    => self::getMenuId('7475ae2fd02e1086cea4973630445a45'), // 41,
+                'fa_icon'           => 'eye',
                 'action_order'      => 1,
-                'menu_crud_action'  => 'EDIT'
-            ),
-            1 => array (
-                'menu_id'           => 9,
-                'target_menu_id'    => 22,
-                'fa_icon'           => 'eye',
-                'action_order'      => 2,
-                'menu_crud_action'  => 'VIEW'
-            ),
-            2 => array (
-                'menu_id'           => 9,
-                'target_menu_id'    => 507,
-                'fa_icon'           => 'pen',
-                'action_order'      => 3,
-                'menu_crud_action'  => 'EDIT'
-            ),
-            3 => array (
-                'menu_id'           => 12,
-                'target_menu_id'    => 503,
-                'fa_icon'           => 'eye',
-                'action_order'      => 4,
-                'menu_crud_action'  => 'VIEW'
-            ),
-            4 => array (
-                'menu_id'           => 12,
-                'target_menu_id'    => 506,
-                'fa_icon'           => 'pen',
-                'action_order'      => 5,
-                'menu_crud_action'  => 'EDIT'
-            ),
-            5 => array (
-                'menu_id'           => 13,
-                'target_menu_id'    => 504,
-                'fa_icon'           => 'eye',
-                'action_order'      => 6,
-                'menu_crud_action'  => 'VIEW'
-            ),
-            6 => array (
-                'menu_id'           => 13,
-                'target_menu_id'    => 505,
-                'fa_icon'           => 'pen',
-                'action_order'      => 7,
-                'menu_crud_action'  => 'EDIT'
-            ),
-            7 => array (
-                'menu_id'           => 26,
-                'target_menu_id'    => 501,
-                'fa_icon'           => 'eye',
-                'action_order'      => 8,
                 'menu_crud_action'  => 'VIEW'
             ),
         ));

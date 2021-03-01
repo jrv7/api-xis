@@ -15,15 +15,15 @@ class CreateTableCurrencies extends Migration
 
     public function up()
     {
-        Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('country_id')->unsigned()->references('id')->on('countries');
-            $table->string('name', 255);
-            $table->string('code', 64);
-            $table->string('symbol', 64);
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        // Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->bigInteger('country_id')->unsigned()->references('id')->on('countries');
+        //     $table->string('name', 255);
+        //     $table->string('code', 64);
+        //     $table->string('symbol', 64);
+        //     $table->timestamps();
+        //     $table->softDeletes();
+        // });
     }
 
     /**
@@ -33,6 +33,6 @@ class CreateTableCurrencies extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
+        // Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
     }
 }

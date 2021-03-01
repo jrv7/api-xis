@@ -18,8 +18,10 @@ class AdminDatabases extends Migration
         // Tabela databases
         Schema::create(self::TABLENAME, function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('dbhash', 8)->unique()->nullable();
             $table->string('name', 255)->unique();
             $table->string('db_connection', 255)->nullable();
+            $table->boolean('root')->default(false);
         });
     }
 

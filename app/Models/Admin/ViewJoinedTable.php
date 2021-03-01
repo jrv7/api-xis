@@ -28,11 +28,11 @@ class ViewJoinedTable extends Model
         'right_table_visible_field_name',
     ];
 
-    public function _LeftTable () {
+    public function leftTable () {
         return $this->hasOne(Table::class, 'id', 'left_table_id');
     }
 
-    public function _RightTable () {
+    public function rightTable () {
         return $this->hasOne(Table::class, 'id', 'right_table_id');
     }
 }

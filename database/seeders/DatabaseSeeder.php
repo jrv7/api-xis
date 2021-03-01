@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends XisSeeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(AdminViewVwOrganizedMenus::class);
+        $this->call(AdminViewVwJoinedTables::class);
         $this->call(AdminUsersTableSeeder::class);
         $this->call(AdminStatusTableSeeder::class);
         $this->call(AdminSystemsTableSeeder::class);
@@ -57,5 +59,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminDbTableFieldJoinsTableSeeder::class);
         $this->call(AdminMenuHasActionMenusTableSeeder::class);
         $this->call(AdminRolesHasPermissionsInTablesSeeder::class);
+        $this->call(AdminUsersDefaultMenuTableSeeder::class);
+        // Views 
+        $this->call(AdminViewVwManyToManyTables::class);
     }
 }

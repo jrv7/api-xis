@@ -15,14 +15,14 @@ class CreateTableProducts extends Migration
 
     public function up()
     {
-        Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('status_id')->unsigned()->references('id')->on('status');
-            $table->string('name', 255);
-            $table->text('description')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        // Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->bigInteger('status_id')->unsigned()->references('id')->on('status');
+        //     $table->string('name', 255);
+        //     $table->text('description')->nullable();
+        //     $table->timestamps();
+        //     $table->softDeletes();
+        // });
     }
 
     /**
@@ -32,6 +32,6 @@ class CreateTableProducts extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
+        // Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
     }
 }

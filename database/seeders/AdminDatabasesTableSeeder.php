@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminDatabasesTableSeeder extends Seeder
+class AdminDatabasesTableSeeder extends XisSeeder
 {
 
     /**
@@ -17,38 +17,22 @@ class AdminDatabasesTableSeeder extends Seeder
         $tableName = 'databases';
         \DB::table($tableName)->delete();
         
-        \DB::table($tableName)->insert(array (
-            0 => 
-            array (
-                'id' => 1,
-                'name' => 'admin',
-                'db_connection' => 'pgsql_admin',
-            ),
-            1 => 
-            array (
-                'id' => 2,
-                'name' => 'csm',
-                'db_connection' => 'pgsql_cms',
-            ),
-            2 => 
-            array (
-                'id' => 3,
-                'name' => 'mtg',
-                'db_connection' => 'pgsql_mtg',
-            ),
-            3 => 
-            array (
-                'id' => 4,
-                'name' => 'pravaler',
-                'db_connection' => 'pgsql_pravaler',
-            ),
-            4 => 
-            array (
-                'id' => 5,
-                'name' => 'postgres',
-                'db_connection' => 'pgsql_postgres',
-            ),
-        ));
+        \DB::table($tableName)->insert(
+            [
+                [
+                    'dbhash' => self::getUniqueDbHash('databases', 'D', 8),
+                    'name' => 'admin',
+                    'db_connection' => 'pgsql_admin',
+                    'root' => true
+                ],
+                [
+                    'dbhash' => self::getUniqueDbHash('databases', 'D', 8),
+                    'name' => 'cms',
+                    'db_connection' => 'pgsql_cms',
+                    'root' => false
+                ]
+            ]
+        );
         
         echo "Setando o proximo valor para a sequencia incremental como: ";
         $tudo = \DB::table($tableName)

@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminRolesTableSeeder extends Seeder
+class AdminRolesTableSeeder extends XisSeeder
 {
 
     /**
@@ -21,21 +21,17 @@ class AdminRolesTableSeeder extends Seeder
         \DB::table($tableName)->insert(array (
             0 => 
             array (
-                'id' => 1,
+                // 'id' => 1,
                 'name' => 'admin',
-                'display_name' => 'ADMIN',
+                'display_name' => 'USER_ROLE_ADMIN',
                 'description' => NULL,
-                'created_at' => NULL,
-                'updated_at' => NULL,
             ),
             1 => 
             array (
-                'id' => 2,
-                'name' => 'perfil-rh',
-                'display_name' => 'Perfil de RH',
-                'description' => 'Perfil de RH',
-                'created_at' => '2017-11-05 14:34:09',
-                'updated_at' => '2017-11-05 23:59:56',
+                // 'id' => 2,
+                'name' => 'read-only',
+                'display_name' => 'USER_ROLE_READ_ONLY',
+                'description' => 'Perfil somente leitura'
             ),
         ));
         

@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminDbTableTypesTableSeeder extends Seeder
+class AdminDbTableTypesTableSeeder extends XisSeeder
 {
 
     /**
@@ -20,31 +20,31 @@ class AdminDbTableTypesTableSeeder extends Seeder
         
         \DB::table($tableName)->insert(array (
             array (
-                'id' => 1,
+                // 'id' => 1,
                 'name' => 'normal',
             ),
             array (
-                'id' => 2,
+                // 'id' => 2,
                 'name' => 'join_1_1',
             ),
             array (
-                'id' => 3,
+                // 'id' => 3,
                 'name' => 'join_1_n',
             ),
             array (
-                'id' => 4,
+                // 'id' => 4,
                 'name' => 'join_n_m',
             ),
             array (
-                'id' => 5,
+                // 'id' => 5,
                 'name' => 'table_view',
             ),
             array (
-                'id' => 6,
+                // 'id' => 6,
                 'name' => 'temporary',
             ),
             array (
-                'id' => 7,
+                // 'id' => 7,
                 'name' => 'join_n_m_map',
             ),
         ));

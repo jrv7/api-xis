@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminUsersTableSeeder extends Seeder
+class AdminUsersTableSeeder extends XisSeeder
 {
 
     /**
@@ -18,30 +18,40 @@ class AdminUsersTableSeeder extends Seeder
 
         // \DB::table($tableName)->delete();
 
-        \DB::table($tableName)->insert(array (
-            0 =>
-            array (
-                'id' => 2,
-                'name' => 'Valdenir Junior',
-                'email' => 'valdenir.junior.v7@gmail.com',
-                'password' => '$2y$10$JOK/wPz2EWewkzqpBv7RP.7JQwHsXY3zcY1jtcH2WpU2ESOr1oKDS',
-                'remember_token' => 'MBYLlJgeOAHN4D91z1259jvGGNFrxOwfYqYuNn1Z77mrm29qYTvtx88pueXj',
-                'created_at' => '2017-11-02 21:49:30',
-                'updated_at' => '2017-11-03 08:56:06',
-                'superuser' => 1
-            ),
-            1 =>
-            array (
-                'id' => 3,
-                'name' => 'Usuario2',
-                'email' => 'usuario2@xis-commerce.com',
-                'password' => '$2y$10$JOK/wPz2EWewkzqpBv7RP.7JQwHsXY3zcY1jtcH2WpU2ESOr1oKDS',
-                'remember_token' => '9FZHKcEv7ds0p5dneBiF0LVArusOpdsVRTegzhcvwHwtBa5WZ2B58fRuB1pH',
-                'created_at' => '2017-11-03 04:49:12',
-                'updated_at' => '2017-11-03 04:49:15',
-                'superuser' => 0
-            ),
-        ));
+        \DB::table($tableName)->insert(
+            [
+                [
+                    'name' => 'Master user',
+                    'email' => 'admin@xis.com',
+                    'email_verified_at' => date('Y-m-d H:i:s'),
+                    'password' => \Hash::make('admin@xis.com'),
+                    'remember_token' => \Hash::make(md5(rand(1, 255))),
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                    'superuser' => true,
+                ],
+                [
+                    'name' => 'Valdenir Junior',
+                    'email' => 'valdenir.junior.v7@gmail.com',
+                    'email_verified_at' => date('Y-m-d H:i:s'),
+                    'password' => \Hash::make('valdenir.junior.v7@gmail.com'),
+                    'remember_token' => \Hash::make('valdenir.junior.v7@gmail.com'),
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                    'superuser' => false,
+                ],
+                [
+                    'name' => 'Usuario2',
+                    'email' => 'usuario2@xis-commerce.com',
+                    'email_verified_at' => date('Y-m-d H:i:s'),
+                    'password' => \Hash::make('usuario2@xis-commerce.com'),
+                    'remember_token' => \Hash::make('usuario2@xis-commerce.com'),
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                    'superuser' => false,
+                ]
+            ]
+        );
 
         echo "Setando o proximo valor para a sequencia incremental como: ";
         $tudo = \DB::table($tableName)

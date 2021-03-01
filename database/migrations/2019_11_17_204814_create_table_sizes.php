@@ -15,13 +15,13 @@ class CreateTableSizes extends Migration
 
     public function up()
     {
-        Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name', 255);
-            $table->text('description')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        // Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->string('name', 255);
+        //     $table->text('description')->nullable();
+        //     $table->timestamps();
+        //     $table->softDeletes();
+        // });
     }
 
     /**
@@ -31,6 +31,6 @@ class CreateTableSizes extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
+        // Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
     }
 }

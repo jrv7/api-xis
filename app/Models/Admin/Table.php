@@ -3,11 +3,38 @@
 namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Table extends Model
 {
     protected $table = 'db_tables';
     public $timestamps = true;
+
+    protected $appends = [
+        'userPermissions'
+    ];
+
+    public function getUserPermissionsAttribute($value)
+    {
+        if (!Auth::check()) {
+            return [];
+        } else if ($this->id) {
+            $User = Auth::user();
+            return $this->permissions()
+                ->with(['permission'])
+                ->whereHas('role', function ($q) use ($User) {
+                    $q->with(['users' => function ($q) use ($User) {
+                        $q->where('id', $User->id);
+                    }]);
+                })
+                ->get();
+        }
+    }
+
+    public function permissions()
+    {
+        return $this->hasMany(RoleHasPermissionInTable::class);
+    }
     
     public function database()
     {
@@ -45,7 +72,7 @@ class Table extends Model
             ->orderBy('action_order', 'asc');
     }
 
-    public function _JoinedTables () {
+    public function joinedTables () {
         return $this->hasMany(ViewJoinedTable::class, 'left_table_id', 'id');
     }
 
@@ -84,7 +111,8 @@ class Table extends Model
         return new $model;
     }
 
-    public function MakeModelFile ($Table) {
+    public function MakeModelFile ($Table)
+    {
         if (!!! @class_exists($Table->model)) {
             // echo "Classe nao existe";
             $Database = $Table->database;
@@ -160,7 +188,7 @@ class ' . $ModelFile . ' extends XisModel {
     protected $connection = \'' . $Database->db_connection . '\';
     public $table = \'' . $Table->name . '\';';
 
-            if ($Table->type->id != 4) {
+            if (!in_array($Table->type->name, ['join_n_m', 'join_n_m_map'])) {
                 if (@count($pkeys) > 1) {
                     $content .= '
     protected $primaryKey = [\'' . implode("', '", $pkeys) . '\'];';
@@ -222,13 +250,13 @@ class ' . $ModelFile . ' extends XisModel {
                 $content .= $appendsContent;
             }
 
-            if (count($Table->_JoinedTables)) {
-                foreach ($Table->_JoinedTables as $JoinedTable) {
+            if (count($Table->joinedTables)) {
+                foreach ($Table->joinedTables as $JoinedTable) {
                     $func_name = str_replace('_id', '', $JoinedTable->left_table_field_name);
-                    $model_name = explode('\\', $JoinedTable->_RightTable->model);
+                    $model_name = explode('\\', $JoinedTable->rightTable->model);
                     $model_name = $model_name[count($model_name) - 1];
                     if ($model_name == 'Nothing') {
-                        $model_name = 'TABLE_' . mb_strtoupper($JoinedTable->_RightTable->database->name) . '_' . mb_strtoupper($JoinedTable->_RightTable->name) . '_' . md5($JoinedTable->_RightTable->id);
+                        $model_name = 'TABLE_' . mb_strtoupper($JoinedTable->rightTable->database->name) . '_' . mb_strtoupper($JoinedTable->rightTable->name) . '_' . md5($JoinedTable->rightTable->id);
                     }
                     if (!$model_name) {
                         $model_name = 'Nothing';

@@ -18,6 +18,7 @@ class AdminDbTables extends Migration
         // Tabela db_tables
         Schema::create(self::TABLENAME, function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('dbhash', 32)->unique()->nullable();
             $table->bigInteger('database_id')->references('id')->on('databases');
             $table->string('name', 255);
             $table->unique(['database_id', 'name']);

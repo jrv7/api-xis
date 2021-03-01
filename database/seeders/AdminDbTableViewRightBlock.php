@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminDbTableViewRightBlock extends Seeder
+class AdminDbTableViewRightBlock extends XisSeeder
 {
     /**
      * Run the database seeds.
@@ -25,19 +25,5 @@ class AdminDbTableViewRightBlock extends Seeder
                 'right_table_id' => self::getTableId('db_table_triggers', 1), // 48,
             )
         ));
-    }
-
-    private static function getTableId($table_name, $database_id = 1)
-    {
-        $_table = \DB::table('db_tables')
-            ->where('database_id', $database_id)
-            ->where('name', $table_name)
-            ->get();
-
-        if ($_table->isNotEmpty()) {
-            return $_table->first()->id;
-        } else {
-            return null;
-        }
     }
 }

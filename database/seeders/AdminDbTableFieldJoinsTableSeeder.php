@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminDbTableFieldJoinsTableSeeder extends Seeder
+class AdminDbTableFieldJoinsTableSeeder extends XisSeeder
 {
 
     /**
@@ -12,25 +12,6 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
      *
      * @return void
      */
-    private static function getFieldId($table_name, $field_name)
-    {
-        $field = \DB::table('db_table_fields')
-            ->selectRaw('db_table_fields.id')
-            ->join('db_tables AS t', 't.id', '=', 'db_table_fields.table_id')
-            ->whereRaw("t.name LIKE '{$table_name}'")
-            ->whereRaw("db_table_fields.name LIKE '{$field_name}'")
-            ->get();
-
-        if ($field->isNotEmpty()) {
-            $field = $field->first();
-
-            return $field->id;
-        }
-
-        dd('AdminDbTableFieldJoinsTableSeeder', 'Field NOT found', $table_name, $field_name);
-
-        return null;
-    }
 
     public function run()
     {
@@ -40,244 +21,254 @@ class AdminDbTableFieldJoinsTableSeeder extends Seeder
         \DB::table($tableName)->insert(array (
             array (
                 'relation_type_id' => 2,
-                'local_field_id' => self::getFieldId('db_tables', 'database_id'),//24,
-                'remote_field_id' => self::getFieldId('databases', 'id'), //28,
+                'local_field_id' => self::getTableFieldId('db_tables', 'database_id'),//24,
+                'remote_field_id' => self::getTableFieldId('databases', 'id'), //28,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('databases', 'name'), //29,
+                'remote_visible_field_id' => self::getTableFieldId('databases', 'name'), //29,
                 'model_foreign_function' => '_database',
             ),
             array (
                 'relation_type_id' => 2,
-                'local_field_id' => self::getFieldId('db_tables', 'table_type_id'), // 26,
-                'remote_field_id' => self::getFieldId('db_table_types', 'id'), // 30,
+                'local_field_id' => self::getTableFieldId('db_tables', 'table_type_id'), // 26,
+                'remote_field_id' => self::getTableFieldId('db_table_types', 'id'), // 30,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_table_types', 'name'), // 31,
+                'remote_visible_field_id' => self::getTableFieldId('db_table_types', 'name'), // 31,
                 'model_foreign_function' => '_table_yype',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('menus', 'father_menu_id'), // 14,
-                'remote_field_id' => self::getFieldId('vw_father_menus', 'id_father_menu'), // 21,
+                'local_field_id' => self::getTableFieldId('menus', 'father_menu_id'), // 14,
+                'remote_field_id' => self::getTableFieldId('vw_father_menus', 'id_father_menu'), // 21,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('vw_father_menus', 'father_menu'), // 22,
+                'remote_visible_field_id' => self::getTableFieldId('vw_father_menus', 'father_menu'), // 22,
                 'model_foreign_function' => '_father_menu',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('menus', 'table_id'), // 20,
-                'remote_field_id' => self::getFieldId('db_tables', 'id'), // 23,
+                'local_field_id' => self::getTableFieldId('menus', 'table_id'), // 20,
+                'remote_field_id' => self::getTableFieldId('db_tables', 'id'), // 23,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,
+                'remote_visible_field_id' => self::getTableFieldId('db_tables', 'name'), // 25,
                 'model_foreign_function' => '_area_table',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_fields', 'table_id'), // 33,
-                'remote_field_id' => self::getFieldId('db_tables', 'id'), // 23,
+                'local_field_id' => self::getTableFieldId('db_table_fields', 'table_id'), // 33,
+                'remote_field_id' => self::getTableFieldId('db_tables', 'id'), // 23,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,
+                'remote_visible_field_id' => self::getTableFieldId('db_tables', 'name'), // 25,
                 'model_foreign_function' => 'table',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_fields', 'type_id'), // 34,
-                'remote_field_id' => self::getFieldId('db_table_field_types', 'id'), // 36,
+                'local_field_id' => self::getTableFieldId('db_table_fields', 'type_id'), // 34,
+                'remote_field_id' => self::getTableFieldId('db_table_field_types', 'id'), // 36,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_table_field_types', 'name'), // 37,
+                'remote_visible_field_id' => self::getTableFieldId('db_table_field_types', 'name'), // 37,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('menus_related', 'menu_id'), // 64,
-                'remote_field_id' => self::getFieldId('menus', 'id'), // 13,
+                'local_field_id' => self::getTableFieldId('menus_related', 'menu_id'), // 64,
+                'remote_field_id' => self::getTableFieldId('menus', 'id'), // 13,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('menus', 'menu_title'), // 15,
+                'remote_visible_field_id' => self::getTableFieldId('menus', 'menu_title'), // 15,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('menus_related', 'related_menu_id'), // 112,
-                'remote_field_id' => self::getFieldId('menus', 'id'), // 13,
+                'local_field_id' => self::getTableFieldId('menus_related', 'related_menu_id'), // 112,
+                'remote_field_id' => self::getTableFieldId('menus', 'id'), // 13,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('menus', 'menu_title'), // 15,
+                'remote_visible_field_id' => self::getTableFieldId('menus', 'menu_title'), // 15,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_field_joins', 'relation_type_id'), // 39,
-                'remote_field_id' => self::getFieldId('db_table_relation_types', 'id'), // 50,
+                'local_field_id' => self::getTableFieldId('db_table_field_joins', 'relation_type_id'), // 39,
+                'remote_field_id' => self::getTableFieldId('db_table_relation_types', 'id'), // 50,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_table_relation_types', 'name'), // 48,
+                'remote_visible_field_id' => self::getTableFieldId('db_table_relation_types', 'name'), // 48,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_field_joins', 'local_field_id'), // 108,
-                'remote_field_id' => self::getFieldId('db_table_fields', 'id'), // 32,
+                'local_field_id' => self::getTableFieldId('db_table_field_joins', 'local_field_id'), // 108,
+                'remote_field_id' => self::getTableFieldId('db_table_fields', 'id'), // 32,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_table_fields', 'name'), // 35,
+                'remote_visible_field_id' => self::getTableFieldId('db_table_fields', 'name'), // 35,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_field_joins', 'remote_field_id'), // 70,
-                'remote_field_id' => self::getFieldId('vw_remote_table_fields', 'joint_remote_field_id'), // 139,
+                'local_field_id' => self::getTableFieldId('db_table_field_joins', 'remote_field_id'), // 70,
+                'remote_field_id' => self::getTableFieldId('vw_remote_table_fields', 'joint_remote_field_id'), // 139,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('vw_remote_table_fields', 'joint_remote_field_name'), // 140,
+                'remote_visible_field_id' => self::getTableFieldId('vw_remote_table_fields', 'joint_remote_field_name'), // 140,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 2,
-                'local_field_id' => self::getFieldId('db_table_field_joins', 'remote_visible_field_id'), // 97,
-                'remote_field_id' => self::getFieldId('vw_remote_table_fields', 'joint_remote_field_id'), // 139,
+                'local_field_id' => self::getTableFieldId('db_table_field_joins', 'remote_visible_field_id'), // 97,
+                'remote_field_id' => self::getTableFieldId('vw_remote_table_fields', 'joint_remote_field_id'), // 139,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('vw_remote_table_fields', 'joint_remote_field_name'), // 140,
+                'remote_visible_field_id' => self::getTableFieldId('vw_remote_table_fields', 'joint_remote_field_name'), // 140,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('dictionary_translations', 'language_id'), // 137,
-                'remote_field_id' => self::getFieldId('languages', 'id'), // 141,
+                'local_field_id' => self::getTableFieldId('dictionary_translations', 'language_id'), // 137,
+                'remote_field_id' => self::getTableFieldId('languages', 'id'), // 141,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('languages', 'name'), // 142,
+                'remote_visible_field_id' => self::getTableFieldId('languages', 'name'), // 142,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('dictionary_translations', 'dictionary_id'), // 136,
-                'remote_field_id' => self::getFieldId('dictionary', 'id'), // 134,
+                'local_field_id' => self::getTableFieldId('dictionary_translations', 'dictionary_id'), // 136,
+                'remote_field_id' => self::getTableFieldId('dictionary', 'id'), // 134,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('dictionary', 'word'), // 135,
+                'remote_visible_field_id' => self::getTableFieldId('dictionary', 'word'), // 135,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 2,
-                'local_field_id' => self::getFieldId('menus', 'return_to_menu_id'), // 157,
-                'remote_field_id' => self::getFieldId('vw_father_menus', 'id_father_menu'), // 21,
+                'local_field_id' => self::getTableFieldId('menus', 'return_to_menu_id'), // 157,
+                'remote_field_id' => self::getTableFieldId('vw_father_menus', 'id_father_menu'), // 21,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('vw_father_menus', 'father_menu'), // 22,
+                'remote_visible_field_id' => self::getTableFieldId('vw_father_menus', 'father_menu'), // 22,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_update_history', 'user_id'), // 225,
-                'remote_field_id' => self::getFieldId('users', 'id'), // 1,
+                'local_field_id' => self::getTableFieldId('db_update_history', 'user_id'), // 225,
+                'remote_field_id' => self::getTableFieldId('users', 'id'), // 1,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('users', 'name'), // 2,
+                'remote_visible_field_id' => self::getTableFieldId('users', 'name'), // 2,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('menu_list_actions', 'target_menu_id'), // 124,
-                'remote_field_id' => self::getFieldId('menus', 'id'), // 13,
+                'local_field_id' => self::getTableFieldId('menu_list_actions', 'target_menu_id'), // 124,
+                'remote_field_id' => self::getTableFieldId('menus', 'id'), // 13,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('menus', 'menu_title'), // 15,
+                'remote_visible_field_id' => self::getTableFieldId('menus', 'menu_title'), // 15,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('menu_list_actions', 'menu_id'), // 123,
-                'remote_field_id' => self::getFieldId('menus', 'id'), // 13,
+                'local_field_id' => self::getTableFieldId('menu_list_actions', 'menu_id'), // 123,
+                'remote_field_id' => self::getTableFieldId('menus', 'id'), // 13,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('menus', 'menu_title'), // 15,
+                'remote_visible_field_id' => self::getTableFieldId('menus', 'menu_title'), // 15,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_triggers', 'table_id'), // 249,
-                'remote_field_id' => self::getFieldId('db_tables', 'id'), // 23,
+                'local_field_id' => self::getTableFieldId('db_table_triggers', 'table_id'), // 249,
+                'remote_field_id' => self::getTableFieldId('db_tables', 'id'), // 23,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,
+                'remote_visible_field_id' => self::getTableFieldId('db_tables', 'name'), // 25,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_triggers', 'table_trigger_type_id'), // 250,
-                'remote_field_id' => self::getFieldId('db_table_trigger_types', 'id'), // 246,
+                'local_field_id' => self::getTableFieldId('db_table_triggers', 'table_trigger_type_id'), // 250,
+                'remote_field_id' => self::getTableFieldId('db_table_trigger_types', 'id'), // 246,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_table_trigger_types', 'name'), // 247,
+                'remote_visible_field_id' => self::getTableFieldId('db_table_trigger_types', 'name'), // 247,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_list_actions', 'table_id'), // 253,
-                'remote_field_id' => self::getFieldId('db_tables', 'id'), // 23,
+                'local_field_id' => self::getTableFieldId('db_table_list_actions', 'table_id'), // 253,
+                'remote_field_id' => self::getTableFieldId('db_tables', 'id'), // 23,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,
+                'remote_visible_field_id' => self::getTableFieldId('db_tables', 'name'), // 25,
                 'model_foreign_function' => 'table',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_list_actions', 'target_menu_id'), // 254,
-                'remote_field_id' => self::getFieldId('menus', 'id'), // 13,
+                'local_field_id' => self::getTableFieldId('db_table_list_actions', 'target_menu_id'), // 254,
+                'remote_field_id' => self::getTableFieldId('menus', 'id'), // 13,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('menus', 'menu_title'), // 15,
+                'remote_visible_field_id' => self::getTableFieldId('menus', 'menu_title'), // 15,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_view_right_block', 'table_id'), // 255,
-                'remote_field_id' => self::getFieldId('db_tables', 'id'), // 23,
+                'local_field_id' => self::getTableFieldId('db_table_view_right_block', 'table_id'), // 255,
+                'remote_field_id' => self::getTableFieldId('db_tables', 'id'), // 23,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,
+                'remote_visible_field_id' => self::getTableFieldId('db_tables', 'name'), // 25,
                 'model_foreign_function' => 'table',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('db_table_view_right_block', 'right_table_id'), // 256,
-                'remote_field_id' => self::getFieldId('db_tables', 'id'), // 23,
+                'local_field_id' => self::getTableFieldId('db_table_view_right_block', 'right_table_id'), // 256,
+                'remote_field_id' => self::getTableFieldId('db_tables', 'id'), // 23,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,
+                'remote_visible_field_id' => self::getTableFieldId('db_tables', 'name'), // 25,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('user_has_roles', 'user_id'), // 68,
-                'remote_field_id' => self::getFieldId('users', 'id'), // 1,
+                'local_field_id' => self::getTableFieldId('user_has_roles', 'user_id'), // 68,
+                'remote_field_id' => self::getTableFieldId('users', 'id'), // 1,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('users', 'name'), // 2,
+                'remote_visible_field_id' => self::getTableFieldId('users', 'name'), // 2,
                 'model_foreign_function' => 'user',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('user_has_roles', 'role_id'), // 111,
-                'remote_field_id' => self::getFieldId('roles', 'id'), // 59,
+                'local_field_id' => self::getTableFieldId('user_has_roles', 'role_id'), // 111,
+                'remote_field_id' => self::getTableFieldId('roles', 'id'), // 59,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('roles', 'display_name'), // 72,
+                'remote_visible_field_id' => self::getTableFieldId('roles', 'display_name'), // 72,
                 'model_foreign_function' => 'role',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('vw_many_to_many_tables', 'n_visible_field_id'), // 268,
-                'remote_field_id' => self::getFieldId('db_tables', 'id'), // 23,
+                'local_field_id' => self::getTableFieldId('vw_many_to_many_tables', 'n_visible_field_id'), // 268,
+                'remote_field_id' => self::getTableFieldId('db_tables', 'id'), // 23,
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_tables', 'name'), // 25,
+                'remote_visible_field_id' => self::getTableFieldId('db_tables', 'name'), // 25,
                 'model_foreign_function' => NULL,
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('role_has_permissions_in_tables', 'role_id'),
-                'remote_field_id' => self::getFieldId('roles', 'id'),
+                'local_field_id' => self::getTableFieldId('role_has_permissions_in_tables', 'role_id'),
+                'remote_field_id' => self::getTableFieldId('roles', 'id'),
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('roles', 'display_name'),
+                'remote_visible_field_id' => self::getTableFieldId('roles', 'display_name'),
                 'model_foreign_function' => 'role',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('role_has_permissions_in_tables', 'permission_id'),
-                'remote_field_id' => self::getFieldId('permissions', 'id'),
+                'local_field_id' => self::getTableFieldId('role_has_permissions_in_tables', 'permission_id'),
+                'remote_field_id' => self::getTableFieldId('permissions', 'id'),
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('permissions', 'display_name'),
+                'remote_visible_field_id' => self::getTableFieldId('permissions', 'display_name'),
                 'model_foreign_function' => 'permission',
             ),
             array (
                 'relation_type_id' => 1,
-                'local_field_id' => self::getFieldId('role_has_permissions_in_tables', 'table_id'),
-                'remote_field_id' => self::getFieldId('db_tables', 'id'),
+                'local_field_id' => self::getTableFieldId('role_has_permissions_in_tables', 'table_id'),
+                'remote_field_id' => self::getTableFieldId('db_tables', 'id'),
                 'nofield_join_value' => NULL,
-                'remote_visible_field_id' => self::getFieldId('db_tables', 'name'),
+                'remote_visible_field_id' => self::getTableFieldId('db_tables', 'name'),
                 'model_foreign_function' => 'table',
             ),
+            array (
+                'relation_type_id' => 1,
+                'local_field_id' => self::getTableFieldId('tests_table', 'field_foreign'),
+                'remote_field_id' => self::getTableFieldId('tests_table', 'id'),
+                'nofield_join_value' => NULL,
+                'remote_visible_field_id' => self::getTableFieldId('tests_table', 'field_string'),
+                'model_foreign_function' => 'test',
+            ),
+
+            // field_foreign
             
         ));
         

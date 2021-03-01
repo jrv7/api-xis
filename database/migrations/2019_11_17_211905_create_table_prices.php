@@ -15,14 +15,14 @@ class CreateTablePrices extends Migration
 
     public function up()
     {
-        Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('article_id')->unsigned()->references('id')->on('articles');
-            $table->bigInteger('currency_id')->unsigned()->references('id')->on('currencies');
-            $table->float('value');
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        // Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->bigInteger('article_id')->unsigned()->references('id')->on('articles');
+        //     $table->bigInteger('currency_id')->unsigned()->references('id')->on('currencies');
+        //     $table->float('value');
+        //     $table->timestamps();
+        //     $table->softDeletes();
+        // });
     }
 
     /**
@@ -32,6 +32,6 @@ class CreateTablePrices extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
+        // Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
     }
 }

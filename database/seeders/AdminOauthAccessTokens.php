@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminOauthAccessTokens extends Seeder
+class AdminOauthAccessTokens extends XisSeeder
 {
     /**
      * Run the database seeds.

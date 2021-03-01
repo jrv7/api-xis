@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 use DB;
 
-class AdminRolesHasPermissionsInTablesSeeder extends Seeder
+class AdminRolesHasPermissionsInTablesSeeder extends XisSeeder
 {
 
     /**
@@ -31,10 +31,18 @@ class AdminRolesHasPermissionsInTablesSeeder extends Seeder
                     foreach ($Tables as $Table) {
 
                         \DB::table($tableName)->insert([
-                            'role_id' => 1,
+                            'role_id' => self::getRoleId('admin'), // 1,
                             'permission_id' => $Permission->id,
                             'table_id' => $Table->id,
                         ]);
+
+                        if ($Permission->name == 'view') {
+                            \DB::table($tableName)->insert([
+                                'role_id' => self::getRoleId('read-only'), // 2,
+                                'permission_id' => $Permission->id,
+                                'table_id' => $Table->id,
+                            ]);
+                        }
                     }
                 }
             }

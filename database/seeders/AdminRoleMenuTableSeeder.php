@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminRoleMenuTableSeeder extends Seeder
+class AdminRoleMenuTableSeeder extends XisSeeder
 {
 
     /**
@@ -16,30 +16,30 @@ class AdminRoleMenuTableSeeder extends Seeder
     {
         $tableName = 'role_has_menus';
         
-        \DB::table($tableName)->delete();
+        // \DB::table($tableName)->delete();
         
-        \DB::table($tableName)->insert(array (
-            0 => 
-            array (
-                'role_id' => 1,
-                'menu_id' => 8,
-            ),
-            1 => 
-            array (
-                'role_id' => 1,
-                'menu_id' => 9,
-            ),
-            2 => 
-            array (
-                'role_id' => 1,
-                'menu_id' => 6,
-            ),
-            3 => 
-            array (
-                'role_id' => 1,
-                'menu_id' => 15,
-            ),
-        ));
+        // \DB::table($tableName)->insert(array (
+        //     0 => 
+        //     array (
+        //         'role_id' => 1,
+        //         'menu_id' => 8,
+        //     ),
+        //     1 => 
+        //     array (
+        //         'role_id' => 1,
+        //         'menu_id' => 9,
+        //     ),
+        //     2 => 
+        //     array (
+        //         'role_id' => 1,
+        //         'menu_id' => 6,
+        //     ),
+        //     3 => 
+        //     array (
+        //         'role_id' => 1,
+        //         'menu_id' => 15,
+        //     ),
+        // ));
         
         
     }

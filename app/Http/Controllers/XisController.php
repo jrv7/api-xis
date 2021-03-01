@@ -13,6 +13,7 @@ use App\Models\{
     Admin\Menu,
     Admin\Table,
     Admin\Dictionary,
+    Admin\RoleHasPermissionInTable,
 };
 
 class XisController extends Controller
@@ -56,6 +57,29 @@ class XisController extends Controller
     private static function getBlueprint($table_id)
     {
         $User = Auth::user();
+
+        // Get all user permissions for this table
+        $Permissions = RoleHasPermissionInTable::with(
+                [
+                    'permission',
+                    'role' => function ($q) use ($User) {
+                        $q->with(
+                            [
+                                'users' => function ($q) use ($User) {
+                                    $q->where('id', $User->id);
+                                }
+                            ]
+                        );
+                    }
+                ]
+            )
+            ->select([
+                \DB::raw('role_has_permissions_in_tables.permission_id')
+            ])
+            ->where('table_id', $table_id)
+            ->groupBy('permission_id')
+            ->get();
+
         $return = Table::with([
                 'primaryKeys.type',
                 'listActions',
@@ -63,8 +87,12 @@ class XisController extends Controller
                 'listActions.menu.fatherMenu',
                 'listActions.menu.fatherMenu.fatherMenu',
                 'manyToManyTables',
-                'manyToManyTables.pivotTable',
-                'manyToManyTables.nTable',
+                'manyToManyTables.pivotTable.type',
+                'manyToManyTables.pivotTable.joinedTables.rightTable.fields',
+                'manyToManyTables.mTable.type',
+                'manyToManyTables.mTable.fields',
+                'manyToManyTables.nTable.type',
+                'manyToManyTables.nTable.fields',
                 'relatedTables',
                 'relatedTables.leftTable',
                 'relatedTables.rightTable',
@@ -96,15 +124,28 @@ class XisController extends Controller
                 $q->where('users.id', $User->id);
             })
             ->whereIn('permissions.name', [
-                'read'
+                'view'
             ])
             ->groupBy('db_tables.id')
             ->find($table_id);
 
         if ($return) {
+            $return->userPermissions = $Permissions;
             return $return;
         } else {
             return null;
         }
+    }
+
+    public static function generateUnicDbHash($table, $field, $prefix, $size = 32)
+    {
+        do {
+            $newHash = substr(mb_strtoupper("{$prefix}" . md5(time() . microtime() . rand(0, 255))), 0, $size);
+            $checkHash = \DB::table($table)
+                ->where($field, $newHash)
+                ->first();
+        } while($checkHash);
+
+        return $newHash;
     }
 }

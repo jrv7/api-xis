@@ -18,6 +18,7 @@ class AdminDbTableFields extends Migration
         // Tabela db_table_fields
         Schema::create(self::TABLENAME, function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('dbhash', 32)->unique()->nullable();
             $table->bigInteger('table_id')->references('id')->on('db_tables');
             $table->bigInteger('type_id')->references('id')->on('db_table_field_types');
             $table->string('name', 255);

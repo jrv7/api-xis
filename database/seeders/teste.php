@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class teste extends Seeder
+class teste extends XisSeeder
 {
     /**
      * Run the database seeds.

@@ -16,11 +16,11 @@ class AdminDbTableFieldLayoutAttributes extends Migration
     public function up()
     {
         // Tabela AdminDbTableFieldLayoutAttributes
-        Schema::create(self::TABLENAME, function (Blueprint $table) {
-            $table->bigInteger('field_id')->references('id')->on('db_table_fields');
-            $table->bigInteger('layout_id')->references('id')->on('layouts');
-            $table->string('name', 255);
-        });
+        // Schema::create(self::TABLENAME, function (Blueprint $table) {
+        //     $table->bigInteger('field_id')->references('id')->on('db_table_fields');
+        //     $table->bigInteger('layout_id')->references('id')->on('layouts');
+        //     $table->string('name', 255);
+        // });
     }
 
     /**
@@ -31,6 +31,6 @@ class AdminDbTableFieldLayoutAttributes extends Migration
     public function down()
     {
         //
-        Schema::connection('pgsql_admin')->dropIfExists(self::TABLENAME);
+        // Schema::connection('pgsql_admin')->dropIfExists(self::TABLENAME);
     }
 }

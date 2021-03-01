@@ -15,16 +15,16 @@ class CreateTableModelPictures extends Migration
 
     public function up()
     {
-        Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('model_id')->unsigned()->references('id')->on('models');
-            $table->string('name', 255);
-            $table->string('path', 255)->nullable();
-            $table->string('url', 255)->nullable();
-            $table->text('description')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        // Schema::connection('pgsql_cms')->create(self::TABLENAME, function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->bigInteger('model_id')->unsigned()->references('id')->on('models');
+        //     $table->string('name', 255);
+        //     $table->string('path', 255)->nullable();
+        //     $table->string('url', 255)->nullable();
+        //     $table->text('description')->nullable();
+        //     $table->timestamps();
+        //     $table->softDeletes();
+        // });
     }
 
     /**
@@ -34,6 +34,6 @@ class CreateTableModelPictures extends Migration
      */
     public function down()
     {
-        Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
+        // Schema::connection('pgsql_cms')->dropIfExists(self::TABLENAME);
     }
 }

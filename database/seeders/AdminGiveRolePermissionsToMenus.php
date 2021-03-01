@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminGiveRolePermissionsToMenus extends Seeder
+class AdminGiveRolePermissionsToMenus extends XisSeeder
 {
     /**
      * Run the database seeds.

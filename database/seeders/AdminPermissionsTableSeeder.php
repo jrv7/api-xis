@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminPermissionsTableSeeder extends Seeder
+class AdminPermissionsTableSeeder extends XisSeeder
 {
 
     /**
@@ -19,29 +19,17 @@ class AdminPermissionsTableSeeder extends Seeder
         \DB::table($tableName)->delete();
         
         \DB::table($tableName)->insert(array (
-            0 => 
             array (
-                'id' => 3,
-                'name' => 'update',
-                'display_name' => 'Update',
+                // 'id' => 2,
+                'name' => 'view',
+                'display_name' => 'View',
                 'description' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'fa_icon_class' => 'edit',
+                'fa_icon_class' => 'eye',
             ),
-            1 => 
             array (
-                'id' => 4,
-                'name' => 'delete',
-                'display_name' => 'Delete',
-                'description' => NULL,
-                'created_at' => NULL,
-                'updated_at' => NULL,
-                'fa_icon_class' => 'times',
-            ),
-            2 => 
-            array (
-                'id' => 1,
+                // 'id' => 1,
                 'name' => 'create',
                 'display_name' => 'Create',
                 'description' => NULL,
@@ -49,15 +37,32 @@ class AdminPermissionsTableSeeder extends Seeder
                 'updated_at' => NULL,
                 'fa_icon_class' => 'file-o',
             ),
-            3 => 
             array (
-                'id' => 2,
-                'name' => 'read',
-                'display_name' => 'View',
+                // 'id' => 3,
+                'name' => 'update',
+                'display_name' => 'Update',
                 'description' => NULL,
                 'created_at' => NULL,
                 'updated_at' => NULL,
-                'fa_icon_class' => 'eye',
+                'fa_icon_class' => 'edit',
+            ),
+            array (
+                // 'id' => 4,
+                'name' => 'delete',
+                'display_name' => 'Delete',
+                'description' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'fa_icon_class' => 'times',
+            ),
+            array (
+                // 'id' => 5,
+                'name' => 'download',
+                'display_name' => 'Download',
+                'description' => NULL,
+                'created_at' => NULL,
+                'updated_at' => NULL,
+                'fa_icon_class' => 'cloud-down',
             ),
         ));
         

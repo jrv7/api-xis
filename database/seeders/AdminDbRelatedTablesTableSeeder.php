@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Database\Seeders\XisSeeder;
 
-class AdminDbRelatedTablesTableSeeder extends Seeder
+class AdminDbRelatedTablesTableSeeder extends XisSeeder
 {
 
     /**
@@ -42,34 +42,5 @@ class AdminDbRelatedTablesTableSeeder extends Seeder
                 'joint_menu_id' => null,
             ),
         ));
-    }
-
-    private static function getTableId($table_name, $database_id = 1)
-    {
-        $_table = \DB::table('db_tables')
-            ->where('database_id', $database_id)
-            ->where('name', $table_name)
-            ->get();
-
-        if ($_table->isNotEmpty()) {
-            return $_table->first()->id;
-        } else {
-            return null;
-        }
-    }
-
-    private static function getTableFieldId($table_name, $field_name)
-    {
-        $_table_field = \DB::table('db_table_fields')
-            ->join('db_tables AS t', 't.id', '=', 'db_table_fields.table_id')
-            ->where('t.name', $table_name)
-            ->where('db_table_fields.name', $field_name)
-            ->get();
-
-        if ($_table_field->isNotEmpty()) {
-            return $_table_field->first()->id;
-        } else {
-            return null;
-        }
     }
 }
