@@ -41,6 +41,13 @@ class AdminDbRelatedTablesTableSeeder extends XisSeeder
                 'joint_field_id' => self::getTableFieldId('db_tables', 'id'), // 53,
                 'joint_menu_id' => null,
             ),
+            array (
+                'table_id' => self::getTableId('db_table_fields', 1), // 6,
+                'related_table_id' => self::getTableId('db_table_field_joins', 1), // 11,
+                'relation_order' => 0,
+                'joint_field_id' => self::getTableFieldId('db_table_fields', 'id'), // 53,
+                'joint_menu_id' => null,
+            ),
         ));
     }
 }

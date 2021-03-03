@@ -188,7 +188,7 @@ class ' . $ModelFile . ' extends XisModel {
     protected $connection = \'' . $Database->db_connection . '\';
     public $table = \'' . $Table->name . '\';';
 
-            if (!in_array($Table->type->name, ['join_n_m', 'join_n_m_map'])) {
+            if (!in_array($Table->type->name, ['join_1_n', 'join_n_m', 'join_n_m_map'])) {
                 if (@count($pkeys) > 1) {
                     $content .= '
     protected $primaryKey = [\'' . implode("', '", $pkeys) . '\'];';

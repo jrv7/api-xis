@@ -112,5 +112,18 @@ class XisSeeder extends Seeder
             return null;
         }
     }
+
+    public static function getTableRelationTypeId($name)
+    {
+        $Data = \DB::table('db_table_relation_types')
+            ->where('name', $name)
+            ->get();
+
+        if ($Data->isNotEmpty()) {
+            return $Data->first()->id;
+        } else {
+            return null;
+        }
+    }
     
 }

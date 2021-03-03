@@ -113,6 +113,8 @@ class XisController extends Controller
                 'fields.joins.rightField.table',
                 'fields.joins.visibleField',
                 'fields.joins.visibleField.table',
+                'fields.joins.filterField',
+                'fields.joins.filterField.table',
             ])
             ->select('db_tables.*')
             ->join('role_has_permissions_in_tables AS rpt', 'rpt.table_id', '=', 'db_tables.id')

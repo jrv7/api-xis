@@ -22,6 +22,8 @@ class AdminDbRelatedTables extends Migration
             $table->integer('relation_order')->nullable()->default(0);
             $table->bigInteger('joint_field_id')->nullable()->references('id')->on('db_table_fields');
             $table->bigInteger('joint_menu_id')->nullable()->references('id')->on('menus');
+            $table->bigInteger('conditional_field_id')->nullable()->references('id')->on('db_table_fields');
+            $table->text('conditional_field_value')->nullable();
             $table->primary(array('table_id', 'related_table_id'));
         });
     }

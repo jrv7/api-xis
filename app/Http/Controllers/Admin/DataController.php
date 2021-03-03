@@ -40,7 +40,7 @@ class DataController extends XisController
         }
 
         foreach ($Blueprints->fields as $field) {
-            if ($field->type->id != 10) continue;
+            if (!in_array($field->type->name, ['foreign'])) continue;
 
             foreach ($field->joins as $_join) {
                 if (!$_join->rightField) continue;
@@ -98,7 +98,7 @@ class DataController extends XisController
                     if ($FilterField) {
                         // Percorre todos os campos vendo se o ID do campo bate com o do limitador
                         foreach ($Blueprints->fields as $field) {
-                            if (($field->id != $FilterField->id) && (!$field->primary_key) && $field->type->id != 10) continue;
+                            if (($field->id != $FilterField->id) && (!$field->primary_key) && (!in_array($field->type->name, ['foreign']))) continue;
 
                             if ($field->id == $FilterField->id) {
                                 $Data = $Data->where("{$field->table->name}.{$field->name}", $_limiter_field_value);
@@ -151,7 +151,7 @@ class DataController extends XisController
         if (isset($_filters['simpleSearch'])) {
             $Data = $Data->where(function ($q) use ($Blueprints, $_filters) {
                 foreach ($Blueprints->fields as $field) {
-                    if (!in_array($field->type->id, [2, 3, 6, 15, 16])) continue;
+                    if (!in_array($field->type->name, ['character', 'text', 'str_fa_icon', 'md5', 'string', 'json'])) continue;
     
                     $_simple_search = mb_strtolower(trim($_filters['simpleSearch']));
     
@@ -291,7 +291,7 @@ class DataController extends XisController
         }
 
         foreach ($Blueprints->fields as $field) {
-            if ($field->type->id != 10) continue;
+            if (!in_array($field->type->name, ['foreign'])) continue;
 
             foreach ($field->joins as $_join) {
                 if (!$_join->rightField) continue;
@@ -407,7 +407,7 @@ class DataController extends XisController
 
                             // Percorre todos os campos vendo se o ID do campo bate com o do limitador
                             foreach ($Blueprints->fields as $field) {
-                                if (($field->id != $_limiter_field_id) && $field->type->id != 10) continue;
+                                if (($field->id != $_limiter_field_id) && (!in_array($field->type->name, ['foreign']))) continue;
                                 if ($field->joins) {
                                     foreach ($field->joins as $_join) {
                                         if ($_join->remote_field_id == $_limiter_field_id) {
@@ -428,7 +428,7 @@ class DataController extends XisController
         if (isset($_filters['simpleSearch'])) {
             $Data = $Data->where(function ($q) use ($Blueprints, $_filters) {
                 foreach ($Blueprints->fields as $field) {
-                    if (!in_array($field->type->id, [2, 3, 6, 15, 16])) continue;
+                    if (!in_array($field->type->name, ['character', 'text', 'str_fa_icon', 'md5', 'string', 'json'])) continue;
     
                     $_simple_search = mb_strtolower(trim($_filters['simpleSearch']));
     
@@ -612,38 +612,57 @@ class DataController extends XisController
             ->select($selectFields)
             ->where(function ($q) use ($request, $Blueprints) {
                 if ($request->has('limiters')) {
-                    $_limiters = $request->get('limiters');
-        
-                    if (substr_count($_limiters, '-')) {
-                        if (substr($_limiters, 0, 1) == '-') {
-                            $_limiters = substr($_limiters, 1);
-                        }
-        
-                        if (substr($_limiters, -1) == '-') {
-                            $_limiters = substr($_limiters, 0, -1);
-                        }
-                        
-                        $_limiters = explode('-', $_limiters);
-        
-                        if (count($_limiters)) {
-                            foreach ($_limiters as $_limiter) {
-                                $_limiter_params = explode(':', $_limiter);
+                    $_limiters = self::clearIdValues($request->get('limiters'));
 
-                                if (isset($_limiter_params[0]) && isset($_limiter_params[1])) {
-                                    $_limiter_field_id = $_limiter_params[0];
-                                    $_limiter_field_value = $_limiter_params[1];
-        
-                                    // Percorre todos os campos vendo se o ID do campo bate com o do limitador
-                                    foreach ($Blueprints->fields as $field) {
-                                        if ($field->id == $_limiter_field_id) {
-                                            $q->where($field->name, $_limiter_field_value);
-                                        } else if ($field->type->id == 10) {
-                                            if ($field->joins) {
-                                                foreach ($field->joins as $_join) {
-                                                    if ($_join->remote_field_id == $_limiter_field_id) {
-                                                        $Data->whereHas("{$_join->model_foreign_function}", function ($q) use ($_join, $_limiter_field_value) {
-                                                            $q->where($_join->rightField->name, $_limiter_field_value);
-                                                        });
+                    if (count($_limiters)) {
+                        foreach ($_limiters as $_limiter) {
+                        
+                            $_limiter_field_id = $_limiter['field_id'];
+                            $FilterField = TableField::find($_limiter_field_id);
+                            $_limiter_field_value = $_limiter['value'];
+
+                            if ($FilterField) {
+                                // Percorre todos os campos vendo se o ID do campo bate com o do limitador
+                                foreach ($Blueprints->fields as $field) {
+                                    if (($field->id != $FilterField->id) && (!$field->primary_key) && (!in_array($field->type->name, ['foreign']))) continue;
+
+                                    if ($field->id == $FilterField->id) {
+                                        $q->where("{$field->table->name}.{$field->name}", $_limiter_field_value);
+                                    }
+                                    
+                                    if ($field->joins) {
+                                        foreach ($field->joins as $_join) {
+                                            if ($_join->remote_field_id == $FilterField->id) {
+                                                $q->whereHas("{$_join->model_foreign_function}", function ($q) use ($_join, $_limiter_field_value) {
+                                                    $q->where($_join->rightField->name, $_limiter_field_value);
+                                                });
+                                            }
+                                        }
+                                    }
+                                }
+
+                                foreach ($Blueprints->joinedTables as $joinedTable) {
+                                    if ($joinedTable->rightTable) {
+                                        if ($joinedTable->rightTable->manyToManyTables) {
+                                            foreach ($joinedTable->rightTable->manyToManyTables as $manyToManyTable) {
+                                                if ($manyToManyTable->pivotTable) {
+                                                    foreach ($manyToManyTable->pivotTable->fields as $pivot_t_field) {
+                                                        if ($pivot_t_field->id == $FilterField->id) {
+                                                            // Vincular todas as tabelas relacionadas ate aqui
+                                                            $q->whereHas("{$joinedTable->right_table_object}", function ($q) use ($manyToManyTable, $FilterField, $_limiter_field_value) {
+                                                                $withMethod = str_replace(' ', '', ucwords(str_replace('_', ' ', $manyToManyTable->pivot_table_name)));
+
+                                                                if (method_exists( (new $manyToManyTable->mTable->model), $withMethod )) {
+                                                                    $q->whereHas($withMethod, function ($q) use ($manyToManyTable, $FilterField, $_limiter_field_value) {
+                                                                        foreach ($manyToManyTable->pivotTable->fields as $fields) {
+                                                                            if ($fields->id == $FilterField->id) {
+                                                                                $q->where($fields->name, $_limiter_field_value);
+                                                                            }
+                                                                        }
+                                                                    });
+                                                                }
+                                                            });
+                                                        }
                                                     }
                                                 }
                                             }
@@ -676,7 +695,8 @@ class DataController extends XisController
         if (!$Table) return response()->json(['error' => "Invalid Model for Menu", 'model' => $Table, 'menu' => $Menu], 403);
 
         foreach ($Table->fields as $field) {
-            if ($field->type->id != 10) continue;
+            // !in_array($field->type->name, ['character', 'text', 'str_fa_icon', 'md5', 'string', 'json'])
+            if (!in_array($field->type->name, ['foreign'])) continue;
 
             foreach ($field->joins as $_join) {
                 if (!$_join->rightField) continue;
@@ -1035,7 +1055,8 @@ class DataController extends XisController
                 // monta os withs da tabela
                 $_model_withs = [];
                 foreach ($table->fields as $field) {
-                    if ($field->type->id != 10) continue;
+                    // !in_array($field->type->name, ['character', 'text', 'str_fa_icon', 'md5', 'string', 'json'])
+                    if (!in_array($field->type->name, ['foreign'])) continue;
         
                     foreach ($field->joins as $_join) {
                         if (!$_join->rightField) continue;

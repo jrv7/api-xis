@@ -28,4 +28,9 @@ class TableFieldJoin extends Model
     {
         return $this->belongsTo(TableField::class, 'remote_visible_field_id', 'id');
     }
+
+    public function filterField()
+    {
+        return $this->belongsTo(TableField::class, 'filter_field_id', 'id');
+    }
 }

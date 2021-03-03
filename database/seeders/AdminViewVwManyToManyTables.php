@@ -51,9 +51,10 @@ class AdminViewVwManyToManyTables extends XisSeeder
         )
         WHERE lt.table_type_id IN ({$join_n_m}, {$join_n_m_map})
             AND (
-                    mtfj.table_type_id IS NULL
-                    AND ntfj.table_type_id IS NULL
-            )"
+                    mtfj.can_be_mapped = true
+                    AND ntfj.can_be_mapped = true
+            )
+            "
         );
     }
 }

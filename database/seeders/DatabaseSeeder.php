@@ -19,13 +19,13 @@ class DatabaseSeeder extends XisSeeder
         $this->call(AdminStatusTableSeeder::class);
         $this->call(AdminSystemsTableSeeder::class);
         $this->call(AdminDatabasesTableSeeder::class);
+        $this->call(AdminDbTableRelationTypesTableSeeder::class);
         $this->call(AdminDbTableTypesTableSeeder::class);
         $this->call(AdminDbTablesTableSeeder::class);
         $this->call(AdminDbTableFieldTypesTableSeeder::class);
         $this->call(AdminDbTableFieldsTableSeeder::class);
         $this->call(AdminDbTableFieldJoinsTableSeeder::class);
         $this->call(AdminDbRelatedTablesTableSeeder::class);
-        $this->call(AdminDbTableRelationTypesTableSeeder::class);
         $this->call(AdminDbTableUserConfigurationsTableSeeder::class);
         $this->call(AdminDictionaryTableSeeder::class);
         $this->call(AdminLanguagesTableSeeder::class);

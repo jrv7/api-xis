@@ -19,7 +19,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
         
         \DB::table($tableName)->insert(array (
             array (
-                'id' => 1,
                 'name' => 'bigint',
                 'schema_table_type' => 'bigInteger',
                 'schema_autoincrement' => 'bigIncrements',
@@ -34,7 +33,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 20,
                 'name' => 'int',
                 'schema_table_type' => 'integer',
                 'schema_autoincrement' => 'increments',
@@ -49,7 +47,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 8,
                 'name' => 'boolean',
                 'schema_table_type' => 'boolean',
                 'schema_autoincrement' => NULL,
@@ -64,7 +61,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 6,
                 'name' => 'character',
                 'schema_table_type' => 'char',
                 'schema_autoincrement' => NULL,
@@ -79,7 +75,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 3,
                 'name' => 'text',
                 'schema_table_type' => 'text',
                 'schema_autoincrement' => NULL,
@@ -94,7 +89,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 14,
                 'name' => 'password',
                 'schema_table_type' => 'string',
                 'schema_autoincrement' => NULL,
@@ -109,7 +103,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => true,
             ),
             array (
-                'id' => 15,
                 'name' => 'str_fa_icon',
                 'schema_table_type' => 'string',
                 'schema_autoincrement' => NULL,
@@ -124,7 +117,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 16,
                 'name' => 'md5',
                 'schema_table_type' => 'string',
                 'schema_autoincrement' => NULL,
@@ -139,7 +131,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 12,
                 'name' => 'date',
                 'schema_table_type' => 'date',
                 'schema_autoincrement' => NULL,
@@ -154,7 +145,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 19,
                 'name' => 'datetime',
                 'schema_table_type' => 'dateTime',
                 'schema_autoincrement' => NULL,
@@ -169,7 +159,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 21,
                 'name' => 'time',
                 'schema_table_type' => 'time',
                 'schema_autoincrement' => NULL,
@@ -184,7 +173,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 13,
                 'name' => 'timestamp',
                 'schema_table_type' => 'timestamp',
                 'schema_autoincrement' => NULL,
@@ -199,7 +187,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 11,
                 'name' => 'function',
                 'schema_table_type' => 'text',
                 'schema_autoincrement' => NULL,
@@ -214,7 +201,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 10,
                 'name' => 'foreign',
                 'schema_table_type' => 'bigInteger',
                 'schema_autoincrement' => NULL,
@@ -229,7 +215,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 18,
                 'name' => 'from_list',
                 'schema_table_type' => 'enum',
                 'schema_autoincrement' => NULL,
@@ -244,7 +229,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 9,
                 'name' => 'preset',
                 'schema_table_type' => 'enum',
                 'schema_autoincrement' => NULL,
@@ -259,7 +243,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 2,
                 'name' => 'string',
                 'schema_table_type' => 'string',
                 'schema_autoincrement' => NULL,
@@ -274,7 +257,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 4,
                 'name' => 'float',
                 'schema_table_type' => 'double',
                 'schema_autoincrement' => NULL,
@@ -289,7 +271,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 5,
                 'name' => 'currency',
                 'schema_table_type' => 'decimal',
                 'schema_autoincrement' => NULL,
@@ -304,7 +285,6 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 7,
                 'name' => 'percentage',
                 'schema_table_type' => 'double',
                 'schema_autoincrement' => NULL,
@@ -319,9 +299,22 @@ class AdminDbTableFieldTypesTableSeeder extends XisSeeder
                 'is_password'       => false,
             ),
             array (
-                'id' => 22,
                 'name' => 'appendable',
                 'schema_table_type' => 'string',
+                'schema_autoincrement' => NULL,
+                'schema_attributes' => null,
+                'elasticsearch_type' => NULL,
+                'is_searchable'     => false,
+                'is_numeric'        => false,
+                'is_string'         => false,
+                'is_boolean'        => false,
+                'is_datetime'       => false,
+                'is_image'          => false,
+                'is_password'       => false,
+            ),
+            array (
+                'name' => 'json',
+                'schema_table_type' => 'text',
                 'schema_autoincrement' => NULL,
                 'schema_attributes' => null,
                 'elasticsearch_type' => NULL,
