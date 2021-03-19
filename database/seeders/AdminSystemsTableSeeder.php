@@ -23,7 +23,7 @@ class AdminSystemsTableSeeder extends XisSeeder
             array (
                 'id' => 1,
                 'name' => 'Xis',
-                'hash' => 'c0fc6ad66b4f22df48f1fed21d34867c',
+                'dbhash' => 'XC0FC6AD',
                 'encrypted_urls' => true,
             ),
         ));

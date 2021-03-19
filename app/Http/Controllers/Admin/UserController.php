@@ -12,14 +12,20 @@ class UserController extends Controller
     public function getSession(Request $request)
     {
         if (Auth::check()) {
-            return response()->json($request->user()->load('defaultMenu'), 200);
+            return response()->json($request->user()->load(
+                [
+                    'systems', 
+                    'defaultMenu.system'
+                ]
+            ), 200);
         } else {
             return response()->json(null, 401);
         }
     }
     public function getMainMenus(Request $request)
     {
-        $Roles = $request->user()->roles;
+        $User = $request->user();
+        $Roles = $User->roles;
 
         $_main_menus = [];
 
@@ -29,11 +35,16 @@ class UserController extends Controller
                     ->with(
                         [
                             'actions.targetMenu',
+                            'actions.targetMenu.system',
                             'children.actions.targetMenu',
+                            'children.actions.targetMenu.system',
+                            'children.system',
                             'children.children.actions.targetMenu',
+                            'children.children.system',
+                            'system',
                         ]
                     )
-                    ->where('system_id', 1)
+                    ->whereIn('system_id', $User->systems->pluck('id'))
                     ->whereNull('father_menu_id')
                     ->get();
                 
@@ -49,11 +60,13 @@ class UserController extends Controller
 
     public function getSubmenus(Request $request, $mainMenuHash, $recursive = false)
     {
-        $Roles = $request->user()->roles;
+        $User = $request->user();
+        $Roles = $User->roles;
 
         $_main_menus = [];
 
-        $mainMenu = Menu::where('menu_url_hash', $mainMenuHash)
+        $mainMenu = Menu::with(['system'])
+            ->where('menu_url_hash', $mainMenuHash)
             ->get();
         if ($mainMenu->isNotEmpty()) {
             $mainMenu = $mainMenu->first();
@@ -61,16 +74,17 @@ class UserController extends Controller
             if (count($Roles)) {
                 foreach ($Roles as $role) {
                     $RoleMenus = $role->menus()
-                        ->where('system_id', 1)
+                        ->with(['system'])
+                        ->where('system_id', $User->systems->pluck('id'))
                         ->where('father_menu_id', $mainMenu->id)
                         ->get();
                     
                     if ($RoleMenus->isNotEmpty()) {
                         foreach ($RoleMenus as $_menu) {
-                            $_menu->load(['fatherMenu']);
+                            $_menu->load(['system', 'fatherMenu.system']);
 
                             if ($_menu->fatherMenu) {
-                                $_menu->fatherMenu->load(['fatherMenu']);
+                                $_menu->fatherMenu->load(['system', 'fatherMenu.system']);
                             }
                             
                             $_menu_data = $_menu->toArray();

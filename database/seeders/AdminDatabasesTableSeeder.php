@@ -21,16 +21,11 @@ class AdminDatabasesTableSeeder extends XisSeeder
             [
                 [
                     'dbhash' => self::getUniqueDbHash('databases', 'D', 8),
+                    'system_id' => self::getSystemId('XC0FC6AD'),
                     'name' => 'admin',
                     'db_connection' => 'pgsql_admin',
                     'root' => true
                 ],
-                [
-                    'dbhash' => self::getUniqueDbHash('databases', 'D', 8),
-                    'name' => 'cms',
-                    'db_connection' => 'pgsql_cms',
-                    'root' => false
-                ]
             ]
         );
         

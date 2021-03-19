@@ -125,5 +125,30 @@ class XisSeeder extends Seeder
             return null;
         }
     }
-    
+
+    public static function getSystemId($name)
+    {
+        $Data = \DB::table('systems')
+            ->where('dbhash', $name)
+            ->get();
+
+        if ($Data->isNotEmpty()) {
+            return $Data->first()->id;
+        } else {
+            return null;
+        }
+    }
+
+    public static function getDatabaseId($name)
+    {
+        $Data = \DB::table('databases')
+            ->where('name', $name)
+            ->get();
+
+        if ($Data->isNotEmpty()) {
+            return $Data->first()->id;
+        } else {
+            return null;
+        }
+    }
 }

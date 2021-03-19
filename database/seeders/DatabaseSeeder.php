@@ -15,9 +15,11 @@ class DatabaseSeeder extends XisSeeder
     {
         $this->call(AdminViewVwOrganizedMenus::class);
         $this->call(AdminViewVwJoinedTables::class);
-        $this->call(AdminUsersTableSeeder::class);
-        $this->call(AdminStatusTableSeeder::class);
         $this->call(AdminSystemsTableSeeder::class);
+        $this->call(AdminUsersTableSeeder::class);
+        $this->call(AdminUserHasSystemsTableSeeder::class);
+        // SeederParaUserSystems
+        $this->call(AdminStatusTableSeeder::class);
         $this->call(AdminDatabasesTableSeeder::class);
         $this->call(AdminDbTableRelationTypesTableSeeder::class);
         $this->call(AdminDbTableTypesTableSeeder::class);

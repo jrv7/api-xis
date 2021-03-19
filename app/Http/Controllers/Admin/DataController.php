@@ -832,6 +832,53 @@ class DataController extends XisController
 
         $validate_rules = [];
 
+        switch ($table->type->name) {
+            case 'join_1_1': {
+                dd('1x1');
+            } break;
+
+            case 'join_1_n': {
+                dd('join_1_n');
+            } break;
+
+            case 'join_n_m': {
+                foreach ($table->fields as $field) {
+                    if (!$field->primary_key) continue;
+        
+                    $validate_rules[$field->name] = ['required'];
+        
+                    if ($field->type->name == 'bigint') {
+                        $validate_rules[$field->name][] = "exists:{$table->database->name}.{$table->name}";
+                    }
+                }
+
+                $_valid_data = $request->validate($validate_rules);
+
+                $TableData = (new $table->model)->where(function ($q) use ($_valid_data) {
+                    foreach ($_valid_data as $field => $value) {
+                        $q->where($field, $value);
+                    }
+                })
+                    ->count();
+
+                if (!$TableData) {
+                    return $this->insertByTable($request, $table);
+                }
+
+                dd('join_n_m', $_valid_data);
+            } break;
+
+            case 'join_n_m_map': {
+                dd('join_n_m_map');
+            } break;
+
+            default: {
+                dd('default', $table->type->name, $table->name);
+            } break;
+        }
+
+        $validate_rules = [];
+
         foreach ($table->fields as $field) {
             if (!$field->primary_key) continue;
 

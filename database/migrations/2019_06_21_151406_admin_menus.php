@@ -18,6 +18,7 @@ class AdminMenus extends Migration
         // Tabela menus
         Schema::create(self::TABLENAME, function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('system_id')->references('id')->on('systems');
             $table->bigInteger('father_menu_id')->nullable();
             $table->string('menu_title', 255);
             $table->string('route', 255)->nullable();
@@ -30,7 +31,6 @@ class AdminMenus extends Migration
             $table->string('custom_controller', 255)->nullable();
             $table->string('custom_first_method_post', 255)->nullable();
             $table->string('custom_first_method_get', 255)->nullable();
-            $table->bigInteger('system_id')->references('id')->on('systems')->default(1);
         });
     }
 

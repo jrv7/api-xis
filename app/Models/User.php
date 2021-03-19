@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'system_id',
         'name',
         'email',
         'password',
@@ -45,6 +46,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function systems()
+    {
+        return $this->belongsToMany(Admin\System::class, 'user_has_systems');
+    }
 
     public function defaultMenu()
     {

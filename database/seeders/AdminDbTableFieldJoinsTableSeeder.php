@@ -485,6 +485,28 @@ class AdminDbTableFieldJoinsTableSeeder extends XisSeeder
                 'can_be_mapped' => false,
                 'model_foreign_function' => 'conditionalField',
             ),
+            array (
+                'relation_type_id' => self::getTableRelationTypeId('INNER'), // 2
+                'local_table_id' => self::getTableId('user_has_systems'),
+                'local_field_id' => self::getTableFieldId('user_has_systems', 'user_id'),
+                'remote_table_id' => self::getTableId('users'),
+                'remote_field_id' => self::getTableFieldId('users', 'id'),
+                'remote_visible_field_id' => self::getTableFieldId('users', 'name'),
+                'filter_field_id' => null,
+                'can_be_mapped' => false,
+                'model_foreign_function' => 'user',
+            ),
+            array (
+                'relation_type_id' => self::getTableRelationTypeId('INNER'), // 2
+                'local_table_id' => self::getTableId('user_has_systems'),
+                'local_field_id' => self::getTableFieldId('user_has_systems', 'system_id'),
+                'remote_table_id' => self::getTableId('systems'),
+                'remote_field_id' => self::getTableFieldId('systems', 'id'),
+                'remote_visible_field_id' => self::getTableFieldId('systems', 'name'),
+                'filter_field_id' => null,
+                'can_be_mapped' => false,
+                'model_foreign_function' => 'system',
+            ),
         ));
         
         

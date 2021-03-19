@@ -9,6 +9,11 @@ class Menu extends Model
     protected $table = 'menus';
     public $timestamps = true;
 
+    public function system()
+    {
+        return $this->belongsTo(System::class, 'system_id');
+    }
+
     public function table()
     {
         return $this->belongsTo(Table::class, 'table_id');

@@ -19,7 +19,7 @@ class AdminSystems extends Migration
         Schema::create(self::TABLENAME, function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 255);
-            $table->string('hash', 32)->nullable();
+            $table->string('dbhash', 8)->unique();
             $table->boolean('encrypted_urls')->default(true);
         });
     }

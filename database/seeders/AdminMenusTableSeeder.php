@@ -39,6 +39,7 @@ class AdminMenusTableSeeder extends XisSeeder
             // ],
             [
                 // 'id' => 100,
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => NULL,
                 'menu_title' => 'ADMINISTRACAO',
                 'route' => 'DEFAULT_URL',
@@ -106,6 +107,7 @@ class AdminMenusTableSeeder extends XisSeeder
         \DB::table($tableName)->insert([
             [
                 // 'id' => 4,
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9212b503339c08ed8a0360f0dd4912cd'), // 100,
                 'menu_title' => 'USUARIOS',
                 'route' => 'DEFAULT_URL',
@@ -140,6 +142,7 @@ class AdminMenusTableSeeder extends XisSeeder
 
             [
                 // 'id' => 5,
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9212b503339c08ed8a0360f0dd4912cd'), // 100,
                 'menu_title' => 'MENUS',
                 'route' => 'DEFAULT_URL',
@@ -174,6 +177,7 @@ class AdminMenusTableSeeder extends XisSeeder
 
             [
                 // 'id' => 31,
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9212b503339c08ed8a0360f0dd4912cd'), // 100,
                 'menu_title' => 'DATABASE',
                 'route' => 'DEFAULT_URL',
@@ -191,6 +195,7 @@ class AdminMenusTableSeeder extends XisSeeder
 
             [
                 // 'id' => 44,
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9212b503339c08ed8a0360f0dd4912cd'), // 100,
                 'menu_title' => 'DICTIONARY',
                 'route' => 'DEFAULT_URL',
@@ -208,6 +213,7 @@ class AdminMenusTableSeeder extends XisSeeder
 
             [
                 // 'id' => 400,
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9212b503339c08ed8a0360f0dd4912cd'), // 100,
                 'menu_title' => 'PERFIS',
                 'route' => 'DEFAULT_URL',
@@ -225,6 +231,7 @@ class AdminMenusTableSeeder extends XisSeeder
 
             [
                 // 'id' => 400,
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9212b503339c08ed8a0360f0dd4912cd'), // 100,
                 'menu_title' => 'TESTES',
                 'route' => 'DEFAULT_URL',
@@ -260,6 +267,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('fdbcc17be502e5192b8dfe1edfdfba38'), // 400
                 'menu_title' => 'EDITAR_PERFIL',
                 'route' => 'CRUD_VIEW',
@@ -275,6 +283,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('fdbcc17be502e5192b8dfe1edfdfba38'), // 400
                 'menu_title' => 'LISTAR_PERFIS',
                 'route' => 'DEFAULT_URL',
@@ -290,6 +299,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'LISTAR_TABELAS',
                 'route' => 'DEFAULT_URL',
@@ -305,6 +315,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'LISTAR_CAMPOS_TABELA',
                 'route' => 'DEFAULT_URL',
@@ -320,6 +331,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('fdbcc17be502e5192b8dfe1edfdfba38'), // 400
                 'menu_title' => 'VIEW_ROLE',
                 'route' => 'DEFAULT_URL',
@@ -335,6 +347,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('987f94b6b2866343e9c54edd250fc259'), // 4
                 'menu_title' => 'ADICIONAR_USUARIO',
                 'route' => 'DEFAULT_URL',
@@ -350,6 +363,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('987f94b6b2866343e9c54edd250fc259'), // 4
                 'menu_title' => 'EDITAR_USUARIO',
                 'route' => 'CRUD_VIEW',
@@ -365,6 +379,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('dca0aae7fb14c689e8757742c76045a6'), // 44
                 'menu_title' => 'EDIT_DICTIONARY_WORD',
                 'route' => 'CRUD_VIEW',
@@ -380,6 +395,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('dca0aae7fb14c689e8757742c76045a6'), // 44
                 'menu_title' => 'ADD_DICTIONARY_TRANSLATION',
                 'route' => 'CRUD_INSERT',
@@ -395,6 +411,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'RELACIONAR_CAMPOS_TABELA',
                 'route' => 'CRUD_INSERT',
@@ -410,6 +427,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'LIST_FIELD_JOINTS',
                 'route' => 'DEFAULT_URL',
@@ -473,6 +491,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
                 'menu_title' => 'ADICIONAR_MENU',
                 'route' => 'CRUD_INSERT',
@@ -488,6 +507,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'ADICIONAR_TABELA',
                 'route' => 'CRUD_INSERT',
@@ -519,6 +539,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('987f94b6b2866343e9c54edd250fc259'), // 4
                 'menu_title' => 'LISTAR_USUARIOS',
                 'route' => 'DEFAULT_URL',
@@ -534,6 +555,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'EDITAR_TABELA',
                 'route' => 'CRUD_INSERT',
@@ -549,6 +571,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('dca0aae7fb14c689e8757742c76045a6'), // 44
                 'menu_title' => 'LIST_DICTIONARY_WORDS',
                 'route' => 'DEFAULT_URL',
@@ -564,6 +587,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
                 'menu_title' => 'EDITAR_MENU',
                 'route' => 'CRUD_VIEW',
@@ -595,6 +619,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'EDITAR_CAMPO_EXTRANGEIRO',
                 'route' => 'CRUD_VIEW',
@@ -610,6 +635,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'ADICIONAR_CAMPOS_TABELA',
                 'route' => 'CRUD_INSERT',
@@ -625,6 +651,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'EDITAR_CAMPO_TABELA',
                 'route' => 'CRUD_VIEW',
@@ -656,6 +683,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'LIST_DATABASES',
                 'route' => 'DEFAULT_URL',
@@ -703,6 +731,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
                 'menu_title' => 'LISTAR_MENUS',
                 'route' => 'DEFAULT_URL',
@@ -734,6 +763,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'RELACIONAR_TABELAS',
                 'route' => 'CRUD_INSERT',
@@ -749,6 +779,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
                 'menu_title' => 'MENU_LIST_ACTIONS_ADD',
                 'route' => 'CRUD_INSERT',
@@ -764,6 +795,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'ADMIN_DB_ADD_DATABASE',
                 'route' => 'CRUD_INSERT',
@@ -795,6 +827,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
                 'menu_title' => 'ADMIN_MENUS_ADD_RELATED_MENU',
                 'route' => 'CRUD_INSERT',
@@ -842,6 +875,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'DB_MONTAR_ESTRUTURA',
                 'route' => 'CRUD_VIEW',
@@ -873,6 +907,7 @@ class AdminMenusTableSeeder extends XisSeeder
             //     'custom_first_method_post' => NULL,
             // ),
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
                 'menu_title' => 'MENUS_LISTAR_MENU_ACTIONS',
                 'route' => 'DEFAULT_URL',
@@ -888,6 +923,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
                 'menu_title' => 'LISTAR_MENUS_RELACIONADOS',
                 'route' => 'DEFAULT_URL',
@@ -903,6 +939,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
                 'menu_title' => 'EDITAR_MENUS_RELACIONADOS',
                 'route' => 'CRUD_VIEW',
@@ -918,6 +955,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'DB_VIEW_DATABASE',
                 'route' => 'CRUD_VIEW',
@@ -933,6 +971,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
                 'menu_title' => 'DB_REFATORAR_TABELA',
                 'route' => 'DEFAULT_URL',
@@ -948,6 +987,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('dca0aae7fb14c689e8757742c76045a6'), // 44
                 'menu_title' => '_STATIC_LAYOUTS_DICTIONARY_TRANSLATE_',
                 'route' => 'CRUD_INSERT',
@@ -963,6 +1003,7 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
             [
+                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('8084d2014eff3a7b21d7d031f36279eb'), // 44
                 'menu_title' => 'LIST_TESTS',
                 'route' => 'DEFAULT_URL',
