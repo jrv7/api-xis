@@ -151,4 +151,30 @@ class XisSeeder extends Seeder
             return null;
         }
     }
+
+    public static function getDictionaryWordId($name)
+    {
+        $Data = \DB::table('dictionary')
+            ->where('word', $name)
+            ->get();
+
+        if ($Data->isNotEmpty()) {
+            return $Data->first()->id;
+        } else {
+            return null;
+        }
+    }
+
+    public static function getLanguageId($name)
+    {
+        $Data = \DB::table('languages')
+            ->where('name', $name)
+            ->get();
+
+        if ($Data->isNotEmpty()) {
+            return $Data->first()->id;
+        } else {
+            return null;
+        }
+    }
 }

@@ -1,4 +1,6 @@
 #!/bin/bash
+# Command example:
+#    ./recreate_database.command xis_new_database_name new_schema_name new_schema_2_name
 
 if [[ $1 == "" ]]; then
 	echo
