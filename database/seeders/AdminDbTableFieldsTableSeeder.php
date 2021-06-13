@@ -5487,26 +5487,29 @@ class AdminDbTableFieldsTableSeeder extends XisSeeder
                 'email' => false,
                 'is_elasticsearchable' => false,
             ),
+            array (
+                'dbhash' => self::getUniqueDbHash('db_table_fields', 'F', 32),
+                'table_id' => self::getTableId('db_tables', 1),// 51,
+                'type_id' => self::getFieldTypeId('foreign'), // 10,
+                'name' => 'system_id',
+                'placeholder' => '',
+                'help_text' => '',
+                'primary_key' => false,
+                'not_null' => true,
+                'unique' => false,
+                'default_value' => NULL,
+                'min_length' => 0,
+                'max_length' => 0,
+                'fillable' => true,
+                'editable' => true,
+                'display_in_lists' => true,
+                'is_hidden' => false,
+                'display_order' => 100,
+                'crud_edit_validation_type' => NULL,
+                'crud_edit_validation_function' => NULL,
+                'email' => false,
+                'is_elasticsearchable' => false,
+            ),
         ));
-
-        echo "Setando o proximo valor para a sequencia incremental como: ";
-        $tudo = \DB::table($tableName)
-            ->orderBy('id', 'desc')
-            ->limit(1)
-            ->get(['id']);
-
-        if ($tudo->isNotEmpty()) {
-            $total_tabela = $tudo->first()->id;
-        } else {
-            $total_tabela = 0;
-        }
-
-        $total_tabela++;
-
-        echo $total_tabela;
-
-        \DB::statement("alter sequence admin.db_table_fields_id_seq restart with {$total_tabela}");
-
-        echo PHP_EOL . PHP_EOL;
     }
 }

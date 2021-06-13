@@ -78,7 +78,7 @@ class AdminMenuListActionsTableSeeder extends XisSeeder
             array (
                 'menu_id' => self::getMenuId('1ad3958aac02f64f1e565851944c7def'), // 42,
                 'target_menu_id' => self::getMenuId('e542fbfb68f5da1243c71110921bf20b'), // 65,
-                'fa_icon' => 'pen',
+                'fa_icon' => 'edit',
                 'action_order' => NULL,
                 'menu_crud_action' => 'view',
             ),

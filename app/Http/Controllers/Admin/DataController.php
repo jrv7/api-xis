@@ -148,6 +148,22 @@ class DataController extends XisController
             }
         }
 
+        if ($request->has('simpleSearch')) {
+            $_simple_search = mb_strtolower($request->get('simpleSearch'));
+
+            if ($_simple_search != 'null') {
+                $Data = $Data->where(function ($q) use ($Blueprints, $_simple_search) {
+                    foreach ($Blueprints->fields as $field) {
+                        if (!in_array($field->type->name, ['character', 'text', 'str_fa_icon', 'md5', 'string', 'json'])) continue;
+        
+                        if (mb_strlen($_simple_search)) {
+                            $q->orWhereRaw("LOWER({$field->name}) LIKE '%$_simple_search%'");
+                        }
+                    }
+                });
+            }
+        }
+
         if (isset($_filters['simpleSearch'])) {
             $Data = $Data->where(function ($q) use ($Blueprints, $_filters) {
                 foreach ($Blueprints->fields as $field) {

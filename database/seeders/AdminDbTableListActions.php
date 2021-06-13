@@ -85,6 +85,13 @@ class AdminDbTableListActions extends XisSeeder
                 'action_order' => '1',
                 'menu_crud_action' => 'view',
             ),
+            array (
+                'table_id' => self::getTableId('systems', 1), // 9,
+                'target_menu_id' => self::getMenuId('e542fbfb68f5da1243c71110921bf20b'), // 60,
+                'fa_icon' => 'edit',
+                'action_order' => '1',
+                'menu_crud_action' => 'view',
+            ),
         ));
     }
 }

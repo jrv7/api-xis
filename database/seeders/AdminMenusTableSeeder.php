@@ -246,26 +246,29 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            
+            [
+                'system_id' => self::getSystemId('XC0FC6AD'),
+                'father_menu_id' => self::getMenuId('9212b503339c08ed8a0360f0dd4912cd'), // 100,
+                'menu_title' => 'SYSTEMS',
+                'route' => 'DEFAULT_URL',
+                'opt_show_menu' => 1,
+                'class_fa_icon' => 'cogs',
+                'menu_url_hash' => 'c310650ad7c420cfb101fd117e3355a6',
+                'table_id' =>NULL,
+                'return_to_menu_id' => NULL,
+                'custom_crud_view' => NULL,
+                'custom_controller' => NULL,
+                'custom_first_method_get' => NULL,
+                'system_id' => 1,
+                'custom_first_method_post' => NULL,
+            ],
         ]);
-        
+        /**
+         * 
+         * 
+         * Insert child menus
+         */
         \DB::table($tableName)->insert([
-            // [
-            //     'id' => 2,
-            //     'father_menu_id' => 1,
-            //     'menu_title' => 'Home',
-            //     'route' => 'HOME_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => '8084d2014eff3a7b21d7d031f36279eb',
-            //     'table_id' => self::getTableId('home', 1), // 1,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('fdbcc17be502e5192b8dfe1edfdfba38'), // 400
@@ -442,54 +445,6 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            // [
-            //     'id' => 11,
-            //     'father_menu_id' => 200,
-            //     'menu_title' => 'MODELOS',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => '079d8e7f8990b3a5d281798269d0b79d',
-            //     'table_id' =>NULL,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
-            // [
-            //     'id' => 10,
-            //     'father_menu_id' => 200,
-            //     'menu_title' => 'PRODUTOS',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => 'icon-prd',
-            //     'menu_url_hash' => '90b370c685f47bc1f300559a24d4b03c',
-            //     'table_id' =>NULL,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
-            // [
-            //     'id' => 28,
-            //     'father_menu_id' => 300,
-            //     'menu_title' => 'CARTAS',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => '4c1ce9bd11d5e36158c4d8fa3dc8e9f1',
-            //     'table_id' =>NULL,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
@@ -522,22 +477,6 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            // [
-            //     'id' => 8,
-            //     'father_menu_id' => 200,
-            //     'menu_title' => 'ARTIGOS',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => '784949445fe212956e95a460fb824d7c',
-            //     'table_id' =>NULL,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('987f94b6b2866343e9c54edd250fc259'), // 4
@@ -602,22 +541,6 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            // [
-            //     'id' => 9,
-            //     'father_menu_id' => 8,
-            //     'menu_title' => 'LISTAR_ARTIGOS',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => 'icon-prd',
-            //     'menu_url_hash' => '1cf31abde0e4254b12fc09c499933f64',
-            //     'table_id' => self::getTableId('articles', 2), // 37,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
@@ -666,22 +589,6 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            // [
-            //     'id' => 22,
-            //     'father_menu_id' => 8,
-            //     'menu_title' => 'VIEW_ARTIGO',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 0,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => 'cf4f1627d6deceec9e44960a34e8c3a1',
-            //     'table_id' =>NULL,
-            //     'return_to_menu_id' => 22,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
@@ -698,38 +605,6 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            // [
-            //     'id' => 25,
-            //     'father_menu_id' => 23,
-            //     'menu_title' => 'INSERIR_IMPORTADOR',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 0,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => 'd168545cfcb74d58de1b443e604f6954',
-            //     'table_id' => self::getTableId('importers', 1), // 15,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
-            // [
-            //     'id' => 12,
-            //     'father_menu_id' => 10,
-            //     'menu_title' => 'LISTAR_PRODUTOS',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => '087191174a91f7d5a73acb8a1d760a34',
-            //     'table_id' => self::getTableId('produtos', 2), // 39,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
@@ -746,22 +621,6 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            // [
-            //     'id' => 24,
-            //     'father_menu_id' => 23,
-            //     'menu_title' => 'IMPORTADOR',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => 'cee5d729e0f43173fc56d65ec4afb222',
-            //     'table_id' => self::getTableId('importers', 1), // 15,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
@@ -810,22 +669,6 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            // [
-            //     'id' => 13,
-            //     'father_menu_id' => 11,
-            //     'menu_title' => 'LISTAR_MODELOS',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => '41fa02c4e9a3ecbcde545b8bd7e3c9ec',
-            //     'table_id' => self::getTableId('modelos', 2), // 38,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
@@ -842,38 +685,6 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            // [
-            //     'id' => 30,
-            //     'father_menu_id' => 28,
-            //     'menu_title' => 'HOME_CARTAS',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 0,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => '510554cf118fc95de2b9d4f3c50d141c',
-            //     'table_id' => self::getTableId('articles', 2), // 37,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
-            // [
-            //     'id' => 3,
-            //     'father_menu_id' => 2,
-            //     'menu_title' => 'homes',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => 'fdc8e290421fe8e99a4833ca6851148e',
-            //     'table_id' => self::getTableId('home', 1), // 1,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('965ac7557dc20d67047043ecbed46ae4'), // 31
@@ -890,22 +701,6 @@ class AdminMenusTableSeeder extends XisSeeder
                 'system_id' => 1,
                 'custom_first_method_post' => NULL,
             ],
-            // array (
-            //     'id' => 29,
-            //     'father_menu_id' => 28,
-            //     'menu_title' => 'LISTAR_CARTAS',
-            //     'route' => 'DEFAULT_URL',
-            //     'opt_show_menu' => 1,
-            //     'class_fa_icon' => NULL,
-            //     'menu_url_hash' => '6d44910fe843bb9b9b3ce4b54f27da74',
-            //     'table_id' => self::getTableId('cards', 3), // 46,
-            //     'return_to_menu_id' => NULL,
-            //     'custom_crud_view' => NULL,
-            //     'custom_controller' => NULL,
-            //     'custom_first_method_get' => NULL,
-            //     'system_id' => 1,
-            //     'custom_first_method_post' => NULL,
-            // ),
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('9f6e4f167614a21b8de52e38531a1662'), // 5
@@ -1020,22 +815,6 @@ class AdminMenusTableSeeder extends XisSeeder
             ],
             [
                 'system_id' => self::getSystemId('XC0FC6AD'),
-                'father_menu_id' => self::getMenuId('9212b503339c08ed8a0360f0dd4912cd'), // 100,
-                'menu_title' => 'SYSTEMS',
-                'route' => 'DEFAULT_URL',
-                'opt_show_menu' => 1,
-                'class_fa_icon' => 'cogs',
-                'menu_url_hash' => 'c310650ad7c420cfb101fd117e3355a6',
-                'table_id' =>NULL,
-                'return_to_menu_id' => NULL,
-                'custom_crud_view' => NULL,
-                'custom_controller' => NULL,
-                'custom_first_method_get' => NULL,
-                'system_id' => 1,
-                'custom_first_method_post' => NULL,
-            ],
-            [
-                'system_id' => self::getSystemId('XC0FC6AD'),
                 'father_menu_id' => self::getMenuId('c310650ad7c420cfb101fd117e3355a6'), // 100,
                 'menu_title' => 'LIST_SYSTEMS',
                 'route' => 'DEFAULT_URL',
@@ -1067,25 +846,5 @@ class AdminMenusTableSeeder extends XisSeeder
                 'custom_first_method_post' => NULL,
             ],
         ]);
-        
-        echo "Setando o proximo valor para a sequencia incremental como: ";
-        $tudo = \DB::table($tableName)
-            ->orderBy('id', 'desc')
-            ->limit(1)
-            ->get(['id']);
-
-        if ($tudo->isNotEmpty()) {
-            $total_tabela = $tudo->first()->id;
-        } else {
-            $total_tabela = 0;
-        }
-
-        $total_tabela++;
-
-        echo $total_tabela;
-
-        \DB::statement("alter sequence admin.menus_id_seq restart with {$total_tabela}");
-
-        echo PHP_EOL . PHP_EOL;
     }
 }
